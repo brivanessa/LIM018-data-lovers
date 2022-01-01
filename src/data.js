@@ -43,6 +43,9 @@ export function filterDataCountry(data,condition) {
   return data.filter ((item) => (item.noc === condition))
 }
 
+export function filterDataAthlete(data,condition) {
+  return data.filter ((item) => (item.name == condition))
+}
 //COMPUTE STAT
 export function computeStats(data) {
   let numberAthletes=data.length;

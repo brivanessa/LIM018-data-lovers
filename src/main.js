@@ -1,5 +1,6 @@
 import data from './data/athletes/athletes.js';
 import sports from './data/athletes/sports.js';
+import highlights from './data/athletes/highlights.js';
 import {
   filterDataGender,
   filterDataSport,
@@ -10,7 +11,8 @@ import {
   noRepeatedData,
   noRepeatedSports,
   noRepeatedCountry,
-  dataMedals} from  "./data.js";
+  dataMedals,
+  filterDataAthlete } from  "./data.js";
 
 const dataRio = data.athletes;
 
@@ -221,28 +223,41 @@ for (let i = 0; i < medalsData.length; i++) {
     }
   }
 }
-//console.log(medalsData)
+console.log(medalsData)
 
+//const menuHighlights = document.getElementById("menuHighlights");
+
+
+// ALL HIGHLIGHTS
+const newDiv3 = document.getElementById("infoHighlights"); // crea un nuevo div
 const menuHighlights = document.getElementById("menuHighlights");
+const elementHighlights = document.getElementById("templateHighlights").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
+const parentHighlights  = document.getElementById("card_highlights"); // Obtener una referencia  del nodo madre
+
+const dataHighlights = highlights.highlights;
 
 menuHighlights.addEventListener("click", () => {
   document.getElementById("bodyAllSports").style.display = "none";
   document.getElementById("selectcontainer").style.display = "none";
   document.getElementById("bodyAllCards").style.display = "none";
-  document.getElementById("findAllAthletes").style.visibility = "hidden"
+  document.getElementById("findAllAthletes").style.visibility = "hidden";
   document.getElementById("card_highlights").style.display = "block";
+  
+  function imprimirHighlights(datos) {
+    let numberSuma=computeStats(dataHighlights);
+    newContent=document.createTextNode(`${numberSuma} atletas ganaron como mínimo 2 medallas de oro.`);  
+      newDiv3.appendChild(newContent); //añade texto al div creado.
+    return datos.forEach((item) => {        
+     const newSeccion = document.importNode(elementHighlights,true); 
+      newSeccion.querySelector(".highlights-athlete").setAttribute("src",item.ref);
+      newSeccion.querySelector(".highlights-name").textContent = item.athlete;
+      let medalsByAthletes=filterDataAthlete(medalsData, `"${item.athlete}"` );
+      console.log(`"${item.athlete}"`);
+      console.log(medalsData[134])
+      console.log(medalsByAthletes)
+      newSeccion.querySelector(".highlights-medals").textContent = `Medals: ${medalsByAthletes[0].medal}`;
+      parentHighlights.appendChild(newSeccion);
+    })
+  }
+  imprimirHighlights(dataHighlights);
 })
-
-// //ALL H
-// const newDiv = document.getElementById("infoAthletes"); // crea un nuevo div
-// const athletesButton = document.getElementById("menuAllAthletes");
-// const elementMain = document.getElementById("templateAthlete").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
-// const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
-
-// athletesButton.addEventListener('click', () => {
-//   document.getElementById("bodyAllSports").style.display = "none";
-//   document.getElementById("card_highlights").style.display = "none";
-//   document.getElementById("bodyAllCards").style.display = "block";
-//   document.getElementById("selectcontainer").style.display = "flex";
-//     imprimirDatos(noRepeatedAhletes);
-// });

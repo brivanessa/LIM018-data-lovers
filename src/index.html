@@ -103,7 +103,7 @@
 
         <!-- TODAS LAS CARTAS DE ATLETAS SIN REPETIR -->
         <div class="cards_all" id="bodyAllCards">    
-          <p id="infoAthletes" class="infoAthletes"></p>
+           <p id="infoAthletes" class="infoAthletes"></p> <!--es la suma total del bloque de atletas -->
         </div>
 
         <!-- PLANTILLA PARA MOSTRAR LOS DATOS DE CADA ATLETA -->
@@ -136,17 +136,22 @@
             </div>
           </div> 
         </template>
+
       </div>
+       <!-- TODAS LAS CARTAS DE Highlights SIN REPETIR -->
       <div  class="card_highlights" id="card_highlights">
+        <p id="infoHighlights" class="infoHighlights"></p> <!--es la suma total del bloque de atletas -->
+      </div>
+
+      <template id="templateHighlights">
         <div class="card-highlights-container">
           <div class="highlights-img">
-            <img src="https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/primary/d805hwu9vwqliue2tbwh" alt="">
+            <img class="highlights-athlete" src="https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/primary/d805hwu9vwqliue2tbwh" alt="">
           </div>
           <p class="highlights-name"></p>
           <p class="highlights-medals"></p>
         </div>
-      </div>
-      
+      </template>  
     </section>
   </main>  
   <script src="main.js" type="module"></script>
