@@ -1,4 +1,4 @@
-export default {
+export default data={
   "games": "Olympic Games",
   "year": 2016,
   "season": "summer",
@@ -24281,4 +24281,4 @@ export default {
       "medal": "Bronze"
     }
   ]
-}
+};
