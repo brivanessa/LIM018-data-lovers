@@ -75,3 +75,37 @@ a {
     margin: 0 auto;
     margin-bottom: 3px;
 }
+
+main.principalPage{
+    float:left;
+    height: 100%; 
+    padding-top: 10%;
+    text-align: center; /*para centrar al momento de convertir los eleementos de bloque section.listaAthletes en elementos del inea*/
+
+}
+
+main.principalPage  section.listaAthletes{
+    /*float:left; /* para elementos de bloque*/ 
+    width: 106px;
+    padding-top: 10px;
+    
+   display: inline-block; 
+}
+
+.petRio{
+    border-radius: 77px; 
+    border: 4px solid #164986;
+    margin: auto;  
+    /*display: block;  */
+    width: 77px;
+    height: 76px; 
+}
+
+#pais, #nombre{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-size: 10px;
+    text-align: center;
+    margin:0;
+    color: #000000;
+}
