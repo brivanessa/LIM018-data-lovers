@@ -24281,4 +24281,4 @@ export default{
       "medal": "Bronze"
     }
   ]
-};
+}
