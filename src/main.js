@@ -1,10 +1,11 @@
-//import { example } from './data.js';
+// import { example } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/athletes/athletes.js';
 const data1=data;
-//console.log(data);
+console.log(data1);
 
 const addElement =(data1) =>{
+    console.log(data1);
     const fragment=document.createDocumentFragment();
     //Crear nuevo div y añadirlo al elemento main
     const newDiv = document.createElement("div"); // crea un nuevo div
@@ -22,6 +23,7 @@ const addElement =(data1) =>{
         const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
         //parentMain.appendChild(newSeccion); // clonas un documeto y lo devuelves al final 
         newSeccion.querySelector("h4").textContent = item.team;
+        newSeccion.querySelector("h5").textContent = item.name;
         fragment.appendChild(newSeccion);      
     });
     document.getElementById("athletes").style.display="none"; //para ocultar el primer elmento
