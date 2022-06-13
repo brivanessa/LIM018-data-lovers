@@ -1,8 +1,5 @@
 import data from './data/athletes/athletes.js';
-//const data1=data;
 
-//const addElement =() =>{
-    //console.log(data);
     const fragment=document.createDocumentFragment();
     //Crear nuevo div y añadirlo al elemento main
     const newDiv = document.createElement("div"); // crea un nuevo div
@@ -26,9 +23,3 @@ import data from './data/athletes/athletes.js';
     });
     document.getElementById("athletes").style.display="none"; //para ocultar el primer elmento
     parentMain.appendChild(fragment); //devuelves el fragment al final del documento   
-//}
-
-//window.addEventListener('load', addElement); 
-//window.addEventListener('load', addElement()) // es lo msimo
-//window.addEventListener('load', function() {addElement()});  // es lo mismo y sirve mas para para agregar parametros/argumentos
-//document.body.onload = addElement; // es lo mismo
