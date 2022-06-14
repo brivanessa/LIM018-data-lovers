@@ -17,13 +17,14 @@ console.log(data);
         const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
         //parentMain.appendChild(newSeccion); // clonas un documeto y lo devuelves al final 
         //console.log(item)
-        newSeccion.querySelector("h4").textContent = item.team;
-        newSeccion.querySelector("h5").textContent = item.name;
-        newSeccion.querySelector("h6").textContent = item.medal;
-        newSeccion.querySelector("h7").textContent = item.sport;
-        newSeccion.querySelector("h8").textContent = item.gender;
-        newSeccion.querySelector("h9").textContent = item.height;
-        newSeccion.querySelector("h10").textContent = item.weight;
+        newSeccion.querySelector("h2").textContent = item.team;
+        newSeccion.querySelector("h3").textContent = item.name;
+        newSeccion.querySelector("h4").textContent = item.medal;
+        newSeccion.querySelector("h5").textContent = item.sport;
+        newSeccion.querySelector("h6").textContent = item.gender;
+        newSeccion.querySelector("p").textContent = `
+        ${item.name} (${item.team})
+        Peso: ${item.height} y Altura: ${item.weight}`; 
         fragment.appendChild(newSeccion);  
           
     });
