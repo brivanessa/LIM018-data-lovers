@@ -1,0 +1,56 @@
+.header {
+    background-color: #0769e9;
+    height: 80px;
+    width: 100%;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  
+    max-width: 992px;
+    margin: 0 auto;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+  }
+  
+  .nav-menu {
+    flex-direction: row;
+
+    padding: 0;
+    top: 0;
+    left: 40%;
+    height: 80px;
+    background-color: #0769e9;
+  }
+  
+  .nav-menu-item {
+    line-height: 80px;
+  }
+  
+  .nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 3px;
+  }
+  
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    background: local;
+    background-color: #034574;
+    color: white;
+  }
+  
+  /* TOGGLE */
+  .nav-toggle {
+    display: none;
+  }
