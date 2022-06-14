@@ -101,7 +101,7 @@ main.principalPage{
     height: 100%; 
     padding-top: 10%;
     text-align: center; /*para centrar al momento de convertir los eleementos de bloque section.listaAthletes en elementos del inea*/
-
+    /* position: absolute; */
 }
 
 section.listaAthlete{
@@ -112,6 +112,8 @@ section.listaAthlete{
    margin: 8px 8px;
    display: inline-block; 
    box-sizing: border-box;
+   position: relative;
+   
    /* border:0.38rem solid rgb(165, 165, 165);  */
     /* se puede omitir solo para que se vea bien xd al voltear */
       perspective: 1000px; 
@@ -119,7 +121,8 @@ section.listaAthlete{
 
 /* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */
 .listaAthlete:hover .card_one{
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
+    
     }
 
 .card_one{
@@ -130,7 +133,7 @@ section.listaAthlete{
     position:relative; 
     transform-style: preserve-3d;  
     /* se puede omitir solo para que se vea bien xd al voltear */
-    transition: all 300ms;
+    transition: all 400ms;
 }
 
 .card_front, 
@@ -151,10 +154,10 @@ section.listaAthlete{
     
 }
 .card_back{
-    transform: rotateY(180deg);
     border-radius: 0.75rem;
     background-color: #EFECEC;
     border:4px; 
+    transform: rotateX(180deg);
    
 
 }
