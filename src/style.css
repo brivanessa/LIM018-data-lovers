@@ -84,13 +84,53 @@ main.principalPage{
 
 }
 
-main.principalPage  section.listaAthletes{
+section.listaAthlete{
     /*float:left; /* para elementos de bloque*/ 
     width: 106px;
-    padding-top: 10px;
-    
+    height: 180px;
+    /* padding-top: auto auto; */
+    /* margin-top: 10px; */
    display: inline-block; 
+   box-sizing: border-box;
+   /* border:0.38rem solid rgb(165, 165, 165);  */
+    /* se puede omitir solo para que se vea bien xd al voltear */
+      perspective: 1000px; 
 }
+
+/* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */
+.listaAthlete:hover .card_one{
+    transform: rotateY(180deg);
+    }
+
+.card_one{
+    width: 105px;
+    height: 179px;
+    /* con position relative en el padre y absolute ne el hijo hacemos que el hijo se ubique enciam del padre pero respetando a los div anteriores al padre */
+    /* background: gray; */
+    position:relative; 
+    transform-style: preserve-3d;  
+    /* se puede omitir solo para que se vea bien xd al voltear */
+    transition: all 100ms;
+}
+
+.card_front, 
+.card_back{
+    /* 100% de todo el espacio de card one por eso card back se ve por debajo de card_one*/
+    width: 100%; 
+    height: 100%;
+    /* card front esta ne la misma position que card back por eso la letra se sobreescribe */
+    position:absolute;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+.card_front{
+    background: gray;  
+}
+.card_back{
+    transform: rotateY(180deg);
+    background: red;  
+}
+
 
 .petRio{
     border-radius: 77px; 

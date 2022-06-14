@@ -30,15 +30,30 @@
     </header>
     
     <main class= "principalPage" id="principal">
-      
-      <section class= "listaAthletes" id="athletes">
-        <img 
-            src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
-        <div class="datos" id="datosAthletes">
-          <h4 id="pais">PAIS</h4>
-          <h5 id="nombre">Nombre del Atleta</h5>
-        </div> 
-      </section>
+      <!-- div card_all contiene todas las cartas: -->
+      <div class="cards_all" id="bodyAllCards">
+        <!-- card_global (card_father):contiene a la carta que se voltea - si no lo ocnsideramos al voltear la card hay un espacio que el cursor no reconoce porque como que no existe (cuando esta en 90 grad) y se produce un fallo optico -->
+        <section class= "listaAthlete" id="athlete">
+          <!-- //card:one es la  que se voltea -->
+          <div class="card_one">  
+            <!-- parte del a carta que esta delante -->
+            <div class="card_front">
+                <img src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
+                <div class="datos" id="datosAthlete">
+                  <h4 id="pais">PAIS</h4>
+                  <h5 id="nombre">Nombre del Atleta</h5>
+                </div> 
+            </div> 
+            <div class="card_back">
+                <h6 id="medalla">Medallas</h6>
+                <h7 id="especialidad">Medallas</h7>
+                <h8 id="genero">Medallas</h8>
+                <h9 id="altura">Medallas</h9>
+                <h10 id="peso">Medallas</h10>
+            </div>             
+          </div>
+        </section>
+      </div>
     </main>  
     
    
