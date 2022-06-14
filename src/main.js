@@ -1,5 +1,5 @@
 import data from './data/athletes/athletes.js';
-console.log(data);
+//console.log(data);
 
 //menu
 const navToggle = document.querySelector(".nav-toggle");
@@ -9,7 +9,7 @@ navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("nav-menu_visible");
   if (navMenu.classList.contains("nav-menu_visible")) {
     navToggle.setAttribute("aria-label", "Cerrar menú");
-    console.log(navToggle);
+    //console.log(navToggle);
   } else {
     navToggle.setAttribute("aria-label", "Abrir menú");
   }
@@ -23,7 +23,7 @@ navToggle.addEventListener("click", () => {
     // añade el elemento creado y su contenido al DOM
     const elementMain = document.getElementById("athlete"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
     const parentMain = elementMain.parentNode; // Obtener una referencia al nodo 
-    parentMain.insertBefore(newDiv, elementMain); // 
+    parentMain.insertBefore(newDiv, elementMain); //
     
     data.athletes.forEach((item) => {
         //Clonar una seccion del DOM y añadirla
@@ -39,8 +39,8 @@ navToggle.addEventListener("click", () => {
         newSeccion.querySelector("p").textContent = `
         ${item.name} (${item.team})
         Peso: ${item.height} y Altura: ${item.weight}`; 
-        fragment.appendChild(newSeccion);  
+        fragment.appendChild(newSeccion);
           
     });
-    document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento
-    parentMain.appendChild(fragment); //devuelves el fragment al final del documento   
+    /* document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento*/
+    parentMain.appendChild(fragment); //devuelves el fragment al final del documento
