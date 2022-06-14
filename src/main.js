@@ -1,5 +1,19 @@
 import data from './data/athletes/athletes.js';
 
+//menu
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("nav-menu_visible");
+  if (navMenu.classList.contains("nav-menu_visible")) {
+    navToggle.setAttribute("aria-label", "Cerrar menú");
+    console.log(navToggle);
+  } else {
+    navToggle.setAttribute("aria-label", "Abrir menú");
+  }
+});
+
     const fragment=document.createDocumentFragment();
     //Crear nuevo div y añadirlo al elemento main
     const newDiv = document.createElement("div"); // crea un nuevo div
