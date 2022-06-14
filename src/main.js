@@ -22,7 +22,7 @@ navToggle.addEventListener("click", () => {
     // añade el elemento creado y su contenido al DOM
     const elementMain = document.getElementById("athlete"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
     const parentMain = elementMain.parentNode; // Obtener una referencia al nodo 
-    parentMain.insertBefore(newDiv, elementMain); // 
+    parentMain.insertBefore(newDiv, elementMain); 
     
     data.athletes.forEach((item) => {
         //Clonar una seccion del DOM y añadirla
