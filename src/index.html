@@ -2,31 +2,38 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/tablet.css" media="(min-width: 880px)">
+    <script
+      src="https://kit.fontawesome.com/7e5b2d153f.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header class="header">
-      <nav class="nav-header">
-        <div class="rio-icon"><img src="./imagenes/riorecortado2016.png" alt=""></div>
-        <ul class="nav-right">
-            <li>
-                <a href="">Undefined</a>
-            </li>
-            <li>
-                <a href="">Undefined</a>
-            </li>
-            <li>
-                <a href="">Undefined</a>
-            </li>
-        </ul>
-        <button class="menu-button">
-          <span></span>
-          <span></span>
-          <span></span>
+      <nav class="nav">
+        <img src="./imagenes/riorecortado2016.png" class="logo nav-link" alt="Logo">
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <i class="fas fa-bars"></i>
         </button>
-        <!-- <div class="search-icon"><img src="./imagenes/loupe.png" alt="search icon"></div> -->
-    </nav>
+        <ul class="nav-menu">
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Undefined</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Undefined</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Undefined</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link nav-menu-link_active">Undefined</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     
     <main class= "principalPage" id="principal">
