@@ -20,7 +20,7 @@ navToggle.addEventListener("click", () => {
     const newContent = document.createTextNode("El número total de deportistas es:");  // y añade contenido
     newDiv.appendChild(newContent); //añade texto al div creado.
     // añade el elemento creado y su contenido al DOM
-    const elementMain = document.getElementById("athletes"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
+    const elementMain = document.getElementById("athlete"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
     const parentMain = elementMain.parentNode; // Obtener una referencia al nodo 
     parentMain.insertBefore(newDiv, elementMain); // 
     
@@ -35,5 +35,5 @@ navToggle.addEventListener("click", () => {
         fragment.appendChild(newSeccion);  
           
     });
-    document.getElementById("athletes").style.display="none"; //para ocultar el primer elmento
+    document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento
     parentMain.appendChild(fragment); //devuelves el fragment al final del documento   
