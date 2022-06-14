@@ -120,7 +120,7 @@ section.listaAthlete{
 }
 
 /* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */
-.listaAthlete:hover .card_one{
+.listaAthlete:active .card_one{
   transform: rotateX(180deg);
   
   }
