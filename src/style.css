@@ -119,11 +119,10 @@ section.listaAthlete{
     perspective: 1000px; 
 }
 
-/* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */
-/* .listaAthlete:hover .card_one{
+/* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */ 
+ .listaAthlete:hover .card_one{
   transform: rotateY(180deg);
-  
-  } */
+  }
 
 .card_one{
   width: 105px;
@@ -133,7 +132,7 @@ section.listaAthlete{
   position:relative; 
   transform-style: preserve-3d;  
   /* se puede omitir solo para que se vea bien xd al voltear */
-  /* transition: all 400ms; */
+  transition: all 400ms;
 }
 
 .card_front, 
