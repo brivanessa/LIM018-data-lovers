@@ -1,4 +1,4 @@
-import data from './data/athletes/athletes.js';
+/*import data from './data/athletes/athletes.js';*/
 //console.log(data);
 
 //menu
@@ -25,7 +25,7 @@ navToggle.addEventListener("click", () => {
     const parentMain = elementMain.parentNode; // Obtener una referencia al nodo 
     parentMain.insertBefore(newDiv, elementMain); //
     
-    data.athletes.forEach((item) => {
+    data.athletes.slice(1,20).forEach((item) => {
         //Clonar una seccion del DOM y añadirla
         //añade secciones clonadas del elemento seccion athletes
         const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
@@ -42,5 +42,5 @@ navToggle.addEventListener("click", () => {
         fragment.appendChild(newSeccion);
           
     });
-    /* document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento*/
+    document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento
     parentMain.appendChild(fragment); //devuelves el fragment al final del documento

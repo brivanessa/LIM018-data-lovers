@@ -1,3 +1,5 @@
+import data from './data/athletes/athletes.js';
+
 // estas funciones son de ejemplo
 
 
