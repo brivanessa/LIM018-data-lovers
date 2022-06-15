@@ -133,7 +133,7 @@ section.listaAthlete{
   position:relative; 
   /* transform-style: preserve-3d;   */
   /* se puede omitir solo para que se vea bien xd al voltear */
-  transition: all 400ms;
+  /* transition: all 400ms; */
 }
 
 .card_front, 
@@ -143,7 +143,7 @@ section.listaAthlete{
   height: 100%;
   /* card front esta ne la misma position que card back por eso la letra se sobreescribe */
   position:absolute;
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; */
   /* transform-style: preserve-3d; */
 }
 .card_front{
