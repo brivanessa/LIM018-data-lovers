@@ -1,5 +1,4 @@
 import data from './data/athletes/athletes.js';
-import sports from './data/athletes/sports.js';
 //console.log(sports)
 //console.log(data.athletes)
 
@@ -9,6 +8,13 @@ const dataRio = data.athletes;
 import {noRepeatedData} from "./data.js";
 const datos1 = noRepeatedData(dataRio);
 //console.log(datos1)
+
+//ALL SPORTS (NO REPEAT)
+
+import {noRepeatedSports} from  "./data.js";
+const datos2 = [noRepeatedSports(dataRio)];
+console.log(datos2) // para copiar la data de la consola a sports.js y añadir la imagen a cada deporte (añadir la imagen se hizo manualmente)
+import sports from './data/athletes/sports.js';
 
 //MENU
   const navToggle = document.querySelector(".nav-toggle");
@@ -38,7 +44,7 @@ const datos1 = noRepeatedData(dataRio);
       newSeccion1.querySelector(".sport-Rio").setAttribute("src",i.ref);
       newSeccion1.querySelector("h2").textContent =i.sport;
       newSeccion1.querySelector(".howManyAthletesSport").textContent = `(XXX) atletas ganaron
-       por lo menos una medalla en ${i.sport}`;
+       por lo menos una medalla en ${i.sport}.`;
       newSeccion1.querySelector(".genderAthletesSport").textContent = `De los (XXX) el 55% son mujeres y (45%) son hombres.`;
       //parentMain.appendChild(newSeccion);
     });

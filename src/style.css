@@ -113,7 +113,7 @@ margin: 13px 13px;
 display: inline-block; 
 box-sizing: border-box;
 position: relative;
-/* visibility: hidden; */
+visibility: hidden; 
 /* se puede omitir solo para que se vea bien xd al voltear */
 perspective: 1000px; 
 }
@@ -160,6 +160,7 @@ perspective: 1000px;
   background-color: #EFECEC;
   border:4px;
   transform: rotateX(180deg); 
+  
   /* -webkit-transform: rotateX(180deg);  */
 }
 

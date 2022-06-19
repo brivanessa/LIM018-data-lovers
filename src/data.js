@@ -15,3 +15,20 @@ export function noRepeatedData(datos){
   const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
   return dataUniqueObject;
 }
+
+export function noRepeatedSports(datos){
+  datos.map(function(object) {
+    delete object.name;
+    delete object.gender;
+    delete object.height;
+    delete object.weight;
+    delete object.team;
+    delete object.noc;
+    delete object.age;
+    delete object.event;
+    delete object.medal;
+  })
+  const dataObjectText = new Set(datos.map(JSON.stringify));
+  const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
+  return dataUniqueObject;
+}
