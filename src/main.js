@@ -24,36 +24,27 @@ const datos1 = noRepeatedData(dataRio);
     }
   });
 
-//ALL ATHLETES (NO REPEAT)
+//ALL SPORTS (NO REPEAT)
+  const dataSport = sports.sports;
+    const elementMainSport = document.getElementById("sport"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
+    const parentMainSport = elementMainSport.parentNode; // Obtener una referencia al nodo 
+    console.log(dataSport[0])
+    dataSport.forEach((i) => {
+      document.getElementById("sport").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
+      //Clonar una seccion del DOM y añadirla
+      //añade secciones clonadas del elemento seccion athletes
+      const newSeccion1 = elementMainSport.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
+      parentMainSport.appendChild(newSeccion1); // clonas un documeto y lo devuelves al final 
+      newSeccion1.querySelector(".sport-Rio").setAttribute("src",i.ref);
+      newSeccion1.querySelector("h2").textContent =i.sport;
+      newSeccion1.querySelector(".howManyAthletesSport").textContent = `(XXX) atletas ganaron
+       por lo menos una medalla en ${i.sport}`;
+      newSeccion1.querySelector(".genderAthletesSport").textContent = `De los (XXX) el 55% son mujeres y (45%) son hombres.`;
+      //parentMain.appendChild(newSeccion);
+    });
+    document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
+    //document.getElementById("athlete").style.visibility="hidden"; 
 
-  //Crear nuevo div y añadirlo al elemento main
-    // const newDivSports = document.createElement("div"); // crea un nuevo div
-    // const newContentSports = document.createTextNode("El número total de deportistas es:");  // y añade contenido
-    // newDiv.appendChild(newContent); //añade texto al div creado.
-    // // añade el elemento creado y su contenido al DOM
-    // const elementMain = document.getElementById("athlete"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
-    // const parentMain = elementMain.parentNode; // Obtener una referencia al nodo 
-    // parentMain.insertBefore(newDiv, elementMain); //
-  //const newSeccion = elementMain.cloneNode(true);
-
-          // const athletesButton = document.getElementById("allAthletes");
-
-          // athletesButton.addEventListener('click', () => {
-          //   datos1.forEach((item) => {
-          //     //Clonar una seccion del DOM y añadirla
-          //     //añade secciones clonadas del elemento seccion athletes
-          //     const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
-          //     parentMain.appendChild(newSeccion); // clonas un documeto y lo devuelves al final 
-          //     newSeccion.querySelector("h2").textContent = item.team;
-          //     newSeccion.querySelector("h3").textContent = item.name;
-          //     newSeccion.querySelector("p").textContent = `Sport: ${item.sport} 
-          //     Gender: (${item.gender}) 
-          //     Height: (${item.height}) 
-          //     Weight: ${item.weight}`;
-          //     //parentMain.appendChild(newSeccion);
-          //   });
-          //   document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento
-          // })
 
 
 
@@ -69,6 +60,8 @@ const datos1 = noRepeatedData(dataRio);
   const athletesButton = document.getElementById("allAthletes");
 
   athletesButton.addEventListener('click', () => {
+    document.getElementById("bodyAllSports").style.display="none";
+
     newDiv.appendChild(newContent); //añade texto al div creado.
     // añade el elemento creado y su contenido al DOM
     const elementMain = document.getElementById("athlete"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
