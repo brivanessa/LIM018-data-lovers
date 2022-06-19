@@ -74,12 +74,14 @@ const datos1 = noRepeatedData(dataRio);
       //añade secciones clonadas del elemento seccion athletes
       const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
       parentMain.appendChild(newSeccion); // clonas un documeto y lo devuelves al final 
-      newSeccion.querySelector("h2").textContent = item.team;
-      newSeccion.querySelector("h3").textContent = item.name;
-      newSeccion.querySelector("p").textContent = `Sport: ${item.sport} 
-      Gender: (${item.gender}) 
-      Height: (${item.height}) 
-      Weight: ${item.weight}`;
+      newSeccion.querySelector(".pais-team").textContent = item.team;
+      newSeccion.querySelector(".nombre-At").textContent = item.name;
+      newSeccion.querySelector(".sport-team").textContent = `Sport: ${item.sport}` 
+      newSeccion.querySelector(".nombre-athleteBack").textContent = `${item.name}` 
+      newSeccion.querySelector(".pais-teamBack").textContent = `(${item.team})`
+      newSeccion.querySelector(".gender").textContent = `Gender: ${item.gender}`
+      newSeccion.querySelector(".heigth").textContent = `Height: ${item.height}`
+      newSeccion.querySelector(".weigth").textContent = `Weight: ${item.weight}`
       //parentMain.appendChild(newSeccion);
     });
     document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
