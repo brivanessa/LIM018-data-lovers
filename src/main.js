@@ -12,8 +12,8 @@ const datos1 = noRepeatedData(dataRio);
 //ALL SPORTS (NO REPEAT)
 
 import {noRepeatedSports} from  "./data.js";
-const datos2 = [noRepeatedSports(dataRio)];
-console.log(datos2) // para copiar la data de la consola a sports.js y añadir la imagen a cada deporte (añadir la imagen se hizo manualmente)
+const datos2 = noRepeatedSports(dataRio);
+//console.log(datos2) // para copiar la data de la consola a sports.js y añadir la imagen a cada deporte (añadir la imagen se hizo manualmente)
 import sports from './data/athletes/sports.js';
 
 //MENU
@@ -33,9 +33,11 @@ import sports from './data/athletes/sports.js';
 //ALL SPORTS (NO REPEAT)
   const dataSport = sports.sports;
     const elementMainSport = document.getElementById("sport"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
-    const parentMainSport = elementMainSport.parentNode; // Obtener una referencia al nodo 
-    console.log(dataSport[0])
+    const parentMainSport = document.getElementById("bodyAllSports");
+    //const parentMainSport = elementMainSport.parentNode; // Obtener una referencia al nodo 
+    //console.log(dataSport[0])
     dataSport.forEach((i) => {
+      //console.log(i)
       document.getElementById("sport").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
       //Clonar una seccion del DOM y añadirla
       //añade secciones clonadas del elemento seccion athletes
@@ -52,16 +54,11 @@ import sports from './data/athletes/sports.js';
     //document.getElementById("athlete").style.visibility="hidden"; 
 
 
-
-
-
-
 //ALL ATHLETES (NO REPEAT)
 
   //Crear nuevo div y para luego añadirlo al elemento main
   const newDiv = document.createElement("div"); // crea un nuevo div
   const newContent = document.createTextNode("El número total de deportistas es:");  // y añade contenido
-
 
   const athletesButton = document.getElementById("allAthletes");
 

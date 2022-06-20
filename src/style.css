@@ -19,7 +19,6 @@ body {
 .nav {
   display: flex;
   justify-content: space-between;
-
   max-width: 992px;
   /* margin: 0 auto; */
 }
@@ -109,13 +108,13 @@ main.principalPage{
 section.listSports{
   width: 218px;
   height: 250px;
-margin: 13px 13px;
-display: inline-block; 
-box-sizing: border-box;
-position: relative;
-visibility: hidden; 
-/* se puede omitir solo para que se vea bien xd al voltear */
-perspective: 1000px; 
+  margin: 13px 13px;
+  display: inline-block; 
+  box-sizing: border-box;
+  position: relative;
+  visibility: hidden; 
+  /* se puede omitir solo para que se vea bien xd al voltear */
+  perspective: 1000px; 
 }
 
 /* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */
@@ -201,9 +200,9 @@ perspective: 1000px;
 
 section.listaAthlete{
   /*float:left; /* para elementos de bloque*/ 
-  width: 110px;
-  height: 180px;
-  margin: 8px 8px;
+  width: 210px;
+  height: 242px;
+  margin: 20px 20px;
   display: inline-block; 
   box-sizing: border-box;
   position: relative;
@@ -221,14 +220,14 @@ section.listaAthlete{
 }
 
 .card_one{
-    width: 110px;
-    height: 180px;
-    /* con position relative en el padre y absolute ne el hijo hacemos que el hijo se ubique enciam del padre pero respetando a los div anteriores al padre */
-    /* background: gray; */
-    position:relative; 
-    /* transform-style: preserve-3d;   */
-    /* se puede omitir solo para que se vea bien xd al voltear */
-    /* transition: all 400ms; */
+  width: 210px;
+  height: 242px;
+  /* con position relative en el padre y absolute ne el hijo hacemos que el hijo se ubique enciam del padre pero respetando a los div anteriores al padre */
+  /* background: gray; */
+  position:relative; 
+  /* transform-style: preserve-3d;   */
+  /* se puede omitir solo para que se vea bien xd al voltear */
+  /* transition: all 400ms; */
 }
 
 .card_front, 
