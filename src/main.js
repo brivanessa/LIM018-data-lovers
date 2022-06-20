@@ -1,5 +1,5 @@
 import data from './data/athletes/athletes.js';
-//console.log(sports)
+console.log(sports)
 //console.log(data.athletes)
 
 //ALL ATHLETES (NO REPEAT)
