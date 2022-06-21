@@ -159,8 +159,6 @@ section.listSports{
   background-color: #EFECEC;
   border:4px;
   transform: rotateX(180deg); 
-  
-  /* -webkit-transform: rotateX(180deg);  */
 }
 
 .sport-Rio{
@@ -184,18 +182,13 @@ section.listSports{
   color: #164986;
   text-align: center;
 }
+
 .howManyAthletesSport, .genderAthletesSport {
   font-size: 13px; 
   color: black;
   text-align: justify;
   padding: 9px;
 }
-
-
-
-
-
-
 /* FORMATO ALL ATHLETES */
 
 section.listaAthlete{
@@ -207,16 +200,14 @@ section.listaAthlete{
   box-sizing: border-box;
   position: relative;
   visibility: hidden;
-   /* border:0.38rem solid rgb(165, 165, 165);  */
-    /* se puede omitir solo para que se vea bien xd al voltear */
-      /* perspective: 1000px;  */
+  /* border:0.38rem solid rgb(165, 165, 165);  */
+  /* se puede omitir solo para que se vea bien xd al voltear */
+  /* perspective: 1000px;  */
 }
 
 /* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */
 .listaAthlete:hover .card_back{
   display: block;
-  /* transform: rotateX(180deg); */
-  /* -webkit-transform: rotateX(180deg); */
 }
 
 .card_one{
@@ -224,60 +215,57 @@ section.listaAthlete{
   height: 242px;
   /* con position relative en el padre y absolute ne el hijo hacemos que el hijo se ubique enciam del padre pero respetando a los div anteriores al padre */
   /* background: gray; */
-  position:relative; 
-  /* transform-style: preserve-3d;   */
-  /* se puede omitir solo para que se vea bien xd al voltear */
-  /* transition: all 400ms; */
+  position:relative;
 }
 
 .card_front, 
 .card_back{
-    /* 100% de todo el espacio de card one por eso card back se ve por debajo de card_one*/
-    width: 100%; 
-    height: 100%;
-    /* card front esta ne la misma position que card back por eso la letra se sobreescribe */
-    position:absolute;
-    /* backface-visibility: hidden; */
-    /* transform-style: preserve-3d; */
-    font-family: 'Barlow';
-    font-style: normal;
-    font-size: 11px;
-    text-align: center;
-    margin:auto;
+  /* 100% de todo el espacio de card one por eso card back se ve por debajo de card_one*/
+  width: 100%; 
+  height: 100%;
+  /* card front esta ne la misma position que card back por eso la letra se sobreescribe */
+  position:absolute;
+  /* backface-visibility: hidden; */
+  /* transform-style: preserve-3d; */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-size: 11px;
+  text-align: center;
+  margin:auto;
 }
 .card_front{
-    border-radius: 0.75rem;
-    background-color: transparent;
-    border:4px solid #164986; 
+  border-radius: 0.75rem;
+  background-color: transparent;
+  border:4px solid #164986; 
 }
 
 .card_back{
-    border-radius: 0.75rem;
-    background-color: #EFECEC;
-    border:4px;
-    display: none; 
-    /* transform: rotateX(180deg); */
-    /* -webkit-transform: rotateX(180deg); */
+  border-radius: 0.75rem;
+  background-color: #EFECEC;
+  border:4px;
+  display: none; 
+  /* transform: rotateX(180deg); */
+  /* -webkit-transform: rotateX(180deg); */
 }
 
 .petRio{
-    border-radius: 77px; 
-    border: 4px solid #164986;
-    margin: auto;  
-    /*display: block;  */
-    width: 77px;
-    height: 76px; 
+  border-radius: 77px; 
+  border: 4px solid #164986;
+  margin: auto;  
+  /*display: block;  */
+  width: 77px;
+  height: 76px; 
 }
 
 h2 {
-    font-size: 11px;  
-    color: #164986;
+  font-size: 11px;  
+  color: #164986;
 }
 h3 {
   font-size: 10px;  
   color: black;
 }
 p {
-    font-size: 10px; 
-    color: rgb(60, 59, 59);
+  font-size: 10px; 
+  color: rgb(60, 59, 59);
 }
