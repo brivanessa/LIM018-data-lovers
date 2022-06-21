@@ -11,23 +11,26 @@ export function noRepeatedData(datos){
     delete object.medal;
     delete object.event;
   })
-  const dataObjectText = new Set(datos.map(JSON.stringify));
-  const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
+  const dataObjectText = new Set(datos.map(JSON.stringify)); //con el new set hacemos que no se repitan y con el JSONstringify convertimos el objeto en string
+  const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse); //convertimos el objeto en un array y JSONparse los string en objetos
   return dataUniqueObject;
 }
 
-// export function noRepeatedAthletism(data){
-//   const athletism = data.map(item, () => {
-//     delete item.medal;
-//     delete item.event;
-//     delete item.gender;
-//     delete item.name;
-//     delete item.height;
-//     delete item.weight;
-//     delete item.team;
-//     delete item.age;
-//     delete item.noc;
-//   })
-
-//   console.log(athletism);
-// }
+export function noRepeatedSports(datos){
+  datos.map(function(object) {
+    delete object.name;
+    delete object.gender;
+    delete object.height;
+    delete object.weight;
+    delete object.team;
+    delete object.noc;
+    delete object.age;
+    delete object.event;
+    delete object.medal;
+  })
+  const dataObjectText = new Set(datos.map(JSON.stringify)); 
+  //console.log(dataObjectText)
+  const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
+  //console.log(dataUniqueObject)
+  return dataUniqueObject;
+}

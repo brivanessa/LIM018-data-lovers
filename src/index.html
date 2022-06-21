@@ -37,46 +37,67 @@
     </header>
     
     <main class= "principalPage" id="principal">
-      <section>
-        <div class="sports-container" id="">
-          <div><img id="firstImg" src="http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/atletismo.svg" alt=""></div>
-        </div>
-      </section>
-
-      <!-- div card_all contiene todas las cartas: -->
-      <div class="cards_all" id="bodyAllCards">
-        <!-- card_global (card_father):contiene a la carta que se voltea - si no lo ocnsideramos al voltear la card hay un espacio que el cursor no reconoce porque como que no existe (cuando esta en 90 grad) y se produce un fallo optico -->
-        <section class= "listaAthlete" id="athlete">
-          <!-- //card:one es la  que se voltea -->
-          <div class="card_one">  
-            <!-- parte del a carta que esta delante -->
-            <div class="card_front">
+      <!-- div sports_container contiene todas los deportes: -->
+      <div class="sports_container" id="bodyAllSports">
+        <section class= "listSports" id="sport">
+          <div class="card_sport">  
+            <div class="sport_front">
+                <img src="Imagen/petRio.jpg" alt="petRio2016" class="sport-Rio">
               <br>
-                <img src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
-                <div class="datos" id="datosAthlete">
-                  <h2 id="pais">PAIS</h2>
-                  <br>
-                  <h3 id="nombre">Nombre del Atleta</h3>
-                </div> 
             </div> 
-            <div class="card_back">
+            <div class="sport_back">
+              <div class="datos-Sport" id="datosSport">
                 <br>
-                <p id="medalla">Medallas</p>
+                <h2 id="whatSport" class="what_Sport">Sport</h2>
                 <br>
-                <!-- <h5 id="especialidad">Medallas</h5>
+                <p class="howManyAthletesSport">La cantidad de atletas que juegan es de:</p>
                 <br>
-                <h6 id="genero">Medallas</h6>
+                <p class="genderAthletesSport">La cantidad de MUJERES atletas que juegan es de: </p>
                 <br>
-                <p id="otros datos">Medallas</p> -->
-
+            </div> 
             </div>
           </div>
         </section>
+      </div>      
+      
+
+      <!-- div card_all contiene todas las cartas: -->
+      <div class="cards_all" id="bodyAllCards">
+          <section class= "listaAthlete" id="athlete">
+            <!-- //card:one es la  que se voltea -->
+            <div class="card_one" id="cardAthlete">  
+              <!-- parte del a carta que esta delante -->
+              <div class="card_front">
+                <br>
+                  <img src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
+                  <div class="datos" id="datosAthlete">
+                    <h2 class="pais-team">PAIS</h2>
+                    <br>
+                    <p class="nombre-At">Nombre del Atleta</p>
+                  </div> 
+              </div> 
+              <div class="card_back">
+                  <h3 class="sport-team">SPORT</h3>
+                  <br>
+                  <h2 class="nombre-athleteBack">Nombre del Atleta</h2>
+                  <p class="pais-teamBack">PAIS</p>
+                  <br>  
+                  <p class="gender">Información</p>
+                  <br>
+                  <p class="heigth">Información</p>
+                  <p class="weigth">Información</p>
+                  <br>
+              </div>
+            </div>
+          </section>  
       </div>
+
+      <!-- <template id="templateAthlete"> -->
+        <!-- card_global (card_father):contiene a la carta que se voltea - si no lo ocnsideramos al voltear la card hay un espacio que el cursor no reconoce porque como que no existe (cuando esta en 90 grad) y se produce un fallo optico -->
+
+      <!-- </template>   -->
+
     </main>  
-    
-   
-   
     
     <script src="main.js" type="module"></script>
   </body>
