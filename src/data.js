@@ -32,3 +32,7 @@ export function noRepeatedSports(datos){
   const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
   return dataUniqueObject;
 }
+
+export function filterDataGender(data,condition) {
+  return data.filter ((item)=>(item.gender===condition))
+}
