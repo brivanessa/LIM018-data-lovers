@@ -40,7 +40,9 @@ import sports from './data/athletes/sports.js';
       //Clonar una seccion del DOM y añadirla
       //añade secciones clonadas del elemento seccion athletes
       const newSeccion1 = elementMainSport.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
+      newSeccion1.setAttribute("id",'sport_'+i.sport) //para poner un id unico a cada seccion clonada
       parentMainSport.appendChild(newSeccion1); // clonas un documeto y lo devuelves al final 
+      
       newSeccion1.querySelector(".sport-Rio").setAttribute("src",i.ref);
       newSeccion1.querySelector("h2").textContent =i.sport;
       newSeccion1.querySelector(".howManyAthletesSport").textContent = `(XXX) atletas ganaron
