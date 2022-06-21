@@ -26,3 +26,11 @@ export function noRepeatedSports(datos){
   //console.log(dataUniqueObject)
   return dataUniqueObject;
 }
+
+export function filterDataGender(data,condition) {
+  return data.filter ((item)=>(item.gender===condition))
+}
+
+export function filterDataSport(data,condition) {
+  return data.filter ((item)=>(item.sport===condition))
+}
