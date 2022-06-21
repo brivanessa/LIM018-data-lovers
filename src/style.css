@@ -1,4 +1,97 @@
+:root {
+  --primary: #121f3d;
+  --white: #fff;
+  --gray: #2a324b;
+}
+
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: lighter;
+  color: var(--white);
+  background-color: var(--primary);
+  height: 100vh;
+}
+
+.nav {
+  border-bottom: 1px solid var(--gray);
+}
+
+.nav__checkbox {
+  display: none;
+}
+
+.nav__toggle {
+  position: absolute;
+  cursor: pointer;
+  margin: 01rem;
+  right: 0;
+}
+
+.nav__toggle svg {
+  width: 1rem;
+  fill: var(--white);
+}
+
+.nav__toggle.close {
+  display: none;
+}
+
+.nav__toggle.close,
+.nav__toggle.menu {
+margin-top: 0.3rem;
+}
+
+.nav__menu {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1rem;
+}
+
+.nav__menu li {
+  display: none;
+  list-style-type: none;
+}
+
+.nav__menu li:first-child {
+  display: block;
+  margin-right: auto;
+}
+
+.nav__menu a {
+  color: inherit;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.menu__logo {
+  height: 30px;
+}
+
+.menu__logo img {
+  height: 100%;
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu {
+  display: none;
+}
+
+/** {
   margin: 0;
   box-sizing: border-box;
 }
@@ -10,10 +103,7 @@ body {
 .header {
   background-color: rgba(239, 236, 236, 1);
   height: 60px;
-  /* position: fixed; */
   width: 100%;
-  /* top: 0;
-  left: 0; */
 }
 
 .nav {
@@ -21,7 +111,6 @@ body {
   justify-content: space-between;
 
   max-width: 992px;
-  /* margin: 0 auto; */
 }
 
 .nav-link {
@@ -37,7 +126,6 @@ body {
 
 .nav-menu {
   display: flex;
-  /* margin-right: 40px; */
   list-style: none;
 
   flex-direction: column;
@@ -75,7 +163,6 @@ body {
   transition: 0.5s;
 }
 
-/* TOGGLE */
 .nav-toggle {
   color: white;
   background: none;
@@ -94,7 +181,7 @@ body {
 
 .nav-toggle:focus:not(:focus-visible) {
   outline: none;
-}
+}*/
 
 main.principalPage{
     float:left;

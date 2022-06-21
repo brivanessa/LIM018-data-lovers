@@ -1,4 +1,16 @@
-.header {
+.nav__toggle {
+  display: none;
+}
+
+.nav__menu {
+  flex-direction: row;
+}
+
+.nav__menu li {
+  display: block;
+}
+
+/* .header {
   height: 80px;
 }
 
@@ -44,7 +56,7 @@
   color: white;
 }
 
-/* TOGGLE */
+/* TOGGLE
 .nav-toggle {
   display: none;
-}
+} */
