@@ -44,7 +44,7 @@ body {
 
 .nav__toggle.close,
 .nav__toggle.menu {
-margin-top: 0.3rem;
+  margin-top: 0.3rem;
 }
 
 .nav__menu {
