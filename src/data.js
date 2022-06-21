@@ -1,11 +1,3 @@
-// export const example = () => {
-//   return 'example';
-// };
-
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
-
 export function noRepeatedData(datos){
   datos.map(function(object) {
     delete object.medal;
