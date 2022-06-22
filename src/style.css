@@ -76,7 +76,7 @@ body {
   color: #83c5f7;
   border-radius: 5px;
   padding: 10px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .menu__logo {
@@ -246,12 +246,12 @@ section.listSports{
 .sport_front{
   border-radius: 0.75rem;
   background-color: transparent;
-  border:4px solid #164986; 
+  /* border:1px solid #164986;  */
 }
 
 .sport_back{
   border-radius: 0.75rem;
-  background-color: #EFECEC;
+  background-color: #f0f0f085;
   border:4px;
   transform: rotateX(180deg); 
 }
