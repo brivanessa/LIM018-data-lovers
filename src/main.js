@@ -23,24 +23,20 @@ const dataFemale=filterDataGender(datos1, "F");
 //console.log(dataFemale)
 const dataMale=filterDataGender(datos1, "M");
 //console.log(dataMale)
+//FILTROS GÉNERO
+// const genderButton = document.getElementById("selectgender");
+// genderButton.addEventListener('change', () => {
+//   const datos5 = filterDataGender(datos1, genderButton.value);
+//   console.log(datos5)
+// })
 
-//ALL SPORT (NO REPEAT)
-
-
-
-//MENU
-// const navToggle = document.querySelector(".nav-toggle");
-// const navMenu = document.querySelector(".nav-menu");
-
-// navToggle.addEventListener("click", () => {
-//   navMenu.classList.toggle("nav-menu_visible");
-//   if (navMenu.classList.contains("nav-menu_visible")) {
-//     navToggle.setAttribute("aria-label", "Cerrar menú");
-//     //console.log(navToggle);
-//   } else {
-//     navToggle.setAttribute("aria-label", "Abrir menú");
-//   }
-// });
+const genderButton = document.getElementById("selectgender");
+genderButton.addEventListener('change', cambiarOpciones);
+  function cambiarOpciones() {
+    return genderButton.value;
+  }
+//const datos5 = filterDataGender(datos1, genderButton.value);
+//console.log(genderSelection);
 
 //ALL SPORTS (NO REPEAT)
 const inicioButton = document.getElementById("inicio");
@@ -126,6 +122,16 @@ inicioButton.addEventListener('click', () => (window.location.reload()))
     const parentMain = elementMain.parentNode; // Obtener una referencia al nodo 
     parentMain.insertBefore(newDiv, elementMain); 
 
+//FILTRANDO POR GÉNERO PARA EL SELECT
+    // const genderButton = document.getElementById("selectgender");
+    // //genderButton.addEventListener('change', () => {
+    //   const datos5 = filterDataGender(datos1, genderButton.value);
+    //   console.log(datos5)
+    
+    // const funcion = function noseque(){
+
+    // }
+
     datos1.forEach((item) => {
       document.getElementById("athlete").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
       //Clonar una seccion del DOM y añadirla
@@ -143,6 +149,7 @@ inicioButton.addEventListener('click', () => (window.location.reload()))
       newSeccion.querySelector(".weigth").textContent = `Weight: ${item.weight}`
       //parentMain.appendChild(newSeccion);
     });
+ // })
     document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
     //document.getElementById("athlete").style.visibility="hidden"; 
   })

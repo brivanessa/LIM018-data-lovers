@@ -99,6 +99,10 @@ body {
   display: none;
 }
 
+.select-gender {
+  margin: 0 auto;
+}
+
 /** {
   margin: 0;
   box-sizing: border-box;
