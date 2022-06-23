@@ -151,7 +151,7 @@ inicioButton.addEventListener('click', () => (window.location.reload()))
   //     //Clonar una seccion del DOM y añadirla
   //     //añade secciones clonadas del elemento seccion athletes
   //     const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
-  //     newSeccion.setAttribute("id",'allath_'+item.name) //cambiamos de id a cada elemento clonado (xq no deberian tener el mismo id que la plantilla)
+  //     newSeccion.setAttribute("id",'allath_') //cambiamos de id a cada elemento clonado (xq no deberian tener el mismo id que la plantilla)
   //     parentMain.appendChild(newSeccion); // clonas un documeto y lo devuelves al final 
   //     newSeccion.querySelector(".pais-team").textContent = item.team;
   //     newSeccion.querySelector(".nombre-At").textContent = item.name;
@@ -167,17 +167,28 @@ inicioButton.addEventListener('click', () => (window.location.reload()))
   
        let cambiarOpciones=document.getElementById('selectgender');
        cambiarOpciones.addEventListener('change', () => {
-        //newSeccion.remove();
-       
-       const datos5=(filterDataGender(datos1,cambiarOpciones.value));
+      
+        while(!!document.getElementById("allath_")==true){
+        const borrar=document.getElementById('allath_');
+        borrar.remove() 
+      }
+      //   const borrar=document.getElementById('allath_');
+      // //borrar.parentNode.removeChild(borrar);
+      // borrar.remove() 
+
+       let datos5=(filterDataGender(datos1,cambiarOpciones.value));
        //console.log(datos5);
        
+       
        datos5.forEach((item) => {
+
         document.getElementById("athlete").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
+        
         //Clonar una seccion del DOM y añadirla
         //añade secciones clonadas del elemento seccion athletes
         const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
-        newSeccion.setAttribute("id",'allath_'+item.name) //cambiamos de id a cada elemento clonado (xq no deberian tener el mismo id que la plantilla)
+        newSeccion.setAttribute("id",'allath_');//cambiamos de id a cada elemento clonado (xq no deberian tener el mismo id que la plantilla)
+        ///newSeccion.setAttribute("class",'xxxx');
         //parentMain.appendChild(newSeccion); // clonas un documeto y lo devuelves al final 
         newSeccion.querySelector(".pais-team").textContent = item.team;
         newSeccion.querySelector(".nombre-At").textContent = item.name;
@@ -188,13 +199,8 @@ inicioButton.addEventListener('click', () => (window.location.reload()))
         newSeccion.querySelector(".heigth").textContent = `Height: ${item.height}`
         newSeccion.querySelector(".weigth").textContent = `Weight: ${item.weight}`
         parentMain.appendChild(newSeccion);
-        //console.log(item.gender)
-        //console.log(cambiarOpciones.value)
-        //console.log((item.gender!=cambiarOpciones.value)?newSeccion.remove():console.log(true))
     })
-    //(newSeccion.gender!=cambiarOpciones.value)?newSeccion.remove():console.log(true)
-    //document.getElementById("athlete").style.visibility="hidden";
-     
+       //document.getElementById("athlete").style.display="none";
        })
 
     //document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
