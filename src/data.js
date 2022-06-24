@@ -1,10 +1,25 @@
+// estas funciones son de ejemplo
+
+export const example = () => {
+  return 'example';
+};
+
+export const anotherExample = () => {
+  return 'OMG';
+};
+
+
+
+
+
+
 export function noRepeatedData(datos){
   datos.map(function(object) {
     delete object.medal;
     delete object.event;
   })
-  const dataObjectText = new Set(datos.map(JSON.stringify)); //con el new set hacemos que no se repitan y con el JSONstringify convertimos el objeto en string
-  const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse); //convertimos el objeto en un array y JSONparse los string en objetos
+  var dataObjectText =  new Set(datos.map(JSON.stringify)); //con el new set hacemos que no se repitan y con el JSONstringify convertimos el objeto en string
+  var dataUniqueObject = Array.from(dataObjectText).map(JSON.parse); //convertimos el objeto en un array y JSONparse los string en objetos
   return dataUniqueObject;
 }
 

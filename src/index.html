@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./styles/tablet.css" media="(min-width: 880px)">
 </head>
+
 <body>
     <header>
       <nav class="nav">
@@ -38,6 +39,7 @@
             </li>
           </ul>
       </nav>
+
       <div id="selectcontainer" class="select-container">
         <select name="" id="selectgender" class="select-gender">
           <!-- <option value="" id="option-gender-all">All</option> -->
@@ -57,29 +59,7 @@
         </select>
     </div>
   </header>
-    <!-- <header class="header">
-      <nav class="nav">
-        <img src="./imagenes/riorecortado2016.png" class="logo nav-link" alt="Logo">
-        <button class="nav-toggle" aria-label="Abrir menú">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-menu">
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link" id="inicio">inicio</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link" id="allAthletes">atletas</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Undefined</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link nav-menu-link_active">Undefined</a>
-          </li>
-        </ul>
-      </nav>
-    </header> -->
-    
+
     <main class= "principalPage" id="principal">
       <!-- div sports_container contiene todas los deportes: -->
       <div class="sports_container" id="bodyAllSports">
@@ -103,16 +83,12 @@
           </div>
         </section>
       </div>      
-      
-       <!-- div sports_container contiene todas los deportes: -->
+       <!-- div sports_container contiene todas los atletas por deporte: -->
        <div class="sportsCards_container" id="bodyCardsBySports">
           <section id="athlete_sport"></section>
       </div> 
-
-
       <!-- div card_all contiene todas las cartas: -->
       <div class="cards_all" id="bodyAllCards">
-        <p id=""></p>
           <section class= "listaAthlete" id="athlete">
             <!-- //card:one es la  que se voltea -->
             <div class="card_one" id="cardAthlete">  
@@ -141,12 +117,6 @@
             </div>
           </section>  
       </div>
-
-      <!-- <template id="templateAthlete"> -->
-        <!-- card_global (card_father):contiene a la carta que se voltea - si no lo ocnsideramos al voltear la card hay un espacio que el cursor no reconoce porque como que no existe (cuando esta en 90 grad) y se produce un fallo optico -->
-
-      <!-- </template>   -->
-
     </main>  
     
     <script src="main.js" type="module"></script>

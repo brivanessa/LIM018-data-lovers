@@ -13,10 +13,10 @@ const datos3 = noRepeatedData(dataRio);
 
 //ALL SPORTS (NO REPEAT)
 
-import {noRepeatedSports} from  "./data.js";
-const datos2 = noRepeatedSports(dataRio);
-//console.log(datos2) // para copiar la data de la consola a sports.js y añadir la imagen a cada deporte (añadir la imagen se hizo manualmente)
-import sports from './data/athletes/sports.js';
+// import {noRepeatedSports} from  "./data.js";
+// const datos2 = noRepeatedSports(dataRio);
+// //console.log(datos2) // para copiar la data de la consola a sports.js y añadir la imagen a cada deporte (añadir la imagen se hizo manualmente)
+ import sports from './data/athletes/sports.js';
 
 //ALL GENDER (NO REPEAT)
 // const dataFemale=filterDataGender(datos1, "F");
@@ -140,9 +140,9 @@ inicioButton.addEventListener('click', () => (window.location.reload()))
     document.getElementById("bodyAllSports").style.display="none";
     document.getElementById("bodyCardsBySports").style.display="none";
 
-    // newDiv.appendChild(newContent); //añade texto al div creado.
-    // // añade el elemento creado y su contenido al DO
-    // parentMain.insertBefore(newDiv, elementMain)
+    newDiv.appendChild(newContent); //añade texto al div creado.
+    // añade el elemento creado y su contenido al DO
+    parentMain.insertBefore(newDiv, elementMain)
   });
 
       
@@ -172,9 +172,6 @@ inicioButton.addEventListener('click', () => (window.location.reload()))
         const borrar=document.getElementById('allath_');
         borrar.remove() 
       }
-      //   const borrar=document.getElementById('allath_');
-      // //borrar.parentNode.removeChild(borrar);
-      // borrar.remove() 
 
        let datos5=(filterDataGender(datos1,cambiarOpciones.value));
        //console.log(datos5);
