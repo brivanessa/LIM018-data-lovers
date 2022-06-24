@@ -1,60 +1,18 @@
 import data from './data/athletes/athletes.js';
-import {filterDataGender} from  "./data.js";
-import {filterDataSport} from  "./data.js";
+import sports from './data/athletes/sports.js';
+import {
+  filterDataGender,
+  filterDataSport,
+  noRepeatedData,
+  noRepeatedSports} from  "./data.js";
 
 //ALL ATHLETES (NO REPEAT)
-const dataRio = data.athletes;
-import {noRepeatedData} from "./data.js";
-const datos1 = noRepeatedData(dataRio);
-const datos3 = noRepeatedData(dataRio);
+const dataOnlyAthletes = data.athletes; //antes dataRio
+const allAthletesNoRepeated = noRepeatedData(dataOnlyAthletes); //antes datos1
+//const datos3 = noRepeatedData(dataOnlyAthletes);
 
 //ALL SPORTS (NO REPEAT)
-import {noRepeatedSports} from  "./data.js";
-const datos2 = noRepeatedSports(dataRio);
-//console.log(datos2) // para copiar la data de la consola a sports.js y añadir la imagen a cada deporte (añadir la imagen se hizo manualmente)
-import sports from './data/athletes/sports.js';
-
-//ALL GENDER (NO REPEAT)
-// const dataFemale=filterDataGender(datos1, "F");
-// //console.log(dataFemale)
-// const dataMale=filterDataGender(datos1, "M");
-// //console.log(dataMale)
-
-
-//FILTROS GÉNERO
-
-
-// let genderButton = document.getElementById('selectgender');
-// genderButton.addEventListener('change', cambiar);
-// function cambiar (datos1){
-//  const ss=filterDataGender(datos1,genderButton.value);
-//  console.log(ss)
-// }
-// //let data3=(cambiar(datos1));
-// //console.log(data3)
-
-
-  
-
-
-
-// let cambiarOpciones=document.getElementById('selectgender')
-// cambiarOpciones.addEventListener('change', () => {
-//   const datos5 = filterDataGender(datos1, cambiarOpciones.value);
-//   console.log(datos5)
-// })
-
-// const genderButton = document.getElementById("selectgender").value;
-//  
-// const cambiarOpciones=()=>{
-//  return genderButton.value;
-//  }
-//   // function cambiarOpciones() {
-//   //   return genderButton.value;
-//   //  //console.log(genderButton.value);
-//   // }
-//console.log(cambiarOpciones);
-
+const datos2 = noRepeatedSports(dataOnlyAthletes);
 
 //ALL SPORTS (NO REPEAT)
 const inicioButton = document.getElementById("inicio");
@@ -87,7 +45,7 @@ dataSport.forEach((i) => {
     const elementMain1 = document.getElementById("athlete_sport"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
     divCardsBySports.insertBefore(newDiv1, elementMain1); 
     //filtrando la data:
-    const datosSportAthletes = filterDataSport(datos3,`${i.sport}`);
+    const datosSportAthletes = filterDataSport(allAthletesNoRepeated,`${i.sport}`);
     //console.log(datosSportAthletes);
 
     datosSportAthletes.forEach((item) => {
@@ -115,11 +73,6 @@ dataSport.forEach((i) => {
 document.getElementById("sport").style.display = "none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
 //document.getElementById("athlete").style.visibility="hidden"; 
 
-
-
-
-
-
 //ALL ATHLETES (NO REPEAT)
 //Crear nuevo div y para luego añadirlo al elemento main
 const newDiv = document.createElement("div"); // crea un nuevo div
@@ -139,45 +92,42 @@ athletesButton.addEventListener('click', () => {
   // parentMain.insertBefore(newDiv, elementMain)
 });
 
-      
-  //     datos1.forEach((item) => {
-  //     document.getElementById("athlete").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
-  //     //Clonar una seccion del DOM y añadirla
-  //     //añade secciones clonadas del elemento seccion athletes
-  //     const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
-  //     newSeccion.setAttribute("id",'allath_') //cambiamos de id a cada elemento clonado (xq no deberian tener el mismo id que la plantilla)
-  //     parentMain.appendChild(newSeccion); // clonas un documeto y lo devuelves al final 
-  //     newSeccion.querySelector(".pais-team").textContent = item.team;
-  //     newSeccion.querySelector(".nombre-At").textContent = item.name;
-  //     newSeccion.querySelector(".sport-team").textContent = `Sport: ${item.sport}` 
-  //     newSeccion.querySelector(".nombre-athleteBack").textContent = `${item.name}` 
-  //     newSeccion.querySelector(".pais-teamBack").textContent = `(${item.team})`
-  //     newSeccion.querySelector(".gender").textContent = `Gender: ${item.gender}`
-  //     newSeccion.querySelector(".heigth").textContent = `Height: ${item.height}`
-  //     newSeccion.querySelector(".weigth").textContent = `Weight: ${item.weight}`
-  //     //parentMain.appendChild(newSeccion);
-  // })
+// allAthletesNoRepeated.forEach((item) => {
+//   document.getElementById("athlete").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
+//   //Clonar una seccion del DOM y añadirla
+//   //añade secciones clonadas del elemento seccion athletes
+//   const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
+//   newSeccion.setAttribute("id",'allath_') //cambiamos de id a cada elemento clonado (xq no deberian tener el mismo id que la plantilla)
+//   parentMain.appendChild(newSeccion); // clonas un documeto y lo devuelves al final 
+//   newSeccion.querySelector(".pais-team").textContent = item.team;
+//   newSeccion.querySelector(".nombre-At").textContent = item.name;
+//   newSeccion.querySelector(".sport-team").textContent = `Sport: ${item.sport}` 
+//   newSeccion.querySelector(".nombre-athleteBack").textContent = `${item.name}` 
+//   newSeccion.querySelector(".pais-teamBack").textContent = `(${item.team})`
+//   newSeccion.querySelector(".gender").textContent = `Gender: ${item.gender}`
+//   newSeccion.querySelector(".heigth").textContent = `Height: ${item.height}`
+//   newSeccion.querySelector(".weigth").textContent = `Weight: ${item.weight}`
+//   parentMain.appendChild(newSeccion);
+// })
 
-  
 let cambiarOpciones = document.getElementById('selectgender');
+const athleteSection = document.getElementById("athlete");
+
 cambiarOpciones.addEventListener('change', () => {
-      
+  
   while(!!document.getElementById("allath_") == true){
     const borrar = document.getElementById('allath_');
     borrar.remove() 
   }
-  //   const borrar=document.getElementById('allath_');
-  // //borrar.parentNode.removeChild(borrar);
+  // const borrar=document.getElementById('allath_');
+  // borrar.parentNode.removeChild(borrar);
   // borrar.remove() 
 
-  let datos5 = (filterDataGender(datos1,cambiarOpciones.value));
-  //console.log(datos5);
-       
+  let datos5 = (filterDataGender(allAthletesNoRepeated,cambiarOpciones.value));       
        
   datos5.forEach((item) => {
-
     document.getElementById("athlete").style.visibility = "visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
-        
+  
     //Clonar una seccion del DOM y añadirla
     //añade secciones clonadas del elemento seccion athletes
     const newSeccion = elementMain.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
@@ -195,6 +145,15 @@ cambiarOpciones.addEventListener('change', () => {
     parentMain.appendChild(newSeccion);
   })
   //document.getElementById("athlete").style.display="none";
+
+  cambiarOpciones.addEventListener('click', () => { 
+    athleteSection.classList.toggle("hiddenforclick");
+    console.log("Me dieron click")
+    if (athleteSection.classList.contains("hiddenforclick")){
+      athleteSection.style.display="none";
+    }
+    else if ()
+  })
 })
 
 //document.getElementById("athlete").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
