@@ -1,11 +1,3 @@
-// export const example = () => {
-//   return 'example';
-// };
-
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
-
 export function noRepeatedData(datos){
   datos.map(function(object) {
     delete object.medal;
@@ -33,4 +25,12 @@ export function noRepeatedSports(datos){
   const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
   //console.log(dataUniqueObject)
   return dataUniqueObject;
+}
+
+export function filterDataGender(data,condition){
+  return data.filter (item => item.gender === condition);
+}
+
+export function filterDataSport(data,condition){
+  return data.filter (item => item.sport === condition);
 }
