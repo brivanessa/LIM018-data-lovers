@@ -3,8 +3,7 @@ import sports from './data/athletes/sports.js';
 import {
   filterDataGender,
   filterDataSport,
-  noRepeatedData,
-  noRepeatedSports} from  "./data.js";
+  noRepeatedData} from  "./data.js";
 
 //ALL ATHLETES (NO REPEAT)
 const dataOnlyAthletes = data.athletes; //antes dataRio
@@ -12,7 +11,7 @@ const allAthletesNoRepeated = noRepeatedData(dataOnlyAthletes); //antes datos1
 //const datos3 = noRepeatedData(dataOnlyAthletes);
 
 //ALL SPORTS (NO REPEAT)
-const datos2 = noRepeatedSports(dataOnlyAthletes);
+//const datos2 = noRepeatedSports(dataOnlyAthletes);
 
 //ALL SPORTS (NO REPEAT)
 const inicioButton = document.getElementById("inicio");
@@ -87,9 +86,9 @@ athletesButton.addEventListener('click', () => {
   document.getElementById("bodyAllSports").style.display = "none";
   document.getElementById("bodyCardsBySports").style.display = "none";
 
-  // newDiv.appendChild(newContent); //añade texto al div creado.
+  newDiv.appendChild(newContent); //añade texto al div creado.
   // // añade el elemento creado y su contenido al DO
-  // parentMain.insertBefore(newDiv, elementMain)
+  parentMain.insertBefore(newDiv, elementMain)
 });
 
 // allAthletesNoRepeated.forEach((item) => {
@@ -115,6 +114,8 @@ const athleteSection = document.getElementById("athlete");
 
 cambiarOpciones.addEventListener('change', () => {
   
+  //athleteSection.classList.toggle("listaAthlete");
+
   while(!!document.getElementById("allath_") == true){
     const borrar = document.getElementById('allath_');
     borrar.remove() 
@@ -122,11 +123,11 @@ cambiarOpciones.addEventListener('change', () => {
   // const borrar=document.getElementById('allath_');
   // borrar.parentNode.removeChild(borrar);
   // borrar.remove() 
-
+  (athleteSection.style.visibility == "visible")?athleteSection.style.visibility="hidden":athleteSection.style.visibility="visible"
   let datos5 = (filterDataGender(allAthletesNoRepeated,cambiarOpciones.value));       
        
   datos5.forEach((item) => {
-    document.getElementById("athlete").style.visibility = "visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
+    //document.getElementById("athlete").style.visibility = "visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
   
     //Clonar una seccion del DOM y añadirla
     //añade secciones clonadas del elemento seccion athletes
@@ -145,14 +146,19 @@ cambiarOpciones.addEventListener('change', () => {
     parentMain.appendChild(newSeccion);
   })
   //document.getElementById("athlete").style.display="none";
+  cambiarOpciones.addEventListener('change', () => {
 
-  cambiarOpciones.addEventListener('click', () => { 
-    athleteSection.classList.toggle("hiddenforclick");
-    console.log("Me dieron click")
-    if (athleteSection.classList.contains("hiddenforclick")){
-      athleteSection.style.display="none";
-    }
-    else if ()
+    //(athleteSection.style.visibility == "visible")?athleteSection.style.visibility="hidden":athleteSection.style.visibility="visible"
+    
+    
+
+
+    // athleteSection.classList.toggle("hiddenforclick");
+    // console.log("Me dieron click")
+    // if (athleteSection.classList.contains("hiddenforclick")){
+    //   athleteSection.style.display="none";
+    // }
+  //   // else if ()
   })
 })
 
