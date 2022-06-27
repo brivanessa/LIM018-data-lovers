@@ -88,35 +88,38 @@
           <section id="athlete_sport"></section>
       </div> 
       <!-- div card_all contiene todas las cartas: -->
-      <div class="cards_all" id="bodyAllCards">
-          <section class= "listaAthlete" id="athlete">
-            <!-- //card:one es la  que se voltea -->
-            <div class="card_one" id="cardAthlete">  
-              <!-- parte del a carta que esta delante -->
-              <div class="card_front">
-                <br>
-                  <img src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
-                  <div class="datos" id="datosAthlete">
-                    <h2 class="pais-team">PAIS</h2>
-                    <br>
-                    <p class="nombre-At">Nombre del Atleta</p>
-                  </div> 
-              </div> 
-              <div class="card_back">
-                  <h3 class="sport-team">SPORT</h3>
-                  <br>
-                  <h2 class="nombre-athleteBack">Nombre del Atleta</h2>
-                  <p class="pais-teamBack">PAIS</p>
-                  <br>  
-                  <p class="gender">Información</p>
-                  <br>
-                  <p class="heigth">Información</p>
-                  <p class="weigth">Información</p>
-                  <br>
-              </div>
-            </div>
-          </section>  
+      <div class="cards_all" id="bodyAllCards">    
       </div>
+
+      <template id="templateAthlete">
+        <section class= "listaAthlete">
+          <!-- //card:one es la  que se voltea -->
+          <div class="card_one" id="cardAthlete">  
+            <!-- parte del a carta que esta delante -->
+            <div class="card_front">
+              <br>
+                <img src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
+                <div class="datos" id="datosAthlete">
+                  <h2 class="pais-team">PAIS</h2>
+                  <br>
+                  <p class="nombre-At">Nombre del Atleta</p>
+                </div> 
+            </div> 
+            <div class="card_back">
+                <h3 class="sport-team">SPORT</h3>
+                <br>
+                <h2 class="nombre-athleteBack">Nombre del Atleta</h2>
+                <p class="pais-teamBack">PAIS</p>
+                <br>  
+                <p class="gender">Información</p>
+                <br>
+                <p class="heigth">Información</p>
+                <p class="weigth">Información</p>
+                <br>
+            </div>
+          </div>
+        </section> 
+      </template>
     </main>  
     
     <script src="main.js" type="module"></script>
