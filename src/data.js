@@ -40,7 +40,7 @@ export function noRepeatedCountry(datos){
     delete object.height;
     delete object.weight;
     delete object.sport;
-    delete object.noc;
+    delete object.team;
     delete object.age;
     delete object.event;
     delete object.medal;
@@ -60,5 +60,5 @@ export function filterDataSport(data,condition) {
 }
 
 export function filterDataCountry(data,condition) {
-  return data.filter ((item)=>(item.team===condition))
+  return data.filter ((item)=>(item.noc===condition))
 }
