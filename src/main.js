@@ -110,9 +110,11 @@ function imprimirDatos(datos) {
 
 //SELECCIONAR COUNTRIES
 //const dataCountries = listCountries.team;
-const elementMainCountry = document.querySelector(".country"); 
+const elementMainCountry = document.querySelector(".country");
+//const parentMainCountry = document.getElementById("select-countries"); es lo mismo que hacer la línea 115
 const parentMainCountry = elementMainCountry.parentNode; 
 listCountries.forEach((i) => {
+  //console.log(i);
   const newOption = elementMainCountry.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
   parentMainCountry.appendChild(newOption); // clonas un documeto y lo devuelves al final 
   newOption.setAttribute("value",i.noc);
@@ -124,11 +126,37 @@ let changeCountries=document.getElementById('select-countries');
 changeCountries.addEventListener('change', () => {
   newDiv.appendChild(newContent); 
   parentMain.appendChild(newDiv);
-  let allCountries=noRepeatedAhletes;
+  let allCountries=noRepeatedAhletes; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
   (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(noRepeatedAhletes,changeCountries.value)));
   console.log(changeCountries.value);
   imprimirDatos(allCountries);
-}) 
+})
+
+//SELECCIONAR SPORTS
+//const dataCountries = listCountries.team;
+const elementMainSports = document.querySelector(".option-sports");
+//const parentMainCountry = document.getElementById("select-countries"); es lo mismo que hacer la línea 115
+const parentMainSports = elementMainSports.parentNode; 
+listSports.forEach((i) => {
+  //console.log(i);
+  const newOption = elementMainSports.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
+  parentMainSports.appendChild(newOption); // clonas un documeto y lo devuelves al final 
+  newOption.setAttribute("value",i.sport);
+  newOption.textContent =i.sport;
+  //return newOption.content;
+});
+
+let changeSports=document.getElementById('select-sports');
+changeSports.addEventListener('change', () => {
+  newDiv.appendChild(newContent); 
+  parentMain.appendChild(newDiv);
+  let allSports=noRepeatedAhletes; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
+  (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(noRepeatedAhletes,changeSports.value)));
+  console.log(changeSports.value);
+  imprimirDatos(allSports);
+})
+
+
 
 
 

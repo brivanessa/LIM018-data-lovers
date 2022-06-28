@@ -27,7 +27,7 @@ export function noRepeatedSports(datos){
       delete item.medal
     })
   const dataObjectText = new Set(sports.map(JSON.stringify));
-  console.log(sports.map(JSON.stringify));
+  //console.log(sports.map(JSON.stringify));
   const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
   return dataUniqueObject;
 }
@@ -46,6 +46,7 @@ export function noRepeatedCountry(country){
     delete object.event;
     delete object.medal;
   })
+  //console.log(country)
   const dataObjectText = new Set(country.map(JSON.stringify)); 
   const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
   return dataUniqueObject;
