@@ -12,21 +12,22 @@ export function noRepeatedData(datos){
   return dataUniqueObject;
 }
 
-export function noRepeatedSports(sports){
+export function noRepeatedSports(datos){
   //const sports = [...datos]
-  //const sports=JSON.parse(JSON.stringify(datos))
- sports.forEach(item => {
-    delete item.name;
-    delete item.gender;
-    delete item.height;
-    delete item.weight;
-    delete item.team;
-    delete item.noc;
-    delete item.age;
-    delete item.event;
-    delete item.medal
-  })
-  const dataObjectText = new Set(sports.map(JSON.stringify)); 
+  const sports = JSON.parse(JSON.stringify(datos));
+  sports.map(item => {
+      delete item.name;
+      delete item.gender;
+      delete item.height;
+      delete item.weight;
+      delete item.team;
+      delete item.noc;
+      delete item.age;
+      delete item.event;
+      delete item.medal
+    })
+  const dataObjectText = new Set(sports.map(JSON.stringify));
+  console.log(sports.map(JSON.stringify));
   const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse);
   return dataUniqueObject;
 }
@@ -55,8 +56,8 @@ export function filterDataGender(data,condition) {
   return data.filter ((item)=>(item.gender===condition))
 }
 
-export function filterDataSport(data,condition){
-  return data.filter (item => item.sport === condition);
+export function filterDataSport(data,condition) {
+  return data.filter ((item)=>(item.sport===condition))
 }
 
 export function filterDataCountry(data,condition) {
