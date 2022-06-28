@@ -19,12 +19,27 @@
     "eslint": "^8.3.0",
     "gh-pages": "^3.1.0",
     "htmlhint": "^1.0.0",
-    "jest": "^27.0.1",
     "opener": "^1.5.1",
     "serve": "^13.0.2"
   },
   "engines": {
     "node": ">=14.x"
-  }
+  },
+  "description": "* [1. Preámbulo](#1-preámbulo)\r * [2. Resumen del proyecto](#2-resumen-del-proyecto)\r * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)\r * [4. Consideraciones generales](#4-consideraciones-generales)\r * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)\r * [6. Hacker edition](#6-hacker-edition)\r * [7. Consideraciones técnicas](#7-consideraciones-técnicas)\r * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)\r * [9. Checklist](#9-checklist)",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olgaabx/LIM018-data-lovers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/olgaabx/LIM018-data-lovers/issues"
+  },
+  "homepage": "https://github.com/olgaabx/LIM018-data-lovers#readme"
 }
-

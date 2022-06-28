@@ -206,7 +206,7 @@ section.listaAthlete{
   display: inline-block; 
   box-sizing: border-box;
   position: relative;
-  visibility: hidden;
+  /* visibility: hidden; */
   /* border:0.38rem solid rgb(165, 165, 165);  */
   /* se puede omitir solo para que se vea bien xd al voltear */
   /* perspective: 1000px;  */
