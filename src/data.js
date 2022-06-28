@@ -3,7 +3,7 @@
 export function noRepeatedData(datos){
   //const data = [...datos] //spread sintax  clona escalares (shallow copy) primitivos de primer nivel se copian pero no estructuras como funciones o objetos / estos se copian como referencia
   const data=JSON.parse(JSON.stringify(datos)) //no clona el prototipo pero si funciones y objetos 
-    data.forEach(item => {
+  data.forEach(item => {
     delete item.medal;
     delete item.event;
   })
@@ -12,10 +12,10 @@ export function noRepeatedData(datos){
   return dataUniqueObject;
 }
 
-export function noRepeatedSports(datos){
+export function noRepeatedSports(sports){
   //const sports = [...datos]
-  const sports=JSON.parse(JSON.stringify(datos))
-  sports.forEach(item => {
+  //const sports=JSON.parse(JSON.stringify(datos))
+ sports.forEach(item => {
     delete item.name;
     delete item.gender;
     delete item.height;
@@ -31,9 +31,9 @@ export function noRepeatedSports(datos){
   return dataUniqueObject;
 }
 
-export function noRepeatedCountry(datos){
+export function noRepeatedCountry(country){
   //const country = [...datos]
-  const country=JSON.parse(JSON.stringify(datos))
+  //const country=JSON.parse(JSON.stringify(datos))
   country.map(function(object) {
     delete object.name;
     delete object.gender;

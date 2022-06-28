@@ -71,6 +71,26 @@ const Brasil2016 =[
   }
 ]   
 
+// TEST: FILTROS
+describe('filterData', () => {
+  it('is a function', () => {
+    expect(typeof filterDataGender).toBe('function');
+    expect(typeof filterDataSport).toBe('function');
+    expect(typeof filterDataCountry).toBe('function');
+  });
+
+  it('returns `filterDataGender`', () => {
+    expect(filterDataGender(Brasil2016,'F')).toEqual([Brasil2016[0],Brasil2016[2]]);
+  });
+  it('returns `filterDataSport`', () => {
+    expect(filterDataSport(Brasil2016,'Handball')).toEqual([Brasil2016[1]]);
+  });
+  it('returns `filterDataCountry`', () => {
+    expect(filterDataCountry(Brasil2016,'USA')).toEqual([Brasil2016[3],Brasil2016[4]]);
+  });
+})
+
+
 // TEST: NO REPETIR DATOS
 
 describe('noRepeatedData', () => {
@@ -91,32 +111,13 @@ describe('noRepeatedData', () => {
   it('returns `noRepeatedCountry`', () => {
     expect(noRepeatedCountry(Brasil2016)).toHaveLength(4);
   });
-
-
 });
 
-// TEST: FILTROS
-describe('filterData', () => {
-  it('is a function', () => {
-    expect(typeof filterDataGender).toBe('function');
-    expect(typeof filterDataSport).toBe('function');
-    expect(typeof filterDataCountry).toBe('function');
-  });
 
-  it('returns `filterData`', () => {
-    expect(filterDataGender(Brasil2016,'F')).toEqual([Brasil2016[0],Brasil2016[2]]);
-  });
-  it('returns `filterData`', () => {
-    expect(filterDataSport(Brasil2016,'Handball')).toEqual([Brasil2016[1]]);
-  });
-  it('returns `filterData`', () => {
-    expect(filterDataCountry(Brasil2016,'United States')).toEqual([Brasil2016[3],Brasil2016[4]]);
-  });
-})
 
 // TEST: ORDENAR DATOS
 
-// TEST: COMPUTE STATS
+// TEST: COMPUTE STATS 
 
 
 

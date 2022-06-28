@@ -8,6 +8,7 @@ const dataRio = data.athletes;
 //ALL ATHLETES (NO REPEAT)
 import {noRepeatedData} from "./data.js";
 const noRepeatedAhletes = noRepeatedData(dataRio);
+console.log(noRepeatedAhletes)
 
 //ALL SPORTS (NO REPEAT)
 import {noRepeatedSports} from  "./data.js";
@@ -17,7 +18,8 @@ console.log(listSports) // para copiar la data de la consola a sports.js y añad
 //ALL COUNTRIES (NO REPEAT)
 import {noRepeatedCountry} from  "./data.js";
 const listCountries = noRepeatedCountry(dataRio);
-console.log(listCountries) 
+console.log("aqui ",dataRio)
+console.log("list countries",listCountries) 
 
 //FUNCION PARA IMPRIMIR LOS DATOS
 function imprimirDatos(datos) {
