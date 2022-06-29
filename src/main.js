@@ -1,25 +1,36 @@
 import data from './data/athletes/athletes.js';
 import sports from './data/athletes/sports.js';
-import {filterDataGender} from  "./data.js";
-import {filterDataSport} from  "./data.js";
-import {filterDataCountry} from  "./data.js";
+import {
+  filterDataGender,
+  filterDataSport,
+  filterDataCountry} from  "./data.js";
+
 
 const dataRio = data.athletes;
 //ALL ATHLETES (NO REPEAT)
 import {noRepeatedData} from "./data.js";
 const noRepeatedAhletes = noRepeatedData(dataRio);
-console.log(noRepeatedAhletes)
+//console.log(noRepeatedAhletes)
 
 //ALL SPORTS (NO REPEAT)
 import {noRepeatedSports} from  "./data.js";
 const listSports = noRepeatedSports(dataRio);
-console.log(listSports) // para copiar la data de la consola a sports.js y añadir la imagen a cada deporte (añadir la imagen se hizo manualmente)
+//console.log(listSports) // para copiar la data de la consola a sports.js y añadir la imagen a cada deporte (añadir la imagen se hizo manualmente)
 
 //ALL COUNTRIES (NO REPEAT)
 import {noRepeatedCountry} from  "./data.js";
 const listCountries = noRepeatedCountry(dataRio);
-console.log("aqui ",dataRio)
-console.log("list countries",listCountries) 
+//console.log("aqui ",dataRio)
+//console.log("list countries",listCountries) 
+
+let orderAZ = document.getElementById("select-order");
+let order = orderAZ.value;
+
+orderAZ.addEventListener('change', () => {
+  (orderAZ.value == "a<b")?"a<b":"a>b";
+  return orderAZ.value;
+})
+console.log(orderAZ.value)
 
 //FUNCION PARA IMPRIMIR LOS DATOS
 function imprimirDatos(datos) {
@@ -27,6 +38,11 @@ function imprimirDatos(datos) {
     const borrar=document.querySelector(".listaAthlete");
     borrar.remove() 
   }
+
+  datos.sort(function (a,b){
+    (order == a < b)?-1:1;
+  })
+
   return datos.forEach((item) => {        
         //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
         //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
@@ -128,7 +144,7 @@ changeCountries.addEventListener('change', () => {
   parentMain.appendChild(newDiv);
   let allCountries=noRepeatedAhletes; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
   (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(noRepeatedAhletes,changeCountries.value)));
-  console.log(changeCountries.value);
+  //console.log(changeCountries.value);
   imprimirDatos(allCountries);
 })
 
@@ -152,7 +168,7 @@ changeSports.addEventListener('change', () => {
   parentMain.appendChild(newDiv);
   let allSports=noRepeatedAhletes; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
   (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(noRepeatedAhletes,changeSports.value)));
-  console.log(changeSports.value);
+  //console.log(changeSports.value);
   imprimirDatos(allSports);
 })
 
