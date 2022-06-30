@@ -23,14 +23,14 @@ const listCountries = noRepeatedCountry(dataRio);
 //console.log("aqui ",dataRio)
 //console.log("list countries",listCountries) 
 
-let orderAZ = document.getElementById("select-order");
-let order = orderAZ.value;
+// let orderAZ = document.getElementById("select-order");
+// let order = orderAZ.value;
 
-orderAZ.addEventListener('change', () => {
-  (orderAZ.value == "a<b")?"a<b":"a>b";
-  return orderAZ.value;
-})
-console.log(orderAZ.value)
+// orderAZ.addEventListener('change', () => {
+//   (orderAZ.value == "a<b")?"a<b":"a>b";
+//   return orderAZ.value;
+// })
+// console.log(orderAZ.value)
 
 //FUNCION PARA IMPRIMIR LOS DATOS
 function imprimirDatos(datos) {
@@ -39,9 +39,9 @@ function imprimirDatos(datos) {
     borrar.remove() 
   }
 
-  datos.sort(function (a,b){
-    (order == a < b)?-1:1;
-  })
+  // datos.sort(function (a,b){
+  //   (order == a < b)?-1:1;
+  // })
 
   return datos.forEach((item) => {        
         //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
