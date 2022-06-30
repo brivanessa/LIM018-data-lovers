@@ -71,14 +71,7 @@ export function dataOrder(data, sortBy, sortOrder) {
   //let arrayOrder = [...data];
   console.log(dataSort);
      if(sortBy === 'name' && sortOrder === 'asc'){
-        return dataSort.sort((a,b)=> a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
-      }else if(sortBy==='name' && sortOrder === 'desc'){
-        return dataSort.sort((a,b)=> a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1);
-      }else if(sortBy === 'weaknesses' && sortOrder === 'asc'){
-        return dataSort.sort((a, b)=> a.weaknesses.length - b.weaknesses.length)
-      }else if(sortBy==='weaknesses' && sortOrder === 'desc'){
-        return  dataSort.sort((a, b)=> b.weaknesses.length - a.weaknesses.length)
-      }
+       
       return data;
   //data.sort((a, b) => a.sortBy.localeCompare(b.sortBy));
   //data.sort((a, b) => -1 * a.sortBy.localeCompare(b.sortBy));

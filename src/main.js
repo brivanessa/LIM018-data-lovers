@@ -173,10 +173,7 @@ let orderAZ = document.getElementById("select-order");
 
 orderAZ.addEventListener('change',()=>{
   const dataOrder = dataOrder(dataRio, orderAZ.value, selectOrder.value);
-  while (infoPokemonSection.firstChild) {
-      infoPokemonSection.removeChild(infoPokemonSection.firstChild);
-  }
-  showElements(mapedData(dataOrder))
+  
 })
 
 
