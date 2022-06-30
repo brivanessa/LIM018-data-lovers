@@ -67,17 +67,19 @@ export function filterDataCountry(data,condition) {
 
 // ORDENAR
 export function dataOrder(data, sortBy, sortOrder) {
-  
-  //sortBy = item.name;
-
-  if (sortOrder == "a<b") {
-    data.sort((a, b) => a.name.localeCompare(b.name));
-  }
-  else {
-    data.sort((a, b) => -1 * a.name.localeCompare(b.name));
-  }
-  return data;
-
+  const dataSort = JSON.parse(JSON.stringify(data));
+  //let arrayOrder = [...data];
+  console.log(dataSort);
+     if(sortBy === 'name' && sortOrder === 'asc'){
+        return dataSort.sort((a,b)=> a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
+      }else if(sortBy==='name' && sortOrder === 'desc'){
+        return dataSort.sort((a,b)=> a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1);
+      }else if(sortBy === 'weaknesses' && sortOrder === 'asc'){
+        return dataSort.sort((a, b)=> a.weaknesses.length - b.weaknesses.length)
+      }else if(sortBy==='weaknesses' && sortOrder === 'desc'){
+        return  dataSort.sort((a, b)=> b.weaknesses.length - a.weaknesses.length)
+      }
+      return data;
   //data.sort((a, b) => a.sortBy.localeCompare(b.sortBy));
   //data.sort((a, b) => -1 * a.sortBy.localeCompare(b.sortBy));
 }
