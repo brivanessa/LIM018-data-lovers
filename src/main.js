@@ -154,7 +154,6 @@ const elementMainSports = document.querySelector(".option-sports");
 //const parentMainCountry = document.getElementById("select-countries"); es lo mismo que hacer la línea 115
 const parentMainSports = elementMainSports.parentNode; 
 listSports.forEach((i) => {
-  console.log(i);
   const newOption = elementMainSports.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
   parentMainSports.appendChild(newOption); // clonas un documeto y lo devuelves al final 
   newOption.setAttribute("value", i);
