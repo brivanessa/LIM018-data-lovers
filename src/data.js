@@ -1,6 +1,6 @@
 // NO REPETIR DATOS
 
-export function noRepeatedData(datos){
+export function noRepeatedData(datos) {
   const data = datos.map(item => {
     // eslint-disable-next-line no-unused-vars
     const {medal, event,...dataWithout} = item; // investigar destructuración desestructuración (fares)
@@ -11,11 +11,11 @@ export function noRepeatedData(datos){
   return dataUniqueObject;
 }
 
-export function noRepeatedSports(datos){
+export function noRepeatedSports(datos) {
   const dataSports = datos.map(item => {
     return item.sport;
   })
-  const dataSportUnique = Array.from(new Set(dataSports)); // OJO. No estamos convirtiendo el set en array
+  const dataSportUnique = Array.from(new Set(dataSports));
   console.log(dataSportUnique);
   // const dataSportUnique = dataSports.filter((item, index) => {
   //   return dataSports.indexOf(item) === index;
@@ -23,27 +23,25 @@ export function noRepeatedSports(datos){
   return dataSportUnique;
 }
 
-export function noRepeatedCountry(data){
-  
+export function noRepeatedCountry(data) {
   const dataCountries = data.map(item => {
     return item.noc;
   })
-  //console.log(country)
   const dataCountryUnique = Array.from(new Set(dataCountries));
   return dataCountryUnique;
 }
 
 //FILTROS
-export function filterDataGender(data,condition) {
-  return data.filter ((item)=>(item.gender===condition))
+export function filterDataGender(data, condition) {
+  return data.filter ((item) => (item.gender === condition));
 }
 
-export function filterDataSport(data,condition) {
-  return data.filter ((item)=>(item.sport===condition))
+export function filterDataSport(data, condition) {
+  return data.filter ((item) => (item.sport === condition));
 }
 
-export function filterDataCountry(data,condition) {
-  return data.filter ((item)=>(item.noc===condition))
+export function filterDataCountry(data, condition) {
+  return data.filter ((item)=>(item.noc === condition));
 }
 
 // ORDENAR
