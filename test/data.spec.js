@@ -5,7 +5,7 @@ import {
   noRepeatedSports,
   noRepeatedCountry,
   filterDataCountry,
-  //dataOrder
+  dataOrder
   //computeStats
 } from '../src/data.js';
 
@@ -114,17 +114,21 @@ describe('noRepeatedData', () => {
   });
 });
 
-// TEST: ORDENAR DATOS
-// describe('dataOrder', () => {
-//   it('is a function', () => {
-//     expect(typeof dataOrder).toBe('function');
-//   })
+// // TEST: ORDENAR DATOS
+describe('dataOrder', () => {
+  it('is a function', () => {
+    expect(typeof dataOrder).toBe('function');
+  })
 
-//   it('returns `dataOrder`', () => {
-//     expect(dataOrder(Brasil2016, Brasil2016.name, "a<b")).toEqual([Brasil2016[2],Brasil2016[1],Brasil2016[3],Brasil2016[4],Brasil2016[0]]);
-//   });
-//   console.log(Brasil2016)
-// })
+  it('returns `dataOrder`', () => {
+    expect(dataOrder(Brasil2016,"nombre",'A-Z')).toEqual([Brasil2016[2],Brasil2016[1],Brasil2016[3],Brasil2016[4],Brasil2016[0]]);
+  });
+  //console.log(dataOrder(Brasil2016,"nombre",'A-Z'))
+  it('returns `dataOrder`', () => {
+    expect(dataOrder(Brasil2016,"nombre",'Z-A')).toEqual([Brasil2016[0],Brasil2016[4],Brasil2016[3],Brasil2016[1],Brasil2016[2]]);
+  console.log(dataOrder(Brasil2016,"nombre",'Z-A'))
+  });
+})
 
 
 
