@@ -125,7 +125,7 @@ describe('dataOrder', () => {
   });
   //console.log(dataOrder(Brasil2016,"nombre",'A-Z'))
   it('returns `dataOrder`', () => {
-    expect(dataOrder(Brasil2016,"nombre",'Z-A')).toEqual([Brasil2016[0],Brasil2016[4],Brasil2016[3],Brasil2016[1],Brasil2016[2]]);
+    expect(dataOrder(Brasil2016,"nombre",'Z-A')).toEqual([Brasil2016[0],Brasil2016[3],Brasil2016[4],Brasil2016[1],Brasil2016[2]]);
   console.log(dataOrder(Brasil2016,"nombre",'Z-A'))
   });
 })

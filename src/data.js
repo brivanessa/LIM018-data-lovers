@@ -49,8 +49,9 @@ export function filterDataCountry(data,condition) {
 // ORDENAR
 export function dataOrder(data, sortBy, sortOrder) {
 //let data3=[...data] 
-const data3=[...data] 
-const data4=
+//const data4=[...data] 
+const data3=JSON.parse(JSON.stringify(data))
+const data4=JSON.parse(JSON.stringify(data))
 switch(sortOrder)  {
   case 'A-Z':
     while ((sortBy=="nombre")) {
