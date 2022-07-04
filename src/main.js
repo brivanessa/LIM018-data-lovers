@@ -60,6 +60,8 @@ function imprimirDatos(datos) {
   })
 }
 
+document.getElementById("selectcontainer").style.display="none"; // Para desaparecer los filtros de la página principal
+
 //ALL SPORTS (INICIO)
   const inicioButton = document.getElementById("inicio");
   inicioButton.addEventListener('click', () => (window.location.reload()))
@@ -108,6 +110,7 @@ function imprimirDatos(datos) {
   athletesButton.addEventListener('click', () => {
     document.getElementById("bodyAllSports").style.display="none";
     document.getElementById("bodyCardsBySports").style.display="none";
+    document.getElementById("selectcontainer").style.display="block";
     newDiv.appendChild(newContent); //añade texto al div creado.
     parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
     imprimirDatos(noRepeatedAhletes);

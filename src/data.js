@@ -48,29 +48,29 @@ export function filterDataCountry(data,condition) {
 export function dataOrder(data, sortBy, sortOrder) {
 //let data3=[...data] 
 //const data4=[...data] 
-const data3=JSON.parse(JSON.stringify(data))
-const data4=JSON.parse(JSON.stringify(data))
+const dataSort = JSON.parse(JSON.stringify(data));
+//const data4=JSON.parse(JSON.stringify(data));
 switch(sortOrder)  {
   case 'A-Z':
-    while ((sortBy=="nombre")) {
-        data3.sort((a,b)=>{
-        const nameA=a.name.toLowerCase();
-        const nameB=b.name.toLowerCase();
-        if (nameA<nameB){
+    while (sortBy == "nombre") {
+        dataSort.sort((a, b) => {
+        const nameA = a.name.toLowerCase();
+        const nameB = b.name.toLowerCase();
+        if (nameA < nameB){
           return -1;
-        } else if (nameA>nameB){
+        } else if (nameA > nameB){
           return 1;
         }else {
           return 0;
         }  
       })
-      return data3;
+      return dataSort;
     }
   break;
 
   case 'Z-A':
     while ((sortBy=="nombre")) {
-      data4.sort((a,b)=>{
+      dataSort.sort((a,b)=>{
         const nameA=a.name.toLowerCase();
         const nameB=b.name.toLowerCase();
         if (nameA<nameB){
@@ -81,7 +81,7 @@ switch(sortOrder)  {
           return 0;
         }  
       })
-      return data4;
+      return dataSort;
     }
   break;
 }

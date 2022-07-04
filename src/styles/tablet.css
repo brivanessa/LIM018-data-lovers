@@ -9,3 +9,11 @@
 .nav__menu li {
   display: block;
 }
+
+.main-input-container {
+  width: 525px;
+}
+
+.main-input input {
+  width: 450px;
+}
