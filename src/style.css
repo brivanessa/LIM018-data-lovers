@@ -100,7 +100,7 @@ body {
 }
 /*BARRA DE FILTROS*/
 .select-container {
-  
+
 }
 
 
@@ -148,7 +148,7 @@ body {
 
 /* FORMATO MAIN */
 main.principalPage{
-  float:left;
+  /* float:left; */
   height: 100%; 
   padding-top: 5%;
   text-align: center; /*para centrar al momento de convertir los eleementos de bloque section.listaAthletes en elementos del inea*/
