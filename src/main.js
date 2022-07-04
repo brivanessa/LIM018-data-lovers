@@ -171,14 +171,6 @@ changeSports.addEventListener('change', () => {
   imprimirDatos(allSports);
 })
 
-let orderAZ = document.getElementById("select-order");
-// let order = orderAZ.value;
-
-orderAZ.addEventListener('change',()=>{
-  const dataOrder = dataOrder(dataRio, orderAZ.value, selectOrder.value);
-  
-})
-
 
 
 

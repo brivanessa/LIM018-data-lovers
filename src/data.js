@@ -43,20 +43,3 @@ export function filterDataSport(data, condition) {
 export function filterDataCountry(data, condition) {
   return data.filter ((item)=>(item.noc === condition));
 }
-
-// ORDENAR
-// export function dataOrder(data, sortBy, sortOrder) {
-  
-//   //sortBy = item.name;
-
-//   if (sortOrder == "a<b") {
-//     data.sort((a, b) => a.name.localeCompare(b.name));
-//   }
-//   else {
-//     data.sort((a, b) => -1 * a.name.localeCompare(b.name));
-//   }
-//   return data;
-
-//   //data.sort((a, b) => a.sortBy.localeCompare(b.sortBy));
-//   //data.sort((a, b) => -1 * a.sortBy.localeCompare(b.sortBy));
-// }
