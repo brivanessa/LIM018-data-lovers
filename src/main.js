@@ -3,7 +3,8 @@ import sports from './data/athletes/sports.js';
 import {
   filterDataGender,
   filterDataSport,
-  filterDataCountry} from  "./data.js";
+  filterDataCountry,
+  dataOrder  } from  "./data.js";
 
 
 const dataRio = data.athletes;
@@ -38,11 +39,9 @@ function imprimirDatos(datos) {
     const borrar=document.querySelector(".listaAthlete");
     borrar.remove() 
   }
-
   // datos.sort(function (a,b){
   //   (order == a < b)?-1:1;
   // })
-
   return datos.forEach((item) => {        
         //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
         //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
@@ -173,3 +172,15 @@ changeSports.addEventListener('change', () => {
   //console.log(changeSports.value);
   imprimirDatos(allSports);
 })
+
+//SELECCIONAR ORDEN
+let cambiarOrden=document.getElementById('select-order');
+cambiarOrden.addEventListener('change', () => {
+  newDiv.appendChild(newContent); //añade texto al div creado.
+  parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
+
+  let allOrder=dataOrder(noRepeatedAhletes,"nombre",cambiarOrden.value);
+  imprimirDatos(allOrder);
+  //console.log(dataOrder(noRepeatedAhletes,"nombre",cambiarOrden.value));
+})
+
