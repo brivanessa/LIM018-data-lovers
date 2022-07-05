@@ -10,6 +10,19 @@
   display: block;
 }
 
+.select-container {
+  justify-content: flex-end;
+}
+
+.select-container select {
+  margin-right: 5px;
+}
+
+.main-input {
+  width: 530px;
+  margin: 0 auto;
+  padding: 30px 0 20px 0;
+}
 .main-input-container {
   width: 525px;
 }

@@ -21,17 +21,6 @@ const listSports = noRepeatedSports(dataRio);
 //ALL COUNTRIES (NO REPEAT)
 import {noRepeatedCountry} from  "./data.js";
 const listCountries = noRepeatedCountry(dataRio);
-//console.log("aqui ",dataRio)
-//console.log("list countries",listCountries) 
-
-// let orderAZ = document.getElementById("select-order");
-// let order = orderAZ.value;
-
-// orderAZ.addEventListener('change', () => {
-//   (orderAZ.value == "a<b")?"a<b":"a>b";
-//   return orderAZ.value;
-// })
-// console.log(orderAZ.value)
 
 //FUNCION PARA IMPRIMIR LOS DATOS
 function imprimirDatos(datos) {
@@ -39,9 +28,7 @@ function imprimirDatos(datos) {
     const borrar=document.querySelector(".listaAthlete");
     borrar.remove() 
   }
-  // datos.sort(function (a,b){
-  //   (order == a < b)?-1:1;
-  // })
+
   return datos.forEach((item) => {        
         //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
         //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
@@ -62,69 +49,71 @@ function imprimirDatos(datos) {
 document.getElementById("selectcontainer").style.display="none"; // Para desaparecer los filtros de la página principal
 
 //ALL SPORTS (INICIO)
-  const inicioButton = document.getElementById("inicio");
-  inicioButton.addEventListener('click', () => (window.location.reload()))
+const inicioButton = document.getElementById("inicio");
+inicioButton.addEventListener('click', () => (window.location.reload()))
 
-  const dataSport = sports.sports;
-  const elementMainSport = document.getElementById("sport"); 
-  const parentMainSport = elementMainSport.parentNode; 
+const dataSport = sports.sports;
+const elementMainSport = document.getElementById("sport"); 
+const parentMainSport = elementMainSport.parentNode; 
     
-  dataSport.forEach((i) => {
-    document.getElementById("sport").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
+dataSport.forEach((i) => {
+  document.getElementById("sport").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
       //Clonar una seccion del DOM y añadirla
       //añade secciones clonadas del elemento seccion athletes
-    const newSeccion1 = elementMainSport.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
-    newSeccion1.setAttribute("id",'sport_'+i.sport) //para poner un id unico a cada seccion clonada
-    parentMainSport.appendChild(newSeccion1); // clonas un documeto y lo devuelves al final 
-    newSeccion1.querySelector(".sport-Rio").setAttribute("src",i.ref);
-    newSeccion1.querySelector("h2").textContent =i.sport;
-    newSeccion1.querySelector(".howManyAthletesSport").textContent = `(XXX) atletas ganaron por lo menos una medalla en ${i.sport}.`;
-    newSeccion1.querySelector(".genderAthletesSport").textContent = `De los (XXX) el 55% son mujeres y (45%) son hombres.`;
+  const newSeccion1 = elementMainSport.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
+  newSeccion1.setAttribute("id",'sport_'+i.sport) //para poner un id unico a cada seccion clonada
+  parentMainSport.appendChild(newSeccion1); // clonas un documeto y lo devuelves al final 
+  newSeccion1.querySelector(".sport-Rio").setAttribute("src",i.ref);
+  newSeccion1.querySelector("h2").textContent =i.sport;
+  newSeccion1.querySelector(".howManyAthletesSport").textContent = `(XXX) atletas ganaron por lo menos una medalla en ${i.sport}.`;
+  newSeccion1.querySelector(".genderAthletesSport").textContent = `De los (XXX) el 55% son mujeres y (45%) son hombres.`;
     
-    newSeccion1.addEventListener('click', () => {
-      document.getElementById("bodyAllSports").style.display="none";
-      const newDiv1 = document.createElement("div"); // crea un nuevo div
-      const newContent1 = document.createTextNode("El número total de deportistas es:");  // y añade contenido
-      const divCardsBySports = document.getElementById("bodyCardsBySports");
-      newDiv1.appendChild(newContent1); //añade texto al div creado.
-        // añade el elemento creado y su contenido al DOM
-      const elementMain1 = document.getElementById("athlete_sport"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
-      divCardsBySports.insertBefore(newDiv1, elementMain1); 
-        //filtrando la data:
-      const datosSportAthletes=filterDataSport(noRepeatedAhletes,`${i.sport}`);
-         //console.log(datosSportAthletes);
-        imprimirDatos(datosSportAthletes);
-    })
-  });
-  document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
+  newSeccion1.addEventListener('click', () => {
+    document.getElementById("bodyAllSports").style.display="none";
+    const newDiv1 = document.createElement("div"); // crea un nuevo div
+    const newContent1 = document.createTextNode("The total number of athletes is:");  // y añade contenido
+    const divCardsBySports = document.getElementById("bodyCardsBySports");
+    newDiv1.appendChild(newContent1); //añade texto al div creado.
+    // añade el elemento creado y su contenido al DOM
+    const elementMain1 = document.getElementById("athlete_sport"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
+    divCardsBySports.insertBefore(newDiv1, elementMain1); 
+    //filtrando la data:
+    const datosSportAthletes=filterDataSport(noRepeatedAhletes,`${i.sport}`);
+    //console.log(datosSportAthletes);
+    imprimirDatos(datosSportAthletes);
+  })
+});
+
+document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
 
 //ALL ATHLETES 
-  //Crear nuevo div y para luego añadirlo al elemento main
-  const newDiv = document.createElement("div"); // crea un nuevo div
-  const newContent = document.createTextNode("El número total de deportistas es:");  // y añade contenido
-  const athletesButton = document.getElementById("allAthletes");
-  const elementMain = document.getElementById("templateAthlete").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
-  const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
+//Crear nuevo div y para luego añadirlo al elemento main
+const newDiv = document.createElement("div"); // crea un nuevo div
+const newContent = document.createTextNode("The total number of athletes is:");  // y añade contenido
+const athletesButton = document.getElementById("allAthletes");
+const elementMain = document.getElementById("templateAthlete").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
+const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
  
-  athletesButton.addEventListener('click', () => {
-    document.getElementById("bodyAllSports").style.display="none";
-    document.getElementById("bodyCardsBySports").style.display="none";
-    document.getElementById("selectcontainer").style.display="block";
-    newDiv.appendChild(newContent); //añade texto al div creado.
-    parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
-    imprimirDatos(noRepeatedAhletes);
-  });
+athletesButton.addEventListener('click', () => {
+  document.getElementById("bodyAllSports").style.display="none";
+  document.getElementById("bodyCardsBySports").style.display="none";
+  document.getElementById("selectcontainer").style.display="flex";
+  newDiv.appendChild(newContent); //añade texto al div creado.
+  parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
+  imprimirDatos(noRepeatedAhletes);
+});
+
 //SELECCIONAR GENDER
-  let cambiarOpcion=document.getElementById('selectgender');
-  cambiarOpcion.addEventListener('change', () => {
-    newDiv.appendChild(newContent); //añade texto al div creado.
-    parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
+let cambiarOpcion=document.getElementById('selectgender');
+cambiarOpcion.addEventListener('change', () => {
+  newDiv.appendChild(newContent); //añade texto al div creado.
+  parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
   
-    let allGender=noRepeatedAhletes;
-    (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
-    imprimirDatos( allGender);
-    //console.log(allGender);
-  })
+  let allGender=noRepeatedAhletes;
+  (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
+  imprimirDatos( allGender);
+  //console.log(allGender);
+})
 
 //SELECCIONAR COUNTRIES
 //const dataCountries = listCountries.team;

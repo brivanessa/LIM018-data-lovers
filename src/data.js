@@ -1,5 +1,4 @@
 // NO REPETIR DATOS
-
 export function noRepeatedData(datos) {
   const data = datos.map(item => {
     // eslint-disable-next-line no-unused-vars
@@ -10,7 +9,7 @@ export function noRepeatedData(datos) {
   const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse); //convertimos el objeto en un array y JSONparse los string en objetos
   return dataUniqueObject;
 }
-
+// DEPORTES NO REPETIDOS
 export function noRepeatedSports(datos) {
   const dataSports = datos.map(item => {
     return item.sport;
@@ -22,7 +21,7 @@ export function noRepeatedSports(datos) {
   // })
   return dataSportUnique;
 }
-
+// PAÍSES NO REPETIDOS
 export function noRepeatedCountry(data) {
   const dataCountries = data.map(item => {
     return item.noc;
@@ -41,21 +40,21 @@ export function filterDataSport(data, condition) {
 }
 
 export function filterDataCountry(data,condition) {
-  return data.filter ((item)=>(item.noc===condition))
+  return data.filter ((item) => (item.noc === condition))
 }
 
 // ORDENAR
 export function dataOrder(data, sortBy, sortOrder) {
-//let data3=[...data] 
-//const data4=[...data] 
-const dataSort = JSON.parse(JSON.stringify(data));
-//const data4=JSON.parse(JSON.stringify(data));
-switch(sortOrder)  {
-  case 'A-Z':
+
+  const dataSort = JSON.parse(JSON.stringify(data));
+  //const data4=JSON.parse(JSON.stringify(data));
+  switch(sortOrder) {
+    case 'A-Z':
     while (sortBy == "nombre") {
-        dataSort.sort((a, b) => {
+      dataSort.sort((a, b) => {
         const nameA = a.name.toLowerCase();
         const nameB = b.name.toLowerCase();
+          
         if (nameA < nameB){
           return -1;
         } else if (nameA > nameB){
@@ -66,9 +65,9 @@ switch(sortOrder)  {
       })
       return dataSort;
     }
-  break;
+    break;
 
-  case 'Z-A':
+    case 'Z-A':
     while ((sortBy=="nombre")) {
       dataSort.sort((a,b)=>{
         const nameA=a.name.toLowerCase();
@@ -83,19 +82,6 @@ switch(sortOrder)  {
       })
       return dataSort;
     }
-  break;
+    break;
+  }
 }
-}
-  //sortBy = item.name;
-
-  // if (sortOrder == "a<b") {
-  //   data.sort((a, b) => a.name.localeCompare(b.name));
-  // }
-  // else {
-  //   data.sort((a, b) => -1 * a.name.localeCompare(b.name));
-  // }
-  // return data;
-
-  //data.sort((a, b) => a.sortBy.localeCompare(b.sortBy));
-  //data.sort((a, b) => -1 * a.sortBy.localeCompare(b.sortBy));
-//}
