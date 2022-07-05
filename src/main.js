@@ -104,9 +104,9 @@ dataSport.forEach((i) => {
   const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
  
   athletesButton.addEventListener('click', () => {
-    document.getElementById("bodyAllSports").style.display="none";
-    document.getElementById("bodyCardsBySports").style.display="none";
-    document.getElementById("selectcontainer").style.display="block";
+    document.getElementById("bodyAllSports").style.display = "none";
+    document.getElementById("bodyCardsBySports").style.display = "none";
+    document.getElementById("selectcontainer").style.display = "flex";
    
     imprimirDatos(noRepeatedAhletes);
   });
