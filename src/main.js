@@ -4,7 +4,8 @@ import {
   filterDataGender,
   filterDataSport,
   filterDataCountry,
-  dataOrder  } from  "./data.js";
+  dataOrder, 
+  computeStats  } from  "./data.js";
 
 
 const dataRio = data.athletes;
@@ -24,10 +25,18 @@ const listCountries = noRepeatedCountry(dataRio);
 
 //FUNCION PARA IMPRIMIR LOS DATOS
 function imprimirDatos(datos) {
+
   while(!!document.querySelector(".listaAthlete")==true){   // https://www.delftstack.com/es/howto/javascript/javascript-check-element-exists-in-dom/
     const borrar=document.querySelector(".listaAthlete");
     borrar.remove() 
+    newContent.remove()
   }
+  let numberSuma=computeStats(datos);
+  newContent=document.createTextNode(`El número total de deportistas es: ${numberSuma} atletas`);  
+    //console.log(newContent)
+    newDiv.appendChild(newContent); //añade texto al div creado.
+    parentMain.appendChild(newDiv); // añade el elemento creado y su contenido al DOM
+    //console.log(allGender);
 
   return datos.forEach((item) => {        
         //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
@@ -68,52 +77,53 @@ dataSport.forEach((i) => {
   newSeccion1.querySelector(".howManyAthletesSport").textContent = `(XXX) atletas ganaron por lo menos una medalla en ${i.sport}.`;
   newSeccion1.querySelector(".genderAthletesSport").textContent = `De los (XXX) el 55% son mujeres y (45%) son hombres.`;
     
-  newSeccion1.addEventListener('click', () => {
-    document.getElementById("bodyAllSports").style.display="none";
-    const newDiv1 = document.createElement("div"); // crea un nuevo div
-    const newContent1 = document.createTextNode("The total number of athletes is:");  // y añade contenido
-    const divCardsBySports = document.getElementById("bodyCardsBySports");
-    newDiv1.appendChild(newContent1); //añade texto al div creado.
-    // añade el elemento creado y su contenido al DOM
-    const elementMain1 = document.getElementById("athlete_sport"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
-    divCardsBySports.insertBefore(newDiv1, elementMain1); 
-    //filtrando la data:
-    const datosSportAthletes=filterDataSport(noRepeatedAhletes,`${i.sport}`);
-    //console.log(datosSportAthletes);
-    imprimirDatos(datosSportAthletes);
-  })
-});
-
-document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
+    newSeccion1.addEventListener('click', () => {
+      document.getElementById("bodyAllSports").style.display="none";
+      const newDiv1 = document.createElement("div"); // crea un nuevo div
+      //const newContent1 = document.createTextNode("El número total de deportistas es:");  // y añade contenido
+      const divCardsBySports = document.getElementById("bodyCardsBySports");
+      //newDiv1.appendChild(newContent1); //añade texto al div creado.
+        // añade el elemento creado y su contenido al DOM
+      const elementMain1 = document.getElementById("athlete_sport"); // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
+      divCardsBySports.insertBefore(newDiv1, elementMain1); 
+        //filtrando la data:
+      const datosSportAthletes=filterDataSport(noRepeatedAhletes,`${i.sport}`);
+         //console.log(datosSportAthletes);
+        imprimirDatos(datosSportAthletes);
+    })
+  });
+  document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
 
 //ALL ATHLETES 
-//Crear nuevo div y para luego añadirlo al elemento main
-const newDiv = document.createElement("div"); // crea un nuevo div
-const newContent = document.createTextNode("The total number of athletes is:");  // y añade contenido
-const athletesButton = document.getElementById("allAthletes");
-const elementMain = document.getElementById("templateAthlete").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
-const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
+  //Crear nuevo div y para luego añadirlo al elemento main
+  const newDiv = document.createElement("div"); // crea un nuevo div
+  let newContent
+  //  = document.createTextNode("El número total de deportistas es:");  // y añade contenido
+  const athletesButton = document.getElementById("allAthletes");
+  const elementMain = document.getElementById("templateAthlete").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
+  const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
  
-athletesButton.addEventListener('click', () => {
-  document.getElementById("bodyAllSports").style.display="none";
-  document.getElementById("bodyCardsBySports").style.display="none";
-  document.getElementById("selectcontainer").style.display="flex";
-  newDiv.appendChild(newContent); //añade texto al div creado.
-  parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
-  imprimirDatos(noRepeatedAhletes);
-});
+  athletesButton.addEventListener('click', () => {
+    document.getElementById("bodyAllSports").style.display="none";
+    document.getElementById("bodyCardsBySports").style.display="none";
+    document.getElementById("selectcontainer").style.display="block";
+   
+    imprimirDatos(noRepeatedAhletes);
+  });
 
-//SELECCIONAR GENDER
-let cambiarOpcion=document.getElementById('selectgender');
-cambiarOpcion.addEventListener('change', () => {
-  newDiv.appendChild(newContent); //añade texto al div creado.
-  parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
   
-  let allGender=noRepeatedAhletes;
-  (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
-  imprimirDatos( allGender);
-  //console.log(allGender);
-})
+//SELECCIONAR GENDER
+  let cambiarOpcion=document.getElementById('selectgender');
+  cambiarOpcion.addEventListener('change', () => {
+    // newDiv.appendChild(newContent); //añade texto al div creado.
+    // parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
+  
+    let allGender=noRepeatedAhletes;
+    (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
+    imprimirDatos(allGender);
+
+    
+  })
 
 //SELECCIONAR COUNTRIES
 //const dataCountries = listCountries.team;
@@ -131,8 +141,8 @@ listCountries.forEach((i) => {
 
 let changeCountries=document.getElementById('select-countries');
 changeCountries.addEventListener('change', () => {
-  newDiv.appendChild(newContent); 
-  parentMain.appendChild(newDiv);
+  // newDiv.appendChild(newContent); 
+  // parentMain.appendChild(newDiv);
   let allCountries=noRepeatedAhletes; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
   (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(noRepeatedAhletes,changeCountries.value)));
   //console.log(changeCountries.value);
@@ -154,8 +164,8 @@ listSports.forEach((i) => {
 
 let changeSports=document.getElementById('select-sports');
 changeSports.addEventListener('change', () => {
-  newDiv.appendChild(newContent); 
-  parentMain.appendChild(newDiv);
+  // newDiv.appendChild(newContent); 
+  // parentMain.appendChild(newDiv);
   let allSports=noRepeatedAhletes; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
   (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(noRepeatedAhletes,changeSports.value)));
   //console.log(changeSports.value);
@@ -165,8 +175,8 @@ changeSports.addEventListener('change', () => {
 //SELECCIONAR ORDEN
 let cambiarOrden=document.getElementById('select-order');
 cambiarOrden.addEventListener('change', () => {
-  newDiv.appendChild(newContent); //añade texto al div creado.
-  parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
+  // newDiv.appendChild(newContent); //añade texto al div creado.
+  // parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
 
   let allOrder=dataOrder(noRepeatedAhletes,"nombre",cambiarOrden.value);
   imprimirDatos(allOrder);

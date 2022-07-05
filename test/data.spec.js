@@ -5,7 +5,8 @@ import {
   noRepeatedSports,
   noRepeatedCountry,
   filterDataCountry,
-  dataOrder
+  dataOrder,
+  computeStats
   //computeStats
 } from '../src/data.js';
 
@@ -126,14 +127,20 @@ describe('dataOrder', () => {
   //console.log(dataOrder(Brasil2016,"nombre",'A-Z'))
   it('returns `dataOrder`', () => {
     expect(dataOrder(Brasil2016,"nombre",'Z-A')).toEqual([Brasil2016[0],Brasil2016[3],Brasil2016[4],Brasil2016[1],Brasil2016[2]]);
-  console.log(dataOrder(Brasil2016,"nombre",'Z-A'))
+  //console.log(dataOrder(Brasil2016,"nombre",'Z-A'))
   });
 })
 
-
-
-
 // TEST: COMPUTE STATS 
 
+describe('computeStats', () => {
+  it('is a function', () => {
+    expect(typeof computeStats).toBe('function');
+  })
 
+  it('returns `computeStats`', () => {
+    expect(computeStats(Brasil2016)).toBe(5);
+  });
+  console.log(computeStats(Brasil2016))
+})
 
