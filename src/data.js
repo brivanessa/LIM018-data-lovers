@@ -44,6 +44,13 @@ export function filterDataCountry(data,condition) {
   return data.filter ((item)=>(item.noc===condition))
 }
 
+//COMPUTE STAT
+export function computeStats(data) {
+  let numberAthletes=data.length
+  return numberAthletes
+}
+
+
 // ORDENAR
 export function dataOrder(data, sortBy, sortOrder) {
 //let data3=[...data] 
