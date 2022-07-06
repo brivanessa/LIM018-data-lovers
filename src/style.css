@@ -337,9 +337,9 @@ section.listaAthlete{
 .petRio{
   border-radius: 77px;
   border: 3px solid;
-  border-image-source: linear-gradient(to left, #0B12B5, #FFF504);
+  /* border-image-source: linear-gradient(to left, #0B12B5, #FFF504); */
   /* border-image-source: linear-gradient(180deg, #0B12B5 0%, #FFF504 100%); */
-  /* border: 4px solid #164986; */
+  border: 4px solid #164986;
   margin: auto;  
   /*display: block;  */
   width: 77px;
