@@ -92,3 +92,8 @@ export function dataOrder(data, sortBy, sortOrder) {
     break;
   }
 }
+
+//BUSCAR
+export function findData(data, propiedad, letras) {
+  return data.filter ((item) => (item[propiedad].toUpperCase().includes(letras.toUpperCase())));
+}

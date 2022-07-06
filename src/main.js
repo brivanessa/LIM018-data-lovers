@@ -5,7 +5,8 @@ import {
   filterDataSport,
   filterDataCountry,
   dataOrder, 
-  computeStats  } from  "./data.js";
+  computeStats,
+  findData  } from  "./data.js";
 
 
 const dataRio = data.athletes;
@@ -183,3 +184,11 @@ cambiarOrden.addEventListener('change', () => {
   //console.log(dataOrder(noRepeatedAhletes,"nombre",cambiarOrden.value));
 })
 
+//BUSCAR
+let findAthlete=document.getElementById('findAthletes');
+findAthlete.addEventListener('keyup', (e) => {
+  
+  let findCardsAthletes= findData(noRepeatedAhletes,'name',e.target.value);
+  imprimirDatos(findCardsAthletes);
+
+})
