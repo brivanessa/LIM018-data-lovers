@@ -36,7 +36,7 @@ function imprimirDatos(datos) {
   newContent=document.createTextNode(`El número total de deportistas es: ${numberSuma} atletas`);  
     //console.log(newContent)
     newDiv.appendChild(newContent); //añade texto al div creado.
-    parentMain.appendChild(newDiv); // añade el elemento creado y su contenido al DOM
+    // parentMain.appendChild(newDiv); // añade el elemento creado y su contenido al DOM
     //console.log(allGender);
 
   return datos.forEach((item) => {        
@@ -114,7 +114,7 @@ dataSport.forEach((i) => {
         let numberSuma=computeStats(datosSportAthletes);
         newContent=document.createTextNode(`${numberSuma} atletas participaron en esta disciplina`);  
           newDiv.appendChild(newContent); //añade texto al div creado.
-          parentMain.appendChild(newDiv); // añade el elemento creado y su contenido al DOM
+          //parentMain.appendChild(newDiv); // añade el elemento creado y su contenido al DOM
   
         return datos.forEach((item) => {        
          const newSeccion = document.importNode(elementMain,true); 
@@ -136,8 +136,8 @@ dataSport.forEach((i) => {
   document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
 
 //ALL ATHLETES 
-  //Crear nuevo div y para luego añadirlo al elemento main
-  const newDiv = document.createElement("div"); // crea un nuevo div
+  
+  const newDiv = document.getElementById("infoAthletes"); // crea un nuevo div
   let newContent
   //  = document.createTextNode("El número total de deportistas es:");  // y añade contenido
   const athletesButton = document.getElementById("allAthletes");
@@ -228,8 +228,22 @@ cambiarOrden.addEventListener('change', () => {
 //BUSCAR
 let findAthlete=document.getElementById('findAthletes');
 findAthlete.addEventListener('keyup', (e) => {
-  
   let findCardsAthletes= findData(noRepeatedAhletes,'name',e.target.value);
-  imprimirDatos(findCardsAthletes);
+  (findCardsAthletes.length===0?imprimirSinDatos(findCardsAthletes):imprimirDatos(findCardsAthletes))
+  console.log(findCardsAthletes.length)
 
+
+ 
 })
+
+  function imprimirSinDatos() {
+    while(!!document.querySelector(".infoAthletes")==true){ 
+      newContent.remove();
+      const borrar=document.querySelector(".listaAthlete");
+      borrar.remove();
+    } 
+    //  newContent=document.createTextNode("No hay resultados para tu busqueda");  
+    // newDiv.appendChild(newContent); 
+  } 
+
+
