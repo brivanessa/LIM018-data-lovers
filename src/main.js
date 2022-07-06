@@ -229,21 +229,19 @@ cambiarOrden.addEventListener('change', () => {
 let findAthlete=document.getElementById('findAthletes');
 findAthlete.addEventListener('keyup', (e) => {
   let findCardsAthletes= findData(noRepeatedAhletes,'name',e.target.value);
-  (findCardsAthletes.length===0?imprimirSinDatos(findCardsAthletes):imprimirDatos(findCardsAthletes))
-  console.log(findCardsAthletes.length)
+  imprimirDatos(findCardsAthletes);
+  //console.log(findCardsAthletes.length)
 
-
- 
 })
 
-  function imprimirSinDatos() {
-    while(!!document.querySelector(".infoAthletes")==true){ 
-      newContent.remove();
-      const borrar=document.querySelector(".listaAthlete");
-      borrar.remove();
-    } 
+  // function imprimirSinDatos() {
+  //   while(!!document.querySelector(".infoAthletes")==true){ 
+  //     newContent.remove();
+  //     const borrar=document.querySelector(".listaAthlete");
+  //     borrar.remove();
+  //   } 
     //  newContent=document.createTextNode("No hay resultados para tu busqueda");  
     // newDiv.appendChild(newContent); 
-  } 
+  
 
 
