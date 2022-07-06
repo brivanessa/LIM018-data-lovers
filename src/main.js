@@ -24,7 +24,7 @@ const listSports = noRepeatedSports(dataRio);
 import {noRepeatedCountry} from  "./data.js";
 const listCountries = noRepeatedCountry(dataRio);
 
-//FUNCION PARA IMPRIMIR LOS DATOS
+//FUNCION PARA IMPRIMIR LOS DATOS SIN REPETIR ATLETAS
 function imprimirDatos(datos) {
 
   while(!!document.querySelector(".listaAthlete")==true){   // https://www.delftstack.com/es/howto/javascript/javascript-check-element-exists-in-dom/
@@ -59,13 +59,14 @@ function imprimirDatos(datos) {
 document.getElementById("selectcontainer").style.display="none"; // Para desaparecer los filtros de la página principal
 
 //ALL SPORTS (INICIO)
+document.getElementById("findAllAthletes").style.visibility = "hidden";
 const inicioButton = document.getElementById("inicio");
 inicioButton.addEventListener('click', () => (window.location.reload()))
 
 const dataSport = sports.sports;
 const elementMainSport = document.getElementById("sport"); 
 const parentMainSport = elementMainSport.parentNode; 
-    
+ 
 dataSport.forEach((i) => {
   document.getElementById("sport").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
       //Clonar una seccion del DOM y añadirla
@@ -75,8 +76,19 @@ dataSport.forEach((i) => {
   parentMainSport.appendChild(newSeccion1); // clonas un documeto y lo devuelves al final 
   newSeccion1.querySelector(".sport-Rio").setAttribute("src",i.ref);
   newSeccion1.querySelector("h2").textContent =i.sport;
-  newSeccion1.querySelector(".howManyAthletesSport").textContent = `(XXX) atletas ganaron por lo menos una medalla en ${i.sport}.`;
-  newSeccion1.querySelector(".genderAthletesSport").textContent = `De los (XXX) el 55% son mujeres y (45%) son hombres.`;
+
+  const datosSportAthletes=filterDataSport(noRepeatedAhletes,`${i.sport}`)
+  const datosSportAthletesGenderF=filterDataGender(datosSportAthletes,'F') 
+  const datosSportAthletesGenderM=filterDataGender(datosSportAthletes,'M') 
+  
+  let numberSuma=computeStats(datosSportAthletes);
+  let numberSumaF=computeStats(datosSportAthletesGenderF);
+  let numberSumaM=computeStats(datosSportAthletesGenderM);
+  let numberPercentF=Math.round(numberSumaF/numberSuma*100); 
+  let numberPercentM=Math.round(numberSumaM/numberSuma*100);
+
+  newSeccion1.querySelector(".howManyAthletesSport").textContent = `${numberSuma} atletas ganaron por lo menos una medalla en ${i.sport}.`;
+  newSeccion1.querySelector(".genderAthletesSport").textContent = `De los ${numberSuma}  el ${numberPercentF}% (${numberSumaF}) son mujeres y ${numberPercentM}% (${numberSumaM}) son hombres.`;
     
     newSeccion1.addEventListener('click', () => {
       document.getElementById("bodyAllSports").style.display="none";
@@ -89,8 +101,36 @@ dataSport.forEach((i) => {
       divCardsBySports.insertBefore(newDiv1, elementMain1); 
         //filtrando la data:
       const datosSportAthletes=filterDataSport(noRepeatedAhletes,`${i.sport}`);
+      const datosSportAllAthletes=filterDataSport(dataRio,`${i.sport}`);
          //console.log(datosSportAthletes);
-        imprimirDatos(datosSportAthletes);
+       
+      //FUNCION PARA IMPRIMIR LOS DATOS CON MEDALLAS Y EVENTOS
+      function imprimirDatosAll(datos) {
+        while(!!document.querySelector(".listaAthlete")==true){  
+          const borrar=document.querySelector(".listaAthlete");
+          borrar.remove() 
+          newContent.remove()
+        }
+        let numberSuma=computeStats(datosSportAthletes);
+        newContent=document.createTextNode(`${numberSuma} atletas participaron en esta disciplina`);  
+          newDiv.appendChild(newContent); //añade texto al div creado.
+          parentMain.appendChild(newDiv); // añade el elemento creado y su contenido al DOM
+  
+        return datos.forEach((item) => {        
+         const newSeccion = document.importNode(elementMain,true); 
+          newSeccion.querySelector(".petRio").setAttribute("src","https://img2.freepng.es/20180410/yke/kisspng-2016-summer-olympics-winter-olympic-games-rio-de-j-rio-5acc7e8e4907e8.9150682715233511822991.jpg");
+          newSeccion.querySelector(".pais-team").textContent = item.team;
+          newSeccion.querySelector(".nombre-At").textContent = item.name;
+          newSeccion.querySelector(".sport-team").textContent = `Sport: ${item.sport}` 
+          newSeccion.querySelector(".nombre-athleteBack").textContent = `${item.name}` 
+          newSeccion.querySelector(".pais-teamBack").textContent = `(${item.team})`
+          newSeccion.querySelector(".gender").textContent = `Gender: ${item.gender}`
+          newSeccion.querySelector(".heigth").textContent = `discipline: ${item.event}`
+          newSeccion.querySelector(".weigth").textContent = `Medal: ${item.medal}`
+          parentMain.appendChild(newSeccion);
+        })
+      }
+      imprimirDatosAll(datosSportAllAthletes);
     })
   });
   document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
@@ -105,6 +145,7 @@ dataSport.forEach((i) => {
   const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
  
   athletesButton.addEventListener('click', () => {
+    document.getElementById("findAllAthletes").style.visibility = "visible";
     document.getElementById("bodyAllSports").style.display = "none";
     document.getElementById("bodyCardsBySports").style.display = "none";
     document.getElementById("selectcontainer").style.display = "flex";
