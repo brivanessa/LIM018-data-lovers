@@ -118,27 +118,9 @@ dataSport.forEach((i) => {
           parentMain.appendChild(newSeccion);
         })
       }
-      let numberSuma=computeStats(datosSportAthletes);
-      newContent=document.createTextNode(`${numberSuma} atletas participaron en esta disciplina`);  
-      newDiv.appendChild(newContent); //añade texto al div creado.
-  
-      return datos.forEach((item) => {        
-        const newSeccion = document.importNode(elementMain,true); 
-        newSeccion.querySelector(".petRio").setAttribute("src","https://img2.freepng.es/20180410/yke/kisspng-2016-summer-olympics-winter-olympic-games-rio-de-j-rio-5acc7e8e4907e8.9150682715233511822991.jpg");
-        newSeccion.querySelector(".pais-team").textContent = item.team;
-        newSeccion.querySelector(".nombre-At").textContent = item.name;
-        newSeccion.querySelector(".sport-team").textContent = `Sport: ${item.sport}` 
-        newSeccion.querySelector(".nombre-athleteBack").textContent = `${item.name}` 
-        newSeccion.querySelector(".pais-teamBack").textContent = `(${item.team})`
-        newSeccion.querySelector(".gender").textContent = `Gender: ${item.gender}`
-        newSeccion.querySelector(".heigth").textContent = `discipline: ${item.event}`
-        newSeccion.querySelector(".weigth").textContent = `Medal: ${item.medal}`
-        parentMain.appendChild(newSeccion);
-      })
-    });
-    imprimirDatosAll(datosSportAllAthletes);
-})
-
+      imprimirDatosAll(datosSportAllAthletes);
+    })
+  });
 document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
 
 //ALL ATHLETES 
