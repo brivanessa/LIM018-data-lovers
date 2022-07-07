@@ -45,7 +45,7 @@ export function filterDataCountry(data,condition) {
 
 //COMPUTE STAT
 export function computeStats(data) {
-  let numberAthletes=data.length
+  let numberAthletes=data.length;
   return numberAthletes
 }
 
