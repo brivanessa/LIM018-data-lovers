@@ -10,10 +10,6 @@
   display: block;
 }
 
-.select-container {
-  justify-content: flex-end;
-}
-
 .select-container select {
   margin-right: 5px;
 }

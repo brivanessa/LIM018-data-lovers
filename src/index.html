@@ -42,68 +42,68 @@
 
   <main class= "principalPage" id="principal">
     <div id="selectcontainer" class="select-container">
-      <input type="button" title="Haz clic para filtrar según los criterios." value="FILTER"  class="button" id="buttonFiltrarOrder">
       <select name="" id="selectgender" class="select-gender">
-        <option value="" disabled selected>GENDER</option>
+        <!-- <option value="" disabled selected>GENDER</option> -->
         <option value="All" id="option-gender-all">All gender</option> 
         <option value="F" id="option-gender-female">Female</option>
         <option value="M" id="option-gender-male">Male</option>
       </select>
       <select name="" id="select-countries" class="select-countries">
-        <option value="" disabled selected>COUNTRIES</option>
+        <!-- <option value="" disabled selected>COUNTRIES</option> -->
         <option class="country" value="All">All countries</option>
       </select>
       <select name="" class="select-sports" id="select-sports">
-        <option value="" disabled selected>SPORTS</option>
+        <!-- <option value="" disabled selected>SPORTS</option> -->
         <option class="option-sports" value="All">All sports</option>
       </select>
+      <input type="button" title="Haz clic para filtrar según los criterios." value="FILTER"  class="filter-button" id="buttonFiltrarOrder">
       <select name="" id="select-order">
         <option value="" disabled selected>ORDER</option>
         <option class="desc">Z-A</option>
         <option class="asc">A-Z</option>
       </select>
-
     </div>
 
-    <section class="main-input" id="findAllAthletes">
-      <div class="main-input-container">
-        <input type="text" id="findAthletes">
-          <span class="search-icon"></span>
-          <!-- <a class="micro-icon" href=""></a> -->
-      </div>
-    </section>
-
-      <!-- div sports_container contiene todas los deportes: -->
-      <div class="sports_container" id="bodyAllSports">
-        <section class= "listSports" id="sport">
-          <div class="card_sport">  
-            <div class="sport_front">
-                <img src="Imagen/petRio.jpg" alt="petRio2016" class="sport-Rio">
-              <br>
-            </div> 
-            <div class="sport_back">
-              <div class="datos-Sport" id="datosSport">
-                <br>
-                <h2 id="whatSport" class="what_Sport">Sport</h2>
-                <br>
-                <p class="howManyAthletesSport">La cantidad de atletas que juegan es de:</p>
-                <br>
-                <p class="genderAthletesSport">La cantidad de MUJERES atletas que juegan es de: </p>
-                <br>
-            </div> 
-            </div>
+      <section class="section2">
+        <section class="main-input" id="findAllAthletes">
+          <div class="main-input-container">
+            <input type="text" id="findAthletes">
+              <span class="search-icon"></span>
+              <!-- <a class="micro-icon" href=""></a> -->
           </div>
         </section>
-      </div>      
-       <!-- div sports_container contiene todas los atletas por deporte: -->
-       <div class="sportsCards_container" id="bodyCardsBySports">
-          <section id="athlete_sport"></section>
-      </div> 
-      <!-- div card_all contiene todas las cartas: -->
-      <div class="cards_all" id="bodyAllCards">    
-        <p id="infoAthletes" class="infoAthletes"></p>
-      </div>
 
+        <!-- div sports_container contiene todas los deportes: -->
+        <div class="sports_container" id="bodyAllSports">
+          <section class= "listSports" id="sport">
+            <div class="card_sport">  
+              <div class="sport_front">
+                  <img src="Imagen/petRio.jpg" alt="petRio2016" class="sport-Rio">
+                <br>
+              </div> 
+              <div class="sport_back">
+                <div class="datos-Sport" id="datosSport">
+                  <br>
+                  <h2 id="whatSport" class="what_Sport">Sport</h2>
+                  <br>
+                  <p class="howManyAthletesSport">La cantidad de atletas que juegan es de:</p>
+                  <br>
+                  <p class="genderAthletesSport">La cantidad de MUJERES atletas que juegan es de: </p>
+                  <br>
+              </div> 
+              </div>
+            </div>
+          </section>
+        </div>      
+        <!-- div sports_container contiene todas los atletas por deporte: -->
+        <div class="sportsCards_container" id="bodyCardsBySports">
+            <section id="athlete_sport"></section>
+        </div> 
+        <!-- div card_all contiene todas las cartas: -->
+        <div class="cards_all" id="bodyAllCards">    
+          <p id="infoAthletes" class="infoAthletes"></p>
+        </div>
+      </section>
       <template id="templateAthlete">
         <section class= "listaAthlete">
           <!-- //card:one es la  que se voltea -->
@@ -133,6 +133,7 @@
           </div>
         </section> 
       </template>
+
     </main>  
     
     <script src="main.js" type="module"></script>
