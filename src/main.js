@@ -32,8 +32,9 @@ function imprimirDatos(datos) {
     borrar.remove() 
     newContent.remove()
   }
-  let numberSuma=computeStats(datos);
-  newContent=document.createTextNode(`El número total de deportistas es: ${numberSuma} atletas`);  
+  //let numberSuma=computeStats(datos);
+  //newContent=document.createTextNode(`El número total de deportistas es: ${numberSuma} atletas`);  
+  newContent=document.createTextNode(`El número total de deportistas es: atletas`); 
     //console.log(newContent)
     newDiv.appendChild(newContent); //añade texto al div creado.
     // parentMain.appendChild(newDiv); // añade el elemento creado y su contenido al DOM
@@ -153,20 +154,6 @@ dataSport.forEach((i) => {
     imprimirDatos(noRepeatedAhletes);
   });
 
-  
-//SELECCIONAR GENDER
-  let cambiarOpcion=document.getElementById('selectgender');
-  cambiarOpcion.addEventListener('change', () => {
-    // newDiv.appendChild(newContent); //añade texto al div creado.
-    // parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
-  
-    let allGender=noRepeatedAhletes;
-    (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
-    imprimirDatos(allGender);
-
-    
-  })
-
 //SELECCIONAR COUNTRIES
 //const dataCountries = listCountries.team;
 const elementMainCountry = document.querySelector(".country");
@@ -181,16 +168,6 @@ listCountries.forEach((i) => {
   //return newOption.content;
 });
 
-let changeCountries=document.getElementById('select-countries');
-changeCountries.addEventListener('change', () => {
-  // newDiv.appendChild(newContent); 
-  // parentMain.appendChild(newDiv);
-  let allCountries=noRepeatedAhletes; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
-  (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(noRepeatedAhletes,changeCountries.value)));
-  //console.log(changeCountries.value);
-  imprimirDatos(allCountries);
-})
-
 //SELECCIONAR SPORTS
 //const dataCountries = listCountries.team;
 const elementMainSports = document.querySelector(".option-sports");
@@ -204,34 +181,43 @@ listSports.forEach((i) => {
   //return newOption.content;
 });
 
+//FILTRAR Y ORDENAR
+
+let cambiarOpcion=document.getElementById('selectgender');
+let changeCountries=document.getElementById('select-countries');
 let changeSports=document.getElementById('select-sports');
-changeSports.addEventListener('change', () => {
-  // newDiv.appendChild(newContent); 
-  // parentMain.appendChild(newDiv);
-  let allSports=noRepeatedAhletes; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
-  (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(noRepeatedAhletes,changeSports.value)));
-  //console.log(changeSports.value);
-  imprimirDatos(allSports);
-})
-
-//SELECCIONAR ORDEN
 let cambiarOrden=document.getElementById('select-order');
-cambiarOrden.addEventListener('change', () => {
-  // newDiv.appendChild(newContent); //añade texto al div creado.
-  // parentMain.appendChild(newDiv) // añade el elemento creado y su contenido al DOM
+const orderFilter=document.getElementById('buttonFiltrarOrder');
 
-  let allOrder=dataOrder(noRepeatedAhletes,"nombre",cambiarOrden.value);
-  imprimirDatos(allOrder);
-  //console.log(dataOrder(noRepeatedAhletes,"nombre",cambiarOrden.value));
-})
+//SELECCIONAR ORDEN Y FILTRAR
 
+
+  let allGender=noRepeatedAhletes;
+  (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
+  
+  let allCountries=allGender; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
+  (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(allGender,changeCountries.value)));
+  
+  let allSports=allCountries; //lo reasignamos a un let para que pueda cambiar de países y no solo lo haga una vez
+  (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(allCountries,changeSports.value)));
+
+
+  let allOrder=dataOrder(allSports,"nombre",cambiarOrden.value);
+  console.log(allOrder);
+  orderFilter.addEventListener("click",() => {
+    imprimirDatos(allOrder);
+  })
+
+
+
+
+  
 //BUSCAR
 let findAthlete=document.getElementById('findAthletes');
 findAthlete.addEventListener('keyup', (e) => {
   let findCardsAthletes= findData(noRepeatedAhletes,'name',e.target.value);
-  imprimirDatos(findCardsAthletes);
-  //console.log(findCardsAthletes.length)
-
+//(findCardsAthletes.length===0?imprimirSinDatos(findCardsAthletes):imprimirDatos(findCardsAthletes))
+imprimirDatos(findCardsAthletes)
 })
 
   // function imprimirSinDatos() {
@@ -242,6 +228,5 @@ findAthlete.addEventListener('keyup', (e) => {
   //   } 
     //  newContent=document.createTextNode("No hay resultados para tu busqueda");  
     // newDiv.appendChild(newContent); 
-  
 
 
