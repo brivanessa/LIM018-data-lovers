@@ -131,11 +131,9 @@ const elementMain = document.getElementById("templateAthlete").content; // con e
 const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
  
 athletesButton.addEventListener('click', () => {
-  document.getElementById("findAllAthletes").style.visibility = "visible";
   document.getElementById("bodyAllSports").style.display = "none";
   document.getElementById("bodyCardsBySports").style.display = "none";
   document.getElementById("selectcontainer").style.display = "flex";
-   
     imprimirDatos(noRepeatedAhletes);
 });
 
@@ -166,8 +164,9 @@ const changeSports=document.getElementById('select-sports');
 const orderFilter=document.getElementById('buttonFiltrarOrder');
 
 //FILTRAR
-  orderFilter.addEventListener("click",() => {
-    
+  orderFilter.addEventListener("click",()=> {
+    document.getElementById("findAllAthletes").style.visibility = "visible";
+
     let allGender=noRepeatedAhletes;
     (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
     let allCountries=allGender;
@@ -190,23 +189,7 @@ cambiarOrden.addEventListener('change', () => {
   imprimirDatos(allOrder);
 })
 
-//BUSCAR
-// const findAthlete=document.getElementById('findAthletes');
-// findAthlete.addEventListener('keyup', (event) => {
-//     while (event === "Enter") {
-//       event.preventDefault()
-//       let allGender=noRepeatedAhletes;
-//     (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
-//     let allCountries=allGender;
-//     (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(allGender,changeCountries.value)));
-//     let allSports=allCountries;
-
-//       let findCardsAthletes= findData(allSports,'name',event.target.value);
-//       (findCardsAthletes.length===0?imprimirDatos([]):imprimirDatos(findCardsAthletes))
-//     }
-// })
-
-
+//BARRA DE BUSCAR
 const findAthlete=document.getElementById('findAthletes');
 findAthlete.addEventListener('keyup', (e) => {
     let allGender=noRepeatedAhletes;
@@ -214,7 +197,7 @@ findAthlete.addEventListener('keyup', (e) => {
     let allCountries=allGender;
     (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(allGender,changeCountries.value)));
     let allSports=allCountries;
-
+    (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(allCountries,changeSports.value)));
     let findCardsAthletes= findData(allSports,'name',e.target.value);
   (findCardsAthletes.length===0?imprimirDatos([]):imprimirDatos(findCardsAthletes))
 })
