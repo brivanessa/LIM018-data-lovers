@@ -216,15 +216,16 @@ console.log(medalsData2);
 // console.log(medalsData);
 
 for (let i = 0; i < medalsData.length; i++) {
-  let indexMedals = medalsData[i].medal.indexOf('Bronze');
-
-  if (indexMedals != -1) {
-    medalsData[i].medal[indexMedals] = "🥉";
-  }
-
-  indexMedals = medalsData[i].medal.indexOf('Silver');
-  if (indexMedals != -1) {
-    medalsData[i].medal[indexMedals] = "🥈";
+  let medals = medalsData[i].medal;
+  for(let j = 0; j < medalsData[i].medal.length; j++) {
+    let indexMedals = medals[j];
+    if (indexMedals=="Bronze"){
+      medals[j] = "🥉";
+    } else if (indexMedals=="Silver"){
+      medals[j] = "🥈";
+    } else {
+      medals[j] = "🥇";
+    }
   }
 }
 console.log(medalsData)
