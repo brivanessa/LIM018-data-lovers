@@ -110,3 +110,4 @@ export function dataMedals(data) {
   });
   return newData;
 }
+

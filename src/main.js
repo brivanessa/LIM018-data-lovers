@@ -205,8 +205,32 @@ findAthlete.addEventListener('keyup', (e) => {
 
 //MEDALLERO
 
-const medals = dataMedals(dataRio);
-console.log(medals);
+const medalsData = dataMedals(dataRio);
+const medalsData2 = dataMedals(dataRio);
+console.log(medalsData2);
+
+// let indexMedals = medalsData[0].medal.indexOf('Bronze');
+// console.log(indexMedals)
+
+// medalsData[0].medal[indexMedals] = "🥉";
+// console.log(medalsData);
+
+for (let i = 0; i < medalsData.length; i++) {
+  let indexMedals = medalsData[i].medal.indexOf('Bronze');
+
+  if (indexMedals != -1) {
+    medalsData[i].medal[indexMedals] = "🥉";
+  }
+
+  indexMedals = medalsData[i].medal.indexOf('Silver');
+  if (indexMedals != -1) {
+    medalsData[i].medal[indexMedals] = "🥈";
+  }
+}
+console.log(medalsData)
+
+// const sumValues = (obj) => medals.medal(obj).reduce((a, b) => a + b, 0);
+// console.log(sumValues)
 
 // const reducedJson = dataRio.reduce((prev, cur) => {
   
