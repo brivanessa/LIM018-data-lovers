@@ -97,3 +97,16 @@ export function dataOrder(data, sortBy, sortOrder) {
 export function findData(data, propiedad, letras) {
   return data.filter ((item) => (item[propiedad].toUpperCase().includes(letras.toUpperCase())));
 }
+
+//MEDALLERO
+
+export function dataMedals(data) { 
+  const newData = [...new Set(data.map((item) => item.name))].map((name) => {
+    return { name, 
+      medal: data.filter((item) => item.name === name).map((item) => item.medal),
+      //con el filter guardamos en nuevos arrays todos los nombres que se repiten
+      //con el map guardamos en un array las medallas por cada atleta
+    };
+  });
+  return newData;
+}

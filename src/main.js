@@ -9,7 +9,8 @@ import {
   findData,
   noRepeatedData,
   noRepeatedSports,
-  noRepeatedCountry} from  "./data.js";
+  noRepeatedCountry,
+  dataMedals} from  "./data.js";
 
 const dataRio = data.athletes;
 
@@ -33,11 +34,11 @@ function imprimirDatos(datos) {
   }
   let numberSuma=computeStats(datos);
   (numberSuma>0)?(newContent=document.createTextNode(`El número total de deportistas es: ${numberSuma} atletas`)):(newContent=document.createTextNode(``));
-    newDiv.appendChild(newContent); //añade texto al div creado.
+  newDiv.appendChild(newContent); //añade texto al div creado.
 
   return datos.forEach((item) => {        
-        //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
-        //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
+    //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
+    //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
     const newSeccion = document.importNode(elementMain,true); 
     newSeccion.querySelector(".pais-team").textContent = item.team;
     newSeccion.querySelector(".nombre-At").textContent = item.name;
@@ -201,3 +202,60 @@ findAthlete.addEventListener('keyup', (e) => {
     let findCardsAthletes= findData(allSports,'name',e.target.value);
   (findCardsAthletes.length===0?imprimirDatos([]):imprimirDatos(findCardsAthletes))
 })
+
+//MEDALLERO
+
+const medals = dataMedals(dataRio);
+console.log(medals);
+
+// const reducedJson = dataRio.reduce((prev, cur) => {
+  
+//   prev[cur.name] = (prev[cur.name] || 0) + 1;
+//   prev[cur.medal] = (prev[cur.medal] || 0) + 1;
+
+//   return prev;
+// }, {});
+//console.log(reducedJson);
+
+// Hacemos un spread operator
+// const newData = [...new Set(dataRio.map((athlete) => athlete.name))].map((name) => {
+//     return { name, 
+//       medal: dataRio.filter((athlete) => athlete.name === name).map((athlete) => athlete.medal),
+//       //con el filter guardamos en nuevos arrays todos los nombres que se repiten
+//       //con el map guardamos en un array las medallas por cada atleta
+//     };
+//   }
+// );
+// console.log(newData)
+
+
+
+// const medalistAthletes = repeatedAthletes(dataRio);
+// // console.log(medalistAthletes);
+// // let medalistAthletesItem=filterDataAthlete(dataRio,medalistAthletes[109])
+// //console.log(medalistAthletesItem)
+// let medallas = []; 
+// for(let i = 0; i < medalistAthletes.length; i++){ 
+//   let medalistAthletesItem = filterDataAthlete(dataRio,medalistAthletes[i]);
+//   let gold=0;
+//   let silver=0;
+//   let bronze=0;
+//   let athletes=medalistAthletesItem[0].name;
+//   for(let i = 0; i < medalistAthletesItem.length; i++){
+//     if(medalistAthletesItem[i].medal=="Gold"){
+//     (gold=gold+1);
+//     } else if (medalistAthletesItem[i].medal=="Silver"){
+//     (silver=silver+1);
+//     } else {bronze=bronze+1}
+//   } 
+//   let total=gold+silver+bronze;
+//   medallas.push({ athlete:athletes, total:total, gold:gold, silver:silver, bronze:bronze});  
+// }
+
+// console.log(medallas);
+// //const medallas2=dataOrder(medallas, "nombre", 'A-Z')
+// // medallas.sort((a,b)=>{
+// //   return(b.total-a.total)  
+// // })
+// // console.log(medallas);
+

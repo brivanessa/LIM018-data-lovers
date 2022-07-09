@@ -6,8 +6,8 @@ import {
   noRepeatedCountry,
   filterDataCountry,
   dataOrder,
-  computeStats
-  //computeStats
+  computeStats,
+  dataMedals
 } from '../src/data.js';
 
 const Brasil2016 =[
@@ -141,6 +141,18 @@ describe('computeStats', () => {
   it('returns `computeStats`', () => {
     expect(computeStats(Brasil2016)).toBe(5);
   });
-  console.log(computeStats(Brasil2016))
+  //console.log(computeStats(Brasil2016))
 })
 
+// MEDALLERO
+
+describe('dataMedals', () => {
+  it('is a function', () => {
+    expect(typeof dataMedals).toBe('function');
+  })
+
+  it('returns `dataMedals`', () => {
+    expect(dataMedals(Brasil2016)).toHaveLength(4);
+  });
+  //console.log(dataMedals(Brasil2016))
+})

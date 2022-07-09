@@ -160,7 +160,7 @@ body {
   cursor: pointer;
 }
 
-.section2 {
+.section-container {
   margin: 0 auto;
 }
 
@@ -215,7 +215,7 @@ main.principalPage{
 }
 
 /* FORMATO ALL SPORTS */
-section.listSports{
+.listSports{
   width: 218px;
   height: 250px;
   margin: 13px 13px;
@@ -306,7 +306,7 @@ section.listSports{
 }
 /* FORMATO ALL ATHLETES */
 
-section.listaAthlete{
+.listaAthlete{
   /*float:left; /* para elementos de bloque*/ 
   width: 210px;
   height: 242px;
