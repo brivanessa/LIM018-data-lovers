@@ -1,11 +1,11 @@
 export default{ 
   "highlights": [
-    {"ref":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/Remo.svg",
-      "athlete": "Michael Fred Phelps"}, 
-    {"ref":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/Taekwondo.svg",
+    {"ref": "https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/primary/d805hwu9vwqliue2tbwh",
+      "athlete": "Michael Fred Phelps, II"}, 
+    {"ref":"https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/primary/d805hwu9vwqliue2tbwh",
       "athlete": "Kathleen Genevieve \"Katie\" Ledecky"},  
-    {"ref": "http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/luta_olimpica.svg",
-     "athlete": "Simone Arianne Biles"}, 
+      {"ref": "http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/luta_olimpica.svg",
+      "athlete": "Simone Arianne Biles"},  
     {"ref": "http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/ginastica_artistica.svg",
       "athlete": "Danuta Kozk"}, 
     {"ref":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/natacao.svg",
@@ -64,7 +64,9 @@ export default{
     "athlete": "Shi Tingmao" },
     {"ref":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/ginastica_de_trampolim.svg",
     "athlete":  "Simone Ashley Manuel" },
-    {"ref:":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/Handebol.svg",
+
+    
+    {"ref:": "https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/primary/d805hwu9vwqliue2tbwh",
     "athlete": "Svetlana Alekseyevna Romashina"},
     {"ref":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/Golfe.svg",
     "athlete": "Tianna Madison-Bartoletta" },

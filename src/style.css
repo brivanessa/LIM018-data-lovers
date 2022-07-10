@@ -393,14 +393,17 @@ p {
 .card_highlights {
   display: none;
 }
+
 .card-highlights-container {
   width: 225px;
   height: 250px;
   border: 1px solid #121f3d;
   border-radius: 10px;
+  display: inline-flexbox;
+  display: inline-block;
+  margin: 20px 20px 20px 20px;
   
 }
-
 
 .highlights-img {
   padding: 15px;

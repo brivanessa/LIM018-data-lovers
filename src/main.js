@@ -244,6 +244,11 @@ menuHighlights.addEventListener("click", () => {
   document.getElementById("card_highlights").style.display = "block";
   
   function imprimirHighlights(datos) {
+    while(!!document.querySelector(".card-highlights-container")==true){   
+      const borrar=document.querySelector(".card-highlights-container");
+      borrar.remove() 
+      newContent.remove()
+    }
     let numberSuma=computeStats(dataHighlights);
     newContent=document.createTextNode(`${numberSuma} atletas ganaron como mínimo 2 medallas de oro.`);  
       newDiv3.appendChild(newContent); //añade texto al div creado.
@@ -251,10 +256,8 @@ menuHighlights.addEventListener("click", () => {
      const newSeccion = document.importNode(elementHighlights,true); 
       newSeccion.querySelector(".highlights-athlete").setAttribute("src",item.ref);
       newSeccion.querySelector(".highlights-name").textContent = item.athlete;
-      let medalsByAthletes=filterDataAthlete(medalsData, `"${item.athlete}"` );
-      console.log(`"${item.athlete}"`);
-      console.log(medalsData[134])
-      console.log(medalsByAthletes)
+      let medalsByAthletes=filterDataAthlete(medalsData,`${item.athlete}`);
+      //console.log(medalsByAthletes)
       newSeccion.querySelector(".highlights-medals").textContent = `Medals: ${medalsByAthletes[0].medal}`;
       parentHighlights.appendChild(newSeccion);
     })
