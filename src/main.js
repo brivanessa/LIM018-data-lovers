@@ -53,9 +53,6 @@ function imprimirDatos(datos) {
 }
 
 //ALL SPORTS (INICIO)
-document.getElementById("selectcontainer").style.display="none"; // Para desaparecer los filtros de la página principal
-document.getElementById("findAllAthletes").style.visibility = "hidden"; // Para ocultar la barra de buscar ; // Para ocultar la carta de los highlights
-document.getElementById("card_highlights").style.display = "none";
 const inicioButton = document.getElementById("menuSports");
 inicioButton.addEventListener('click', () => (window.location.reload()))
 
@@ -127,15 +124,13 @@ dataSport.forEach((i) => {
 document.getElementById("listSports").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
 
 //ALL ATHLETES 
-  const newDiv = document.getElementById("infoAthletes"); // crea un nuevo div
-  //  = document.createTextNode("El número total de deportistas es:");  // y añade contenido
+const newDiv = document.getElementById("infoAthletes"); // crea un nuevo div
 const athletesButton = document.getElementById("menuAllAthletes");
 const elementMain = document.getElementById("templateAthlete").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
 const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
- 
+
 athletesButton.addEventListener('click', () => {
   document.getElementById("bodyAllSports").style.display = "none";
- //document.getElementById("bodyCardsBySports").style.display = "none";
   document.getElementById("card_highlights").style.display = "none";
   document.getElementById("bodyAllCards").style.display = "block";
   document.getElementById("selectcontainer").style.display = "flex";
@@ -171,7 +166,6 @@ const orderFilter=document.getElementById('buttonFiltrarOrder');
 //FILTRAR
   orderFilter.addEventListener("click",()=> {
     document.getElementById("findAllAthletes").style.visibility = "visible";
-    //document.getElementById("bodyAllCards").style.display = "block";
 
     let allGender=noRepeatedAhletes;
     (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
@@ -211,13 +205,8 @@ findAthlete.addEventListener('keyup', (e) => {
 //MEDALLERO
 const medalsData = dataMedals(dataRio);
 const medalsData2 = dataMedals(dataRio);
-console.log(medalsData2);
+//console.log(medalsData2);
 
-// let indexMedals = medalsData[0].medal.indexOf('Bronze');
-// console.log(indexMedals)
-
-// medalsData[0].medal[indexMedals] = "🥉";
-// console.log(medalsData);
 
 for (let i = 0; i < medalsData.length; i++) {
   let medals = medalsData[i].medal;
@@ -232,70 +221,28 @@ for (let i = 0; i < medalsData.length; i++) {
     }
   }
 }
-console.log(medalsData)
+//console.log(medalsData)
 
 const menuHighlights = document.getElementById("menuHighlights");
 
 menuHighlights.addEventListener("click", () => {
   document.getElementById("bodyAllSports").style.display = "none";
-  //document.getElementById("bodyCardsBySports").style.display = "none";
   document.getElementById("selectcontainer").style.display = "none";
   document.getElementById("bodyAllCards").style.display = "none";
   document.getElementById("findAllAthletes").style.visibility = "hidden"
   document.getElementById("card_highlights").style.display = "block";
 })
 
-// const sumValues = (obj) => medals.medal(obj).reduce((a, b) => a + b, 0);
-// console.log(sumValues)
+// //ALL H
+// const newDiv = document.getElementById("infoAthletes"); // crea un nuevo div
+// const athletesButton = document.getElementById("menuAllAthletes");
+// const elementMain = document.getElementById("templateAthlete").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
+// const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
 
-// const reducedJson = dataRio.reduce((prev, cur) => {
-  
-//   prev[cur.name] = (prev[cur.name] || 0) + 1;
-//   prev[cur.medal] = (prev[cur.medal] || 0) + 1;
-
-//   return prev;
-// }, {});
-//console.log(reducedJson);
-
-// Hacemos un spread operator
-// const newData = [...new Set(dataRio.map((athlete) => athlete.name))].map((name) => {
-//     return { name, 
-//       medal: dataRio.filter((athlete) => athlete.name === name).map((athlete) => athlete.medal),
-//       //con el filter guardamos en nuevos arrays todos los nombres que se repiten
-//       //con el map guardamos en un array las medallas por cada atleta
-//     };
-//   }
-// );
-// console.log(newData)
-
-
-
-// const medalistAthletes = repeatedAthletes(dataRio);
-// // console.log(medalistAthletes);
-// // let medalistAthletesItem=filterDataAthlete(dataRio,medalistAthletes[109])
-// //console.log(medalistAthletesItem)
-// let medallas = []; 
-// for(let i = 0; i < medalistAthletes.length; i++){ 
-//   let medalistAthletesItem = filterDataAthlete(dataRio,medalistAthletes[i]);
-//   let gold=0;
-//   let silver=0;
-//   let bronze=0;
-//   let athletes=medalistAthletesItem[0].name;
-//   for(let i = 0; i < medalistAthletesItem.length; i++){
-//     if(medalistAthletesItem[i].medal=="Gold"){
-//     (gold=gold+1);
-//     } else if (medalistAthletesItem[i].medal=="Silver"){
-//     (silver=silver+1);
-//     } else {bronze=bronze+1}
-//   } 
-//   let total=gold+silver+bronze;
-//   medallas.push({ athlete:athletes, total:total, gold:gold, silver:silver, bronze:bronze});  
-// }
-
-// console.log(medallas);
-// //const medallas2=dataOrder(medallas, "nombre", 'A-Z')
-// // medallas.sort((a,b)=>{
-// //   return(b.total-a.total)  
-// // })
-// // console.log(medallas);
-
+// athletesButton.addEventListener('click', () => {
+//   document.getElementById("bodyAllSports").style.display = "none";
+//   document.getElementById("card_highlights").style.display = "none";
+//   document.getElementById("bodyAllCards").style.display = "block";
+//   document.getElementById("selectcontainer").style.display = "flex";
+//     imprimirDatos(noRepeatedAhletes);
+// });
