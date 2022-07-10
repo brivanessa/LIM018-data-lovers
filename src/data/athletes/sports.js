@@ -64,10 +64,12 @@ export default{
       "sport": "Modern Pentathlon"},
     {"ref":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/ginastica_de_trampolim.svg",
       "sport": "Trampolining"},
-    {"ref:":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/Handebol.svg",
-      "sport": "Handball"},
+    // {"ref:":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/Handebol.svg",
+    //   "sport": "Handball"},
     {"ref":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/Golfe.svg",
       "sport": "Golf"},
+      {"ref":"http://app.globoesporte.globo.com/olimpiadas/corrida-olimpica/images/Handebol.svg",
+      "sport": "Handball"},  
   ]
 }
 // 0 {athlete: "Michael Fred Phelps, II", total: 6, gold: 5, silver: 1, bronze: 0}
