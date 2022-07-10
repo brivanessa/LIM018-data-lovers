@@ -65,76 +65,78 @@
     </section>
 
     <section class="section-container">
-      <!-- TODOS LOS DEPORTES DE LA PANTALLA PRINCIPAL -->
-      <div class="sports_container" id="bodyAllSports">
-        <div class= "listSports" id="listSports">
-          <div class="card_sport">  
-            <div class="sport_front">
-              <img src="Imagen/petRio.jpg" alt="petRio2016" class="sport-Rio">
-            <br>
-            </div> 
-            <div class="sport_back">
-              <div class="datos-Sport" id="datosSport">
-                <br>
-                <h2 id="whatSport" class="what_Sport">Sport</h2>
-                <br>
-                <p class="howManyAthletesSport">La cantidad de atletas que juegan es de:</p>
-                <br>
-                <p class="genderAthletesSport">La cantidad de MUJERES atletas que juegan es de: </p>
-                <br>
+      <div id="athletes-sports-container">
+        <!-- TODOS LOS DEPORTES DE LA PANTALLA PRINCIPAL -->
+        <div class="sports_container" id="bodyAllSports">
+          <div class= "listSports" id="listSports">
+            <div class="card_sport">  
+              <div class="sport_front">
+                <img src="Imagen/petRio.jpg" alt="petRio2016" class="sport-Rio">
+              <br>
               </div> 
+              <div class="sport_back">
+                <div class="datos-Sport" id="datosSport">
+                  <br>
+                  <h2 id="whatSport" class="what_Sport">Sport</h2>
+                  <br>
+                  <p class="howManyAthletesSport">La cantidad de atletas que juegan es de:</p>
+                  <br>
+                  <p class="genderAthletesSport">La cantidad de MUJERES atletas que juegan es de: </p>
+                  <br>
+                </div> 
+              </div>
             </div>
           </div>
+        </div>      
+        <!-- CARTAS DE LOS ATLETAS POR DEPORTE (CON SU DISCIPLINA) -->
+        <div class="sportsCards_container" id="bodyCardsBySports">
+          <div id="athlete_sport"></div>
         </div>
-      </div>      
-      <!-- CARTAS DE LOS ATLETAS POR DEPORTE (CON SU DISCIPLINA) -->
-      <div class="sportsCards_container" id="bodyCardsBySports">
-        <div id="athlete_sport"></div>
-      </div>
 
-      <!-- BARRA DE BUSCAR -->
-      <div class="main-input" id="findAllAthletes">
-        <div class="main-input-container">
-          <input type="text" id="findAthletes">
-            <span class="search-icon"></span>
-        </div>
-      </div>
-
-      <!-- TODAS LAS CARTAS DE ATLETAS SIN REPETIR -->
-      <div class="cards_all" id="bodyAllCards">    
-        <p id="infoAthletes" class="infoAthletes"></p>
-      </div>
-
-      <!-- PLANTILLA PARA MOSTRAR LOS DATOS DE CADA ATLETA -->
-      <template id="templateAthlete">
-        <div class= "listaAthlete">
-          <!-- //card:one es la  que se voltea -->
-          <div class="card_one" id="cardAthlete">  
-            <!-- parte del a carta que esta delante -->
-            <div class="card_front">
-              <br>
-              <img src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
-              <div class="datos" id="datosAthlete">
-                <h2 class="pais-team">PAIS</h2>
-                <br>
-                <p class="nombre-At">Nombre del Atleta</p>
-              </div> 
-            </div> 
-            <div class="card_back">
-              <h3 class="sport-team">SPORT</h3>
-              <br>
-              <h2 class="nombre-athleteBack">Nombre del Atleta</h2>
-              <p class="pais-teamBack">PAIS</p>
-              <br>  
-              <p class="gender">Información</p>
-              <br>
-              <p class="heigth">Información</p>
-              <p class="weigth">Información</p>
-              <br>
-            </div>
+        <!-- BARRA DE BUSCAR -->
+        <div class="main-input" id="findAllAthletes">
+          <div class="main-input-container">
+            <input type="text" id="findAthletes">
+              <span class="search-icon"></span>
           </div>
-        </div> 
-      </template>
+        </div>
+
+        <!-- TODAS LAS CARTAS DE ATLETAS SIN REPETIR -->
+        <div class="cards_all" id="bodyAllCards">    
+          <p id="infoAthletes" class="infoAthletes"></p>
+        </div>
+
+        <!-- PLANTILLA PARA MOSTRAR LOS DATOS DE CADA ATLETA -->
+        <template id="templateAthlete">
+          <div class= "listaAthlete">
+            <!-- //card:one es la  que se voltea -->
+            <div class="card_one" id="cardAthlete">  
+              <!-- parte del a carta que esta delante -->
+              <div class="card_front">
+                <br>
+                <img src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
+                <div class="datos" id="datosAthlete">
+                  <h2 class="pais-team">PAIS</h2>
+                  <br>
+                  <p class="nombre-At">Nombre del Atleta</p>
+                </div> 
+              </div> 
+              <div class="card_back">
+                <h3 class="sport-team">SPORT</h3>
+                <br>
+                <h2 class="nombre-athleteBack">Nombre del Atleta</h2>
+                <p class="pais-teamBack">PAIS</p>
+                <br>  
+                <p class="gender">Información</p>
+                <br>
+                <p class="heigth">Información</p>
+                <p class="weigth">Información</p>
+                <br>
+              </div>
+            </div>
+          </div> 
+        </template>
+      </div>
       <div class="card-highlights-container" id="card_highlights">
         <div class="highlights-img">
           <img src="https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/primary/d805hwu9vwqliue2tbwh" alt="">

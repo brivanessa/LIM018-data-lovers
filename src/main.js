@@ -55,7 +55,7 @@ function imprimirDatos(datos) {
 //ALL SPORTS (INICIO)
 document.getElementById("selectcontainer").style.display="none"; // Para desaparecer los filtros de la página principal
 document.getElementById("findAllAthletes").style.visibility = "hidden"; // Para ocultar la barra de buscar ; // Para ocultar la carta de los highlights
-//document.getElementById("card_highlights").style.display = "none";
+document.getElementById("card_highlights").style.display = "none";
 const inicioButton = document.getElementById("menuSports");
 inicioButton.addEventListener('click', () => (window.location.reload()))
 
@@ -135,7 +135,9 @@ const parentMain  = document.getElementById("bodyAllCards"); // Obtener una refe
  
 athletesButton.addEventListener('click', () => {
   document.getElementById("bodyAllSports").style.display = "none";
-  document.getElementById("bodyCardsBySports").style.display = "none";
+ //document.getElementById("bodyCardsBySports").style.display = "none";
+  document.getElementById("card_highlights").style.display = "none";
+  document.getElementById("bodyAllCards").style.display = "block";
   document.getElementById("selectcontainer").style.display = "flex";
     imprimirDatos(noRepeatedAhletes);
 });
@@ -169,6 +171,7 @@ const orderFilter=document.getElementById('buttonFiltrarOrder');
 //FILTRAR
   orderFilter.addEventListener("click",()=> {
     document.getElementById("findAllAthletes").style.visibility = "visible";
+    //document.getElementById("bodyAllCards").style.display = "block";
 
     let allGender=noRepeatedAhletes;
     (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
@@ -235,9 +238,10 @@ const menuHighlights = document.getElementById("menuHighlights");
 
 menuHighlights.addEventListener("click", () => {
   document.getElementById("bodyAllSports").style.display = "none";
-  document.getElementById("bodyCardsBySports").style.display = "none";
+  //document.getElementById("bodyCardsBySports").style.display = "none";
   document.getElementById("selectcontainer").style.display = "none";
   document.getElementById("bodyAllCards").style.display = "none";
+  document.getElementById("findAllAthletes").style.visibility = "hidden"
   document.getElementById("card_highlights").style.display = "block";
 })
 
