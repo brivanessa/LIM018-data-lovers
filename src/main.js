@@ -54,16 +54,18 @@ function imprimirDatos(datos) {
 
 //ALL SPORTS (INICIO)
 document.getElementById("selectcontainer").style.display="none"; // Para desaparecer los filtros de la página principal
-document.getElementById("findAllAthletes").style.visibility = "hidden";
-const inicioButton = document.getElementById("inicio");
+document.getElementById("findAllAthletes").style.visibility = "hidden"; // Para ocultar la barra de buscar ; // Para ocultar la carta de los highlights
+//document.getElementById("card_highlights").style.display = "none";
+const inicioButton = document.getElementById("menuSports");
 inicioButton.addEventListener('click', () => (window.location.reload()))
 
 const dataSport = sports.sports;
-const elementMainSport = document.getElementById("sport"); 
+const elementMainSport = document.getElementById("listSports"); 
+console.log(elementMainSport)
 const parentMainSport = elementMainSport.parentNode; 
  
 dataSport.forEach((i) => {
-  document.getElementById("sport").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
+  document.getElementById("listSports").style.visibility="visible";  //visible para que podamos copiar sus propiades no block porque ocupa todo el espacio en bloque de cada card Athlete
   const newSeccion1 = elementMainSport.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
   newSeccion1.setAttribute("id",'sport_'+i.sport) //para poner un id unico a cada seccion clonada
   parentMainSport.appendChild(newSeccion1); // clonas un documeto y lo devuelves al final 
@@ -122,12 +124,12 @@ dataSport.forEach((i) => {
       imprimirDatosAll(datosSportAllAthletes);
     })
   });
-document.getElementById("sport").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
+document.getElementById("listSports").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
 
 //ALL ATHLETES 
   const newDiv = document.getElementById("infoAthletes"); // crea un nuevo div
   //  = document.createTextNode("El número total de deportistas es:");  // y añade contenido
-const athletesButton = document.getElementById("allAthletes");
+const athletesButton = document.getElementById("menuAllAthletes");
 const elementMain = document.getElementById("templateAthlete").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
 const parentMain  = document.getElementById("bodyAllCards"); // Obtener una referencia  del nodo madre
  
@@ -204,7 +206,6 @@ findAthlete.addEventListener('keyup', (e) => {
 })
 
 //MEDALLERO
-
 const medalsData = dataMedals(dataRio);
 const medalsData2 = dataMedals(dataRio);
 console.log(medalsData2);
@@ -229,6 +230,16 @@ for (let i = 0; i < medalsData.length; i++) {
   }
 }
 console.log(medalsData)
+
+const menuHighlights = document.getElementById("menuHighlights");
+
+menuHighlights.addEventListener("click", () => {
+  document.getElementById("bodyAllSports").style.display = "none";
+  document.getElementById("bodyCardsBySports").style.display = "none";
+  document.getElementById("selectcontainer").style.display = "none";
+  document.getElementById("bodyAllCards").style.display = "none";
+  document.getElementById("card_highlights").style.display = "block";
+})
 
 // const sumValues = (obj) => medals.medal(obj).reduce((a, b) => a + b, 0);
 // console.log(sumValues)

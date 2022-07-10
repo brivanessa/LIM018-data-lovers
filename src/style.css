@@ -405,3 +405,7 @@ p {
   height: 120px;
   border-radius: 50%;
 }
+
+#card_highlights {
+  display: none;
+}
