@@ -223,9 +223,6 @@ for (let i = 0; i < medalsData.length; i++) {
     }
   }
 }
-console.log(medalsData)
-
-//const menuHighlights = document.getElementById("menuHighlights");
 
 
 // ALL HIGHLIGHTS
@@ -233,7 +230,6 @@ const newDiv3 = document.getElementById("infoHighlights"); // crea un nuevo div
 const menuHighlights = document.getElementById("menuHighlights");
 const elementHighlights = document.getElementById("templateHighlights").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
 const parentHighlights  = document.getElementById("card_highlights"); // Obtener una referencia  del nodo madre
-
 const dataHighlights = highlights.highlights;
 
 menuHighlights.addEventListener("click", () => {
@@ -242,22 +238,23 @@ menuHighlights.addEventListener("click", () => {
   document.getElementById("bodyAllCards").style.display = "none";
   document.getElementById("findAllAthletes").style.visibility = "hidden";
   document.getElementById("card_highlights").style.display = "block";
-  
+  let newContent2;  
+
+  while(!!document.querySelector(".card-highlights-container")==true){   
+    newContent2.remove();
+  }
+   
   function imprimirHighlights(datos) {
-    while(!!document.querySelector(".card-highlights-container")==true){   
-      const borrar=document.querySelector(".card-highlights-container");
-      borrar.remove() 
-      newContent.remove()
-    }
+       
     let numberSuma=computeStats(dataHighlights);
-    newContent=document.createTextNode(`${numberSuma} atletas ganaron como mínimo 2 medallas de oro.`);  
-      newDiv3.appendChild(newContent); //añade texto al div creado.
+    newContent2=document.createTextNode(`${numberSuma} atletas ganaron como mínimo 2 medallas de oro.`);
+    newDiv3.appendChild(newContent2); //añade texto al div creado.
+
     return datos.forEach((item) => {        
      const newSeccion = document.importNode(elementHighlights,true); 
       newSeccion.querySelector(".highlights-athlete").setAttribute("src",item.ref);
       newSeccion.querySelector(".highlights-name").textContent = item.athlete;
       let medalsByAthletes=filterDataAthlete(medalsData,`${item.athlete}`);
-      //console.log(medalsByAthletes)
       newSeccion.querySelector(".highlights-medals").textContent = `Medals: ${medalsByAthletes[0].medal}`;
       parentHighlights.appendChild(newSeccion);
     })
