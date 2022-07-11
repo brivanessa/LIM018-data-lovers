@@ -2,12 +2,17 @@
   --primary: #121f3d;
   --white: #fff;
   --gray: #2a324b;
+  --black: #000;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+ font-size: 62.5%; 
 }
 
 body {
@@ -29,7 +34,7 @@ body {
 .nav__toggle {
   position: absolute;
   cursor: pointer;
-  margin: 01rem;
+  margin: 0.1rem;
   right: 0;
 }
 
@@ -67,7 +72,7 @@ body {
 
 .nav__menu a {
   color: inherit;
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   text-decoration: none;
 }
 
@@ -294,8 +299,8 @@ main.principalPage{
   padding: 9px;
 }
 
-#whatSport {
-  font-size: 18px;  
+.what_Sport {
+  font-size: 1.8rem;
   color: #164986;
   text-align: center;
 }
@@ -395,11 +400,10 @@ p {
 }
 
 .card-highlights-container {
-  width: 225px;
-  height: 250px;
-  border: 1px solid #121f3d;
+  width: 270px;
+  height: 270px;
+  /* border: 1px solid #121f3d; */
   border-radius: 10px;
-  display: inline-flexbox;
   display: inline-block;
   margin: 20px 20px 20px 20px;
   
@@ -413,6 +417,17 @@ p {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+}
+
+.highlights-name {
+  color: var(--black);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.highlights-medals {
+  color: var(--black);
+  font-size: 1.6rem;
 }
 
 /* #card_highlights {

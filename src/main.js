@@ -35,7 +35,7 @@ function imprimirDatos(datos) {
     newContent.remove()
   }
   let numberSuma=computeStats(datos);
-  (numberSuma>0)?(newContent=document.createTextNode(`El número total de deportistas es: ${numberSuma} atletas`)):(newContent=document.createTextNode(``));
+  (numberSuma>0)?(newContent=document.createTextNode(`The total number of athletes is: ${numberSuma} athletes.`)):(newContent=document.createTextNode(``));
   newDiv.appendChild(newContent); //añade texto al div creado.
 
   return datos.forEach((item) => {        
@@ -81,8 +81,9 @@ dataSport.forEach((i) => {
   let numberPercentF=Math.round(numberSumaF/numberSuma*100); 
   let numberPercentM=Math.round(numberSumaM/numberSuma*100);
 
-  newSeccion1.querySelector(".howManyAthletesSport").textContent = `${numberSuma} atletas ganaron por lo menos una medalla en ${i.sport}.`;
-  newSeccion1.querySelector(".genderAthletesSport").textContent = `De los ${numberSuma}  el ${numberPercentF}% (${numberSumaF}) son mujeres y ${numberPercentM}% (${numberSumaM}) son hombres.`;
+  newSeccion1.querySelector(".howManyAthletesSport").textContent = `${numberSuma} athletes won at least one medal in ${i.sport}.`;
+  newSeccion1.querySelector(".genderAthletesSport").textContent = `${numberPercentF}% (${numberSumaF}) are women and ${numberPercentM}% (${numberSumaM}) are men.`;
+  //Of the ${numberSuma} ,
     
     newSeccion1.addEventListener('click', () => {
       document.getElementById("bodyAllSports").style.display="none";
@@ -103,7 +104,7 @@ dataSport.forEach((i) => {
           newContent.remove()
         }
         let numberSuma=computeStats(datosSportAthletes);
-        newContent=document.createTextNode(`${numberSuma} atletas participaron en esta disciplina`);  
+        newContent=document.createTextNode(`${numberSuma} athletes participated in this discipline.`);  
           newDiv.appendChild(newContent); //añade texto al div creado.
 
         return datos.forEach((item) => {        
@@ -206,7 +207,7 @@ findAthlete.addEventListener('keyup', (e) => {
 
 //MEDALLERO
 const medalsData = dataMedals(dataRio);
-const medalsData2 = dataMedals(dataRio);
+//const medalsData2 = dataMedals(dataRio);
 //console.log(medalsData2);
 
 
@@ -247,7 +248,7 @@ menuHighlights.addEventListener("click", () => {
   function imprimirHighlights(datos) {
        
     let numberSuma=computeStats(dataHighlights);
-    newContent2=document.createTextNode(`${numberSuma} atletas ganaron como mínimo 2 medallas de oro.`);
+    newContent2=document.createTextNode(`${numberSuma} athletes won at least 2 gold medals.`);
     newDiv3.appendChild(newContent2); //añade texto al div creado.
 
     return datos.forEach((item) => {        
