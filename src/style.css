@@ -104,19 +104,12 @@ main.principalPage{
 
 }
 
-section.listaAthlete{
-  /*float:left; /* para elementos de bloque*/ 
-  width: 106px;
-  height: 180px;
-  /* padding-top: auto auto; */
- margin: 8px 8px;
- display: inline-block; 
- box-sizing: border-box;
- position: relative;
- 
- /* border:0.38rem solid rgb(165, 165, 165);  */
-  /* se puede omitir solo para que se vea bien xd al voltear */
-    /* perspective: 1000px;  */
+main.principalPage  section.listaAthlete{
+    /*float:left; /* para elementos de bloque*/ 
+    width: 106px;
+    padding-top: 10px;
+    
+   display: inline-block; 
 }
 
 /* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */ 
