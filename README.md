@@ -16,7 +16,7 @@ acogida a nivel mundial, de todas estas personas hay un grupo que desea poder
 interactuar y ver la información de los atletas, los deportes olímpicos y los
 países que participaron.
 
-## Definición del producto
+## 2. Definición del producto
 
 Nuestro producto 
 
@@ -38,42 +38,42 @@ son las medallas que ganaron
 - Adicionalmente a nuestros usuarios les gustaría saber la cantidad de mujeres
 atletas que participaron y ganaron medallas.
 
-## 2. Diseño de la Interfaz de Usuario
+## 3. Diseño de la Interfaz de Usuario
 
 [Prototipo en Figma](https://www.figma.com/file/YT5fv7nPDd5rfFfwFQUAPn/Untitled?node-id=77%3A147)
 
-## 3. Historias de usuario
+## 4. Historias de usuario
 
 1. Como usuario quiero saber información de los atletas como nombre, altura, peso, país que representa y especialidad deportiva.
-- Visualizar una imagen de cada deportista.
-- Al tocar la foto con el clic, podamos ver información relevante del deportista ( nombre, altura, peso, país que representa y especialidad deportiva).
-- Barra de menú.
+  - Visualizar una imagen de cada deportista.
+  - Al tocar la foto con el clic, podamos ver información relevante del deportista ( nombre, altura, peso, país que representa y especialidad deportiva).
+  - Barra de menú.
 
 2. Como usuario quiero poder ver a todos los atletas y también poder verlos según su deporte.
-- Botón que te dirija directamente a todos los deportistas sin repetirlos.
-- Pantalla principal que muestre cada deporte.
-- Poder entrar a cada disciplina y ver a los atletas de ese deporte elegido.
-- Corregir la barra de menú reponsive.
+  - Botón que te dirija directamente a todos los deportistas sin repetirlos.
+  - Pantalla principal que muestre cada deporte.
+  - Poder entrar a cada disciplina y ver a los atletas de ese deporte elegido.
+  - Corregir la barra de menú reponsive.
 
 3. Como usuario me gustaría poder ver una barra de menú donde pueda buscar los deportistas de un país, deporte o género.
-- Listado de todos los países para que pueda buscar los deportistas de ese país en específico.
-- Listado por género y poder buscar a los deportistas según el género de interés.
-- Listado de deportes para poder buscar los deportistas según su deporte.
-- Barra de ordenar de A-Z y de Z-A.
+  - Listado de todos los países para que pueda buscar los deportistas de ese país en específico.
+  - Listado por género y poder buscar a los deportistas según el género de interés.
+  - Listado de deportes para poder buscar los deportistas según su deporte.
+  - Barra de ordenar de A-Z y de Z-A.
 
 4. Como usuario quiero poder visualizar una barra de buscar para poder encontrar el atleta específico de mi interés por su nombre y tener alguna opción para ver estadísticas interesantes de cada deporte.
-- Barra de búsqueda.
-- Atletas destacados.
-- Mostrar estadísticas cuando se presione algún deporte en la página de inicio.
+  - Barra de búsqueda.
+  - Atletas destacados.
+  - Mostrar estadísticas cuando se presione algún deporte en la página de inicio.
 
 ## 5. Implementación de la Interfaz de Usuario
 
-[X] Filtrar los deportistas por deporte, género, país.
-[X] Ordenar a los deportistas de manera ASC - DESC.
-[X] Se podrá buscar un deportista específico con una barra de búsqueda.
-[X] Se puede visualizar cuántos y cuáles son los deportistas que participan por disciplina.
-[X] Se muestra en una sección los deportistas más destacados de Río 2016.
-[X] Se muestra el porcentaje de mujeres y hombres que participaron por disciplina.
+- [X] Filtrar los deportistas por deporte, género, país.
+- [X] Ordenar a los deportistas de manera ASC - DESC.
+- [X] Se podrá buscar un deportista específico con una barra de búsqueda.
+- [X] Se puede visualizar cuántos y cuáles son los deportistas que participan por disciplina.
+- [X] Se muestra en una sección los deportistas más destacados de Río 2016.
+- [X] Se muestra el porcentaje de mujeres y hombres que participaron por disciplina.
 
 ### HTML
 
