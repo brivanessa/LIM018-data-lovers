@@ -104,18 +104,25 @@ main.principalPage{
 
 }
 
-main.principalPage  section.listaAthlete{
-    /*float:left; /* para elementos de bloque*/ 
-    width: 106px;
-    padding-top: 10px;
-    
-   display: inline-block; 
+section.listaAthlete{
+  /*float:left; /* para elementos de bloque*/ 
+  width: 106px;
+  height: 180px;
+  /* padding-top: auto auto; */
+ margin: 8px 8px;
+ display: inline-block; 
+ box-sizing: border-box;
+ position: relative;
+ 
+ /* border:0.38rem solid rgb(165, 165, 165);  */
+  /* se puede omitir solo para que se vea bien xd al voltear */
+    perspective: 1000px; 
 }
 
-/* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */ 
- .listaAthlete:hover .card_back{
-  /* transform: scale(1); */
-  display: block;
+/* cuando le haces hover al elemento padre (seccion) entonces en el elemento hijo card */
+.listaAthlete:hover .card_one{
+  transform: rotateX(180deg);
+  
   }
 
 .card_one{
@@ -124,9 +131,9 @@ main.principalPage  section.listaAthlete{
   /* con position relative en el padre y absolute ne el hijo hacemos que el hijo se ubique enciam del padre pero respetando a los div anteriores al padre */
   /* background: gray; */
   position:relative; 
-  /* transform-style: preserve-3d;   */
+  transform-style: preserve-3d;  
   /* se puede omitir solo para que se vea bien xd al voltear */
-  /* transition: all 400ms; */
+  transition: all 400ms;
 }
 
 .card_front, 
@@ -136,8 +143,8 @@ main.principalPage  section.listaAthlete{
   height: 100%;
   /* card front esta ne la misma position que card back por eso la letra se sobreescribe */
   position:absolute;
-  /* backface-visibility: hidden; */
-  /* transform-style: preserve-3d; */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 .card_front{
   
@@ -150,8 +157,8 @@ main.principalPage  section.listaAthlete{
   border-radius: 0.75rem;
   background-color: #EFECEC;
   border:4px; 
-  /* transform: scale(1); */
-  display: none;
+  transform: rotateX(180deg);
+ 
 
 }
 
