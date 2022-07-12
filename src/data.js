@@ -1,63 +1,115 @@
+// NO REPETIR DATOS
+export function noRepeatedData(datos) {
+  const data = datos.map(item => {
+    // eslint-disable-next-line no-unused-vars
+    const {medal, event,...dataWithout} = item; // investigar desestructuración (fares)
+    return dataWithout;
+  })
+  const dataObjectText =  new Set(data.map(JSON.stringify)); //con el new set hacemos que no se repitan y con el JSONstringify convertimos el objeto en strin
+  const dataUniqueObject = Array.from(dataObjectText).map(JSON.parse); //convertimos el objeto en un array y JSONparse los string en objetos
+  return dataUniqueObject;
+}
+// DEPORTES NO REPETIDOS
+export function noRepeatedSports(datos) {
+  const dataSports = datos.map(item => {
+    return item.sport;
+  })
+  const dataSportUnique = Array.from(new Set(dataSports)); // OJO. No estamos convirtiendo el set en array
+  //console.log(dataSportUnique);
+  // const dataSportUnique = dataSports.filter((item, index) => {
+  //   return dataSports.indexOf(item) === index;
+  // })
+  return dataSportUnique;
+}
+// PAÍSES NO REPETIDOS
+export function noRepeatedCountry(data) {
+  const dataCountries = data.map(item => {
+    return item.noc;
+  })
+  const dataCountryUnique = Array.from(new Set(dataCountries));
+  return dataCountryUnique;
+}
 
-export function newDataNoRepeat(data){
-  data.map(function(objeto) {
-         delete objeto.medal;
-         delete objeto.event;
-       }) 
- const DataObjectText = new Set( data.map( JSON.stringify ) );
- const DataUniqObject = Array.from(DataObjectText).map( JSON.parse );
- return DataUniqObject;
-} 
+//FILTROS
+export function filterDataGender(data, condition) {
+  return data.filter ((item) => (item.gender === condition));
+}
 
-export function filterData(data,condition) {
-  return data.filter ((item)=>(item.gender===condition))
+export function filterDataSport(data, condition) {
+  return data.filter ((item) => (item.sport === condition));
+}
+
+export function filterDataCountry(data,condition) {
+  return data.filter ((item) => (item.noc === condition))
+}
+
+export function filterDataAthlete(data,condition) {
+  return data.filter ((item) => (item.name == condition))
+}
+//COMPUTE STAT
+export function computeStats(data) {
+  let numberAthletes=data.length;
+  return numberAthletes
 }
 
 
+// ORDENAR
+export function dataOrder(data, sortBy, sortOrder) {
 
+  const dataSort = JSON.parse(JSON.stringify(data));
+  //const data4=JSON.parse(JSON.stringify(data));
+  switch(sortOrder) {
+    case 'A-Z':
+    while (sortBy == "nombre") {
+      dataSort.sort((a, b) => {
+        const nameA = a.name.toLowerCase();
+        const nameB = b.name.toLowerCase();
+          
+        if (nameA < nameB){
+          return -1;
+        } else if (nameA > nameB){
+          return 1;
+        }else {
+          return 0;
+        }  
+      })
+      return dataSort;
+    }
+    break;
 
+    case 'Z-A':
+    while ((sortBy=="nombre")) {
+      dataSort.sort((a,b)=>{
+        const nameA=a.name.toLowerCase();
+        const nameB=b.name.toLowerCase();
+        if (nameA<nameB){
+          return 1;
+        } else if (nameA>nameB){
+          return -1;
+        }else {
+          return 0;
+        }  
+      })
+      return dataSort;
+    }
+    break;
+  }
+}
 
+//BUSCAR
+export function findData(data, propiedad, letras) {
+  return data.filter ((item) => (item[propiedad].toUpperCase().includes(letras.toUpperCase())));
+}
 
+//MEDALLERO
 
-// export function noRepeat(datos1){
-//     let i=0;
-//     while(datos1[i].name==datos1[i+1].name){    
-//       let obj2={medal: `${datos1[i].medal}, ${datos1[i+1].medal}`}; 
-//       let obj3={event: `${datos1[i].event}, ${datos1[i+1].event}`};
-//       let obj1=datos1[i];
-//       let obj4=Object.assign(obj1, obj2, obj3);
-//       datos1.splice(i+1,1);
-//       if (datos1[i].name==datos1[i+1].name) {i=0} else {i++}
-//     } 
-//      return datos1
-//     }
-
-
-
-
-
-// export function noRepeat2 (datos1){
-//         let i =0;
-//         if (datos1[i].name==datos1[i+1].name) {i=0} else  {i++};
-//           while(datos1[i].name==datos1[i+1].name){  
-//           let obj2={medal: `${datos1[i].medal}, ${datos1[i+1].medal}`}; 
-//           let obj3={event: `${datos1[i].event}, ${datos1[i+1].event}`};
-//           let obj1=datos1[i];
-//           Object.assign(obj1, obj2, obj3);
-//           datos1.splice(i+1,1);
-//           i++
-//         } 
-//          return datos1
-//         }  
-
-//         function newData (datos1){
-        
-//           datos1.map(function(objeto){
-//             delete objeto.medal;
-//             delete objeto.event;
-           
-//           })
-//           //datos1.map(objeto => delete objeto.event); 
-//           return datos1;
-//           }  
-//    console.log(newData (datos3))        
+export function dataMedals(data) { 
+  const newData = [...new Set(data.map((item) => item.name))].map((name) => {
+    return { name, 
+      medal: data.filter((item) => item.name === name).map((item) => item.medal),
+      //con el filter guardamos en nuevos arrays todos los nombres que se repiten
+      //con el map guardamos en un array las medallas por cada atleta
+    };
+  });
+  return newData;
+}

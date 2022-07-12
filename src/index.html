@@ -1,77 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Lovers</title>
+    <title>Río 2016</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./styles/tablet.css" media="(min-width: 880px)">
-    <script
-      src="https://kit.fontawesome.com/7e5b2d153f.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav">
-        <img src="./imagenes/riorecortado2016.png" class="logo nav-link" alt="Logo">
-        <button class="nav-toggle" aria-label="Abrir menú">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-menu">
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Undefined</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Undefined</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Undefined</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link nav-menu-link_active">Undefined</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    
-    <main class= "principalPage" id="principal">
-      <!-- div card_all contiene todas las cartas: -->
-      <div class="cards_all" id="bodyAllCards">
-        <!-- card_global (card_father):contiene a la carta que se voltea - si no lo ocnsideramos al voltear la card hay un espacio que el cursor no reconoce porque como que no existe (cuando esta en 90 grad) y se produce un fallo optico -->
-        <section class= "listaAthlete" id="athlete">
-          <!-- //card:one es la  que se voltea -->
-          <div class="card_one">  
-            <!-- parte del a carta que esta delante -->
-            <div class="card_front">
-              <br>
-                <img src="Imagen/petRio.jpg" alt="petRio2016" class="petRio">
-                <div class="datos" id="datosAthlete">
-                  <h2 id="pais">PAIS</h2>
-                  <br>
-                  <h3 id="nombre">Nombre del Atleta</h3>
-                </div> 
-            </div> 
-            <div class="card_back">
-                <br>
-                <h4 id="medalla">Medallas</h4>
-                <br>
-                <h5 id="especialidad">Medallas</h5>
-                <br>
-                <h6 id="genero">Medallas</h6>
-                <br>
-                <p id="otros datos">Medallas</p>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <input type="checkbox" name="" id="nav__checkbox" class="nav__checkbox">
+      <label for="nav__checkbox" class="nav__toggle">
+          
+        <svg class="menu" viewbox="0 0 448 512" width="100" title="bars">
+          <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+        </svg>
+        <svg class="close" viewbox="0 0 384 512" width="100" title="times">
+          <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path>
+        </svg>
+      </label>
+      
+      <ul class="nav__menu">
+        <li class="menu__logo">
+          <img src="./imagenes/riorecortado2016.png" alt="" />
+          <img src="#" alt="" />
+        </li>
+        <li>
+          <a href="#" id="menuSports">SPORTS</a>
+        </li>
+        <li>
+          <a href="#" id="menuAllAthletes">ATHLETES</a>
+        </li>
+        <li>
+          <a href="#" id="menuHighlights">HIGHLIGHTS</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-            </div>             
+  <main class= "principalPage" id="principal">
+    <section id="selectcontainer" class="select-container">
+      <select name="" id="selectgender" class="select-gender">
+        <!-- <option value="" disabled selected>GENDER</option> -->
+        <option value="All" id="option-gender-all">All gender</option> 
+        <option value="F" id="option-gender-female">Female</option>
+        <option value="M" id="option-gender-male">Male</option>
+      </select>
+      <select name="" id="select-countries" class="select-countries">
+        <!-- <option value="" disabled selected>COUNTRIES</option> -->
+        <option class="country" value="All">All countries</option>
+      </select>
+      <select name="" class="select-sports" id="select-sports">
+        <!-- <option value="" disabled selected>SPORTS</option> -->
+        <option class="option-sports" value="All">All sports</option>
+      </select>
+      <input type="button" title="Click to search" value="SEARCH"  class="filter-button" id="buttonFiltrarOrder">
+      <select name="" id="select-order">
+        <option value="" disabled selected>SORT</option>
+        <option class="desc">Z-A</option>
+        <option class="asc">A-Z</option>
+      </select>
+    </section>
+
+    <section class="section-container">
+      <div id="athletes-sports-container">
+        <!-- TODOS LOS DEPORTES DE LA PANTALLA PRINCIPAL -->
+        <div class="sports_container" id="bodyAllSports">
+          <div class= "listSports" id="listSports">
+            <div class="card_sport">  
+              <div class="sport_front">
+                <img src="imagenes/petRio.jpg" alt="petRio2016" class="sport-Rio">
+              <br>
+              </div> 
+              <div class="sport_back">
+                <div class="datos-Sport" id="datosSport">
+                  <br>
+                  <h2 class="what_Sport">Sport</h2>
+                  <br>
+                  <p class="howManyAthletesSport">La cantidad de atletas que juegan es de:</p>
+                  <br>
+                  <p class="genderAthletesSport">La cantidad de MUJERES atletas que juegan es de: </p>
+                  <br>
+                </div> 
+              </div>
+            </div>
           </div>
-        </section>
+        </div>      
+        <!-- CARTAS DE LOS ATLETAS POR DEPORTE (CON SU DISCIPLINA) -->
+        <div class="sportsCards_container" id="bodyCardsBySports">
+          <div id="athlete_sport"></div>
+        </div>
+
+        <!-- BARRA DE BUSCAR -->
+        <div class="main-input" id="findAllAthletes">
+          <div class="main-input-container">
+            <input type="text" id="findAthletes">
+              <span class="search-icon"></span>
+          </div>
+        </div>
+
+        <!-- TODAS LAS CARTAS DE ATLETAS SIN REPETIR -->
+        <div class="cards_all" id="bodyAllCards">    
+           <p id="infoAthletes" class="infoAthletes"></p> <!--es la suma total del bloque de atletas -->
+        </div>
+
+        <!-- PLANTILLA PARA MOSTRAR LOS DATOS DE CADA ATLETA -->
+        <template id="templateAthlete">
+          <div class= "listaAthlete">
+            <!-- //card:one es la  que se voltea -->
+            <div class="card_one" id="cardAthlete">  
+              <!-- parte del a carta que esta delante -->
+              <div class="card_front">
+                <br>
+                <img src="imagenes/petRio.jpg" alt="petRio2016" class="petRio">
+                <div class="datos" id="datosAthlete">
+                  <h2 class="pais-team">PAIS</h2>
+                  <br>
+                  <p class="nombre-At">Nombre del Atleta</p>
+                </div> 
+              </div> 
+              <div class="card_back">
+                <h3 class="sport-team">SPORT</h3>
+                <br>
+                <h2 class="nombre-athleteBack">Nombre del Atleta</h2>
+                <p class="pais-teamBack">PAIS</p>
+                <br>  
+                <p class="gender">Información</p>
+                <br>
+                <p class="heigth">Información</p>
+                <p class="weigth">Información</p>
+                <br>
+              </div>
+            </div>
+          </div> 
+        </template>
+
       </div>
-    </main> 
-    
-   
-   
-    
-    <script src="main.js" type="module"></script>
-  </body>
+       <!-- TODAS LAS CARTAS DE Highlights SIN REPETIR -->
+      <div  class="card_highlights" id="card_highlights">
+        <p id="infoHighlights" class="infoHighlights"></p> <!--es la suma total del bloque de atletas -->
+      </div>
+
+      <template id="templateHighlights">
+        <div class="card-highlights-container">
+          <div class="highlights-img">
+            <img class="highlights-athlete" src="https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/primary/d805hwu9vwqliue2tbwh" alt="">
+          </div>
+          <p class="highlights-name"></p>
+          <p class="highlights-medals"></p>
+        </div>
+      </template>  
+    </section>
+  </main>  
+  <script src="main.js" type="module"></script>
+</body>
 </html>
