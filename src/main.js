@@ -71,9 +71,9 @@ dataSport.forEach((i) => {
   newSeccion1.querySelector(".sport-Rio").setAttribute("src",i.ref);
   newSeccion1.querySelector("h2").textContent =i.sport;
 
-  const datosSportAthletes=filterDataSport(noRepeatedAhletes,`${i.sport}`)
-  const datosSportAthletesGenderF=filterDataGender(datosSportAthletes,'F') 
-  const datosSportAthletesGenderM=filterDataGender(datosSportAthletes,'M') 
+  const datosSportAthletes = filterDataSport(noRepeatedAhletes,`${i.sport}`)
+  const datosSportAthletesGenderF = filterDataGender(datosSportAthletes,'F') 
+  const datosSportAthletesGenderM = filterDataGender(datosSportAthletes,'M') 
   
   let numberSuma=computeStats(datosSportAthletes);
   let numberSumaF=computeStats(datosSportAthletesGenderF);
@@ -188,7 +188,7 @@ cambiarOrden.addEventListener('change', () => {
   (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(allGender,changeCountries.value)));
   let allSports=allCountries;
   (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(allCountries,changeSports.value)));
-  let allOrder=dataOrder(allSports,"nombre",cambiarOrden.value);
+  let allOrder = dataOrder(allSports,"nombre",cambiarOrden.value);
   imprimirDatos(allOrder);
 })
 
