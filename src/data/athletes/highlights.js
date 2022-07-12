@@ -22,7 +22,7 @@ export default{
     "athlete": "Anthony Lee Ervin" },
     {"ref":"https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/v1538355600/primary/kxv7nqrkzzwxkvysxdeo",
     "athlete": "Caeleb Remel Dressel"},
-    {"ref":"https://pbs.twimg.com/media/FXWnOdIXkAAgrPJ?format=jpg&name=360x360",
+    {"ref":"https://extranet.worldarchery.sport/ProfilePictures/?Id=6890",
     "athlete": "Chang Hye-Jin"},
     {"ref":"https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/v1538355600/primary/hlsqnjqltlizo4axlxzw",
     "athlete": "Chen Aisen"},
