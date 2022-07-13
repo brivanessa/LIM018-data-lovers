@@ -42,7 +42,9 @@ function imprimirDatos(datos) {
   return datos.forEach((item) => {        
     //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
     //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
-    const newSeccion = document.importNode(elementMain, true);
+    // const newSeccion = document.importNode(elementMain, true);
+    const newSeccion = elementMain.cloneNode(true);
+
     newSeccion.querySelector(".pais-team").textContent = item.team;
     newSeccion.querySelector(".nombre-At").textContent = item.name;
     newSeccion.querySelector(".sport-team").textContent = `Sport: ${item.sport}` 
@@ -108,7 +110,9 @@ dataSport.forEach((i) => {
           newDiv.appendChild(newContent); //añade texto al div creado.
 
         return datos.forEach((item) => {        
-         const newSeccion = document.importNode(elementMain,true); 
+         // const newSeccion = document.importNode(elementMain, true);
+          const newSeccion = elementMain.cloneNode(true);
+
           newSeccion.querySelector(".petRio").setAttribute("src","https://img2.freepng.es/20180410/yke/kisspng-2016-summer-olympics-winter-olympic-games-rio-de-j-rio-5acc7e8e4907e8.9150682715233511822991.jpg");
           newSeccion.querySelector(".pais-team").textContent = item.team;
           newSeccion.querySelector(".nombre-At").textContent = item.name;
@@ -252,7 +256,9 @@ menuHighlights.addEventListener("click", () => {
     newDiv3.appendChild(newContent2); //añade texto al div creado.
 
     return datos.forEach((item) => {        
-     const newSeccion = document.importNode(elementHighlights,true); 
+      //  const newSeccion = document.importNode(elementHighlights,true); 
+      const newSeccion = elementHighlights.cloneNode(true);
+
       newSeccion.querySelector(".highlights-athlete").setAttribute("src",item.ref);
       newSeccion.querySelector(".highlights-name").textContent = item.athlete;
       let medalsByAthletes=filterDataAthlete(medalsData,`${item.athlete}`);
