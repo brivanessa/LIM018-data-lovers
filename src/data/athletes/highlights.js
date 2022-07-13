@@ -1,4 +1,4 @@
-export default{ 
+export default { 
   "highlights": [
     {"ref": "https://img.olympicchannel.com/images/image/private/t_1-1_300/f_auto/primary/d805hwu9vwqliue2tbwh",
       "athlete": "Michael Fred Phelps, II"}, 
