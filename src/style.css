@@ -3,6 +3,7 @@
   --white: #fff;
   --gray: #2a324b;
   --black: #000;
+  --olympicblue: #164986;
 }
 
 * {
@@ -16,8 +17,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
-  font-weight: lighter;
+  font-family: 'Barlow', sans-serif;
   height: 100vh;
 }
 
@@ -62,6 +62,7 @@ body {
 .nav__menu a {
   color: inherit;
   font-size: 1.8rem;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -232,6 +233,7 @@ main.principalPage {
   /* 100% de todo el espacio de card one por eso card back se ve por debajo de card_one*/
   width: 100%; 
   height: 100%;
+  font-size: 1.8rem;
   /* card front esta ne la misma position que card back por eso la letra se sobreescribe */
   position:absolute;
   backface-visibility: hidden;  /*Para que la parte de atrás de la carta no se mire hasta que se le haga hover*/
@@ -304,6 +306,14 @@ main.principalPage {
   position:relative;
 }
 
+.nombre-At {
+  width: auto;
+  font-size: 1.9rem;
+  font-weight: 500;
+  border: 15px;
+  margin: auto;
+}
+
 .card_front, 
 .card_back{
   /* 100% de todo el espacio de card one por eso card back se ve por debajo de card_one*/
@@ -319,7 +329,7 @@ main.principalPage {
 .card_front{
   border-radius: 0.75rem;
   background-color: transparent;
-  border:2px solid #164986; 
+  border: 2.5px outset var(--olympicblue);
 }
 
 .card_back{
@@ -330,26 +340,40 @@ main.principalPage {
 }
 
 .petRio{
-  border-radius: 77px;
-  border: 3px solid #164986;
-  margin: auto;
   width: 77px;
-  height: 76px; 
+  height: 76px;
+  /* border-radius: 77px;*/
+  margin: auto;
 }
 
 h2 {
-  font-size: 15px;
+  font-size: 2rem;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #164986;
+  color: var(--olympicblue);
 }
 h3 {
-  font-size: 13px;  
-  color: black;
+  font-size: 1.3rem;  
+  color: var(--black);
 }
 p {
-  font-size: 15px; 
-  color: rgb(60, 59, 59);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--black);
 }
+.infoAthletes {
+  margin-bottom: 30px;
+}
+.infoHighlights,
+.infoAthletes {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.infoHighlights {
+      margin-bottom: 40px;
+}
+
 .card_highlights {
   display: none;
 }

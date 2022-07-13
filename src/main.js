@@ -12,7 +12,8 @@ import {
   noRepeatedSports,
   noRepeatedCountry,
   dataMedals,
-  filterDataAthlete } from  "./data.js";
+  filterDataAthlete 
+} from  "./data.js";
 
 const dataRio = data.athletes;
 
@@ -29,7 +30,7 @@ const listCountries = noRepeatedCountry(dataRio);
 let newContent
 
 function imprimirDatos(datos) {
-  while(!!document.querySelector(".listaAthlete")==true){   
+  while(!!document.querySelector(".listaAthlete")==true) {   
     const borrar=document.querySelector(".listaAthlete");
     borrar.remove() 
     newContent.remove()
@@ -41,7 +42,7 @@ function imprimirDatos(datos) {
   return datos.forEach((item) => {        
     //Clonar una seccion del DOM y añadirla //añade secciones clonadas del elemento seccion athletes
     //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
-    const newSeccion = document.importNode(elementMain,true); 
+    const newSeccion = document.importNode(elementMain, true);
     newSeccion.querySelector(".pais-team").textContent = item.team;
     newSeccion.querySelector(".nombre-At").textContent = item.name;
     newSeccion.querySelector(".sport-team").textContent = `Sport: ${item.sport}` 
@@ -59,8 +60,7 @@ const inicioButton = document.getElementById("menuSports");
 inicioButton.addEventListener('click', () => (window.location.reload()))
 
 const dataSport = sports.sports;
-const elementMainSport = document.getElementById("listSports"); 
-console.log(elementMainSport)
+const elementMainSport = document.getElementById("listSports");
 const parentMainSport = elementMainSport.parentNode; 
  
 dataSport.forEach((i) => {
