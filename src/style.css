@@ -47,6 +47,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   margin: 1rem;
+  cursor: pointer;
 }
 
 .nav__menu li {
@@ -301,7 +302,7 @@ main.principalPage {
 
 .card_one{
   width: 210px;
-  height: 242px;
+  height: 250px;
   /* con position relative en el padre y absolute ne el hijo hacemos que el hijo se ubique enciam del padre pero respetando a los div anteriores al padre */
   position:relative;
 }
