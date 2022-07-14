@@ -5,7 +5,7 @@
 El objetivo principal de este proyecto es que el usuario pueda visualizar y manipular la data más relevantes e interesantes de los atletas de Río 2016 en una interfaz web.
 
 Se puede acceder al proyecto siguiendo el enlace: 
-[Río 2016](https://olgaabx.github.io/LIM018-data-lovers/src/)
+[Río 2016](https://brivanessa.github.io/LIM018-data-lovers/src/))
 
 # Juegos Olímpicos de Río de Janeiro
 
