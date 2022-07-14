@@ -7,7 +7,7 @@ la información/data más relevante e interesante de los atletas de Río 2016 en
 interfaz web.
 
 Se puede acceder al proyecto siguiendo el enlace: 
-[Río 2016](https://brivanessa.github.io/LIM018-data-lovers/src/))
+[Río 2016](https://brivanessa.github.io/LIM018-data-lovers/src/).
 
 # Juegos Olímpicos de Río de Janeiro
 
