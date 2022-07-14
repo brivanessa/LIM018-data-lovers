@@ -43,6 +43,8 @@ atletas que participaron y ganaron medallas.
 ## 3. Diseño de la Interfaz de Usuario
 
 [Prototipo en Figma](https://www.figma.com/file/YT5fv7nPDd5rfFfwFQUAPn/Untitled?node-id=77%3A147)
+[Prototipo Desktop](https://www.figma.com/proto/YT5fv7nPDd5rfFfwFQUAPn/Untitled?node-id=2%3A4&scaling=contain&page-id=0%3A1&starting-point-node-id=2%3A4)
+[Protipo Cellphone](https://www.figma.com/proto/YT5fv7nPDd5rfFfwFQUAPn/Untitled?node-id=6%3A33&scaling=scale-down&page-id=2%3A2&starting-point-node-id=6%3A33)
 
 ## 4. Historias de usuario
 
