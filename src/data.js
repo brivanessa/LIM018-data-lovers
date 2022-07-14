@@ -96,7 +96,7 @@ export function dataOrder(data, sortBy, sortOrder) {
 
 //BUSCAR
 export function findData(data, propiedad, letras) {
-  return data.filter (item => item[propiedad].toUpperCase().includes(letras.toUpperCase()));
+  return data.filter(item => item[propiedad].toUpperCase().includes(letras.toUpperCase()));
 }
 
 //MEDALLERO

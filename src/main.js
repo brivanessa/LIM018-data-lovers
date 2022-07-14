@@ -115,117 +115,133 @@ dataSport.forEach((item) => {
   newSectionSports.querySelector(".genderAthletesSport").textContent = `${numberPercentF}% (${numberSumaF}) are women and ${numberPercentM}% (${numberSumaM}) are men.`;
   //Of the ${numberSuma} ,
     
-    newSectionSports.addEventListener('click', () => {
-      document.getElementById("bodyAllSports").style.display="none";
-      // const newDiv1 = document.createElement("div"); // crea un nuevo div
-      // const divCardsBySports = document.getElementById("bodyCardsBySports");
-      // const elementMain1 = document.getElementById("athlete_sport");
-      // divCardsBySports.insertBefore(newDiv1, elementMain1); 
+  newSectionSports.addEventListener('click', () => {
+    document.getElementById("bodyAllSports").style.display="none";
+    // const newDiv1 = document.createElement("div"); // crea un nuevo div
+    // const divCardsBySports = document.getElementById("bodyCardsBySports");
+    // const elementMain1 = document.getElementById("athlete_sport");
+    // divCardsBySports.insertBefore(newDiv1, elementMain1); 
       
-      //filtrando la data:
-      const dataAllAthletesBySport = filterDataSport(dataRio, `${item.sport}`);
+    //filtrando la data:
+    const dataAllAthletesBySport = filterDataSport(dataRio, `${item.sport}`);
        
-      //FUNCION PARA IMPRIMIR LOS DATOS CON MEDALLAS Y EVENTOS
-      function imprimirDatosAll(datos) {
-        newContent = document.createTextNode(`${numberSuma} athletes participated in this discipline.`);  
-        newDiv.appendChild(newContent); //añade texto al div creado.
+    //FUNCION PARA IMPRIMIR LOS DATOS CON MEDALLAS Y EVENTOS
+    function imprimirDatosAll(datos) {
+      newContent = document.createTextNode(`${numberSuma} athletes participated in this discipline.`);  
+      newDiv.appendChild(newContent); //añade texto al div creado.
 
-        return datos.forEach((item) => {        
-         // const newSeccion = document.importNode(elementMain, true);
-          const newSectionAthletesBySport = elementMain.cloneNode(true);
+      return datos.forEach((item) => {        
+        // const newSeccion = document.importNode(elementMain, true);
+        const newSectionAthletesBySport = elementMain.cloneNode(true);
 
-          newSectionAthletesBySport.querySelector(".petRio").setAttribute("src","https://img2.freepng.es/20180410/yke/kisspng-2016-summer-olympics-winter-olympic-games-rio-de-j-rio-5acc7e8e4907e8.9150682715233511822991.jpg");
-          newSectionAthletesBySport.querySelector(".pais-team").textContent = item.team;
-          newSectionAthletesBySport.querySelector(".nombre-At").textContent = item.name;
-          newSectionAthletesBySport.querySelector(".sport-team").textContent = `Sport: ${item.sport}`;
-          newSectionAthletesBySport.querySelector(".nombre-athleteBack").textContent = `${item.name}`;
-          newSectionAthletesBySport.querySelector(".pais-teamBack").textContent = `(${item.team})`;
-          newSectionAthletesBySport.querySelector(".gender").textContent = `Gender: ${item.gender}`;
-          newSectionAthletesBySport.querySelector(".heigth").textContent = `Discipline: ${item.event}`;
-          newSectionAthletesBySport.querySelector(".weigth").textContent = `Medal: ${item.medal}`;
-          parentMain.appendChild(newSectionAthletesBySport);
-        })
-      }
-      imprimirDatosAll(dataAllAthletesBySport);
-    })
+        newSectionAthletesBySport.querySelector(".petRio").setAttribute("src","https://img2.freepng.es/20180410/yke/kisspng-2016-summer-olympics-winter-olympic-games-rio-de-j-rio-5acc7e8e4907e8.9150682715233511822991.jpg");
+        newSectionAthletesBySport.querySelector(".pais-team").textContent = item.team;
+        newSectionAthletesBySport.querySelector(".nombre-At").textContent = item.name;
+        newSectionAthletesBySport.querySelector(".sport-team").textContent = `Sport: ${item.sport}`;
+        newSectionAthletesBySport.querySelector(".nombre-athleteBack").textContent = `${item.name}`;
+        newSectionAthletesBySport.querySelector(".pais-teamBack").textContent = `(${item.team})`;
+        newSectionAthletesBySport.querySelector(".gender").textContent = `Gender: ${item.gender}`;
+        newSectionAthletesBySport.querySelector(".heigth").textContent = `Discipline: ${item.event}`;
+        newSectionAthletesBySport.querySelector(".weigth").textContent = `Medal: ${item.medal}`;
+        parentMain.appendChild(newSectionAthletesBySport);
+      })
+    }
+    imprimirDatosAll(dataAllAthletesBySport);
+  })
 });
 document.getElementById("listSports").style.display="none"; //para ocultar el primer elmento no hidden pq el hidden no lo meustra pero sigue ocupando el espacio  
 
-//SELECCIONAR COUNTRIES
-const elementMainCountry = document.querySelector(".country");
-const parentMainCountry = elementMainCountry.parentNode; 
-listCountries.forEach((i) => {
-  const newOption = elementMainCountry.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
+//SELECT COUNTRIES
+const elementMainCountry = document.querySelector(".option-country");
+const parentMainCountry = elementMainCountry.parentNode;
+listCountries.forEach((item) => {
+  const newOption = elementMainCountry.cloneNode(); //clonamos un nodo del DOM (el nodo es de la seccion existente)
   parentMainCountry.appendChild(newOption); // clonas un documeto y lo devuelves al final 
-  newOption.setAttribute("value", i);
-  newOption.textContent = i;
+  newOption.setAttribute("value", item);
+  newOption.textContent = item;
 });
 
-//SELECCIONAR SPORTS
+//SELECT SPORTS
 const elementMainSports = document.querySelector(".option-sports");
-const parentMainSports = elementMainSports.parentNode; 
-listSports.forEach((i) => {
+const parentMainSports = elementMainSports.parentNode;
+
+listSports.forEach((item) => {
   const newOption = elementMainSports.cloneNode(true); //clonamos un nodo del DOM (el nodo es de la seccion existente) -TRUE es para clonar los hijos de ese nodo
   parentMainSports.appendChild(newOption); // clonas un documeto y lo devuelves al final 
-  newOption.setAttribute("value", i);
-  newOption.textContent = i;
+  newOption.setAttribute("value", item);
+  newOption.textContent = item;
 });
 
 //FILTRAR Y ORDENAR
-const cambiarOpcion=document.getElementById('selectgender');
-const changeCountries=document.getElementById('select-countries');
-const changeSports=document.getElementById('select-sports');
-const orderFilter=document.getElementById('buttonFiltrarOrder');
+const selectGender = document.getElementById('selectgender');
+const selectCountries = document.getElementById('select-countries');
+const selectSports = document.getElementById('select-sports');
+const searchButton = document.getElementById('filterButton');
 
 //FILTRAR
-  orderFilter.addEventListener("click",()=> {
-    document.getElementById("findAllAthletes").style.visibility = "visible";
+searchButton.addEventListener("click", () => {
+  document.getElementById("findAllAthletes").style.visibility = "visible"; // Barra de búsqueda
 
-    let allGender=noRepeatedAhletes;
-    (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
-    let allCountries=allGender;
-    (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(allGender,changeCountries.value)));
-    let allSports=allCountries;
-    (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(allCountries,changeSports.value)));
-    imprimirDatos(allSports);
-  })
+  let allGender = noRepeatedAhletes;
+  (selectGender.value == "All")?(allGender):(allGender = (filterDataGender(noRepeatedAhletes, selectGender.value)));
+
+  let allCountries = allGender;
+  (selectCountries.value == "All")?(allCountries):(allCountries = (filterDataCountry(allGender, selectCountries.value)));
+
+  let allSports = allCountries;
+  (selectSports.value == "All")?(allSports):(allSports = (filterDataSport(allCountries, selectSports.value)));
+  
+  imprimirDatos(allSports);
+});
 
 // SELECCIONAR ORDEN
-let cambiarOrden=document.getElementById('select-order');
-cambiarOrden.addEventListener('change', () => {
-  let allGender=noRepeatedAhletes;
-  (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
-  let allCountries=allGender;
-  (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(allGender,changeCountries.value)));
-  let allSports=allCountries;
-  (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(allCountries,changeSports.value)));
-  let allOrder = dataOrder(allSports,"nombre",cambiarOrden.value);
+let changeSort = document.getElementById('select-order'); // Etiqueta de AZ - ZA
+changeSort.addEventListener('change', () => {
+
+  let allGender = noRepeatedAhletes;
+  (selectGender.value == "All")?(allGender):(allGender = (filterDataGender(noRepeatedAhletes, selectGender.value)));
+  
+  let allCountries = allGender;
+  (selectCountries.value == "All")?(allCountries):(allCountries = (filterDataCountry(allGender, selectCountries.value)));
+ 
+  let allSports = allCountries;
+  (selectSports.value == "All")?(allSports):(allSports = (filterDataSport(allCountries, selectSports.value)));
+  
+  let allOrder = dataOrder(allSports, "nombre" , changeSort.value);
+
   imprimirDatos(allOrder);
 })
 
-//BARRA DE BUSCAR
+//BARRA DE BUSQUEDA
 const findAthlete=document.getElementById('findAthletes');
+
 findAthlete.addEventListener('keyup', (e) => {
-    let allGender=noRepeatedAhletes;
-    (cambiarOpcion.value=="All")?(allGender):(allGender=(filterDataGender(noRepeatedAhletes,cambiarOpcion.value)));
-    let allCountries=allGender;
-    (changeCountries.value=="All")?(allCountries):(allCountries=(filterDataCountry(allGender,changeCountries.value)));
-    let allSports=allCountries;
-    (changeSports.value=="All")?(allSports):(allSports=(filterDataSport(allCountries,changeSports.value)));
-    let findCardsAthletes= findData(allSports,'name',e.target.value);
-  (findCardsAthletes.length===0?imprimirDatos([]):imprimirDatos(findCardsAthletes))
+
+  let allGender = noRepeatedAhletes;
+  (selectGender.value == "All")?(allGender):(allGender = (filterDataGender(noRepeatedAhletes,selectGender.value)));
+
+  let allCountries = allGender;
+  (selectCountries.value == "All")?(allCountries):(allCountries = (filterDataCountry(allGender,selectCountries.value)));
+
+  let allSports = allCountries;
+  (selectSports.value == "All")?(allSports):(allSports = (filterDataSport(allCountries,selectSports.value)));
+
+  let findCardsAthletes = findData(allSports, 'name', e.target.value);
+
+  (findCardsAthletes.length === 0?imprimirDatos([]):imprimirDatos(findCardsAthletes));
 })
 
 //MEDALLERO
 const medalsData = dataMedals(dataRio);
-//const medalsData2 = dataMedals(dataRio);
-//console.log(medalsData2);
-
 
 for (let i = 0; i < medalsData.length; i++) {
+
   let medals = medalsData[i].medal;
-  for(let j = 0; j < medalsData[i].medal.length; j++) {
+  
+  for(let j = 0; j < medals.length; j++) {
+
     let indexMedals = medals[j];
+
     if (indexMedals=="Bronze"){
       medals[j] = "🥉";
     } else if (indexMedals=="Silver"){
@@ -236,13 +252,12 @@ for (let i = 0; i < medalsData.length; i++) {
   }
 }
 
-
 // ALL HIGHLIGHTS
-const newDiv3 = document.getElementById("infoHighlights"); // crea un nuevo div
-const menuHighlights = document.getElementById("menuHighlights");
-const elementHighlights = document.getElementById("templateHighlights").content; // con el metodo getElementById devuelve una referencia del elemento seccion con id "athletes" (es traido del DOM)
-const parentHighlights  = document.getElementById("card_highlights"); // Obtener una referencia  del nodo madre
-const dataHighlights = highlights.highlights;
+const newDiv3 = document.getElementById("infoHighlights"); // etiqueta P del título de highlights
+const menuHighlights = document.getElementById("menuHighlights"); // botón del menu para ir a highlights
+const elementHighlights = document.getElementById("templateHighlights").content; // haciéndole referencia a los decendientes del template
+const parentHighlights  = document.getElementById("card_highlights"); // Obtener una referencia  del nodo padre para ubicar los clone
+const dataHighlights = highlights.highlights; // data de los deportistas highlights (34) y sus imágenes
 
 menuHighlights.addEventListener("click", () => {
   document.getElementById("bodyAllSports").style.display = "none";
@@ -250,27 +265,29 @@ menuHighlights.addEventListener("click", () => {
   document.getElementById("bodyAllCards").style.display = "none";
   document.getElementById("findAllAthletes").style.visibility = "hidden";
   document.getElementById("card_highlights").style.display = "block";
+
   let newContent2;  
 
-  while(!!document.querySelector(".card-highlights-container")==true){   
+  while(!!document.querySelector(".card-highlights-container") == true){   
     newContent2.remove();
   }
    
   function imprimirHighlights(datos) {
        
-    let numberSuma=computeStats(dataHighlights);
-    newContent2=document.createTextNode(`${numberSuma} athletes won at least 2 gold medals.`);
-    newDiv3.appendChild(newContent2); //añade texto al div creado.
+    let numberSuma = computeStats(dataHighlights);
+    newContent2 = document.createTextNode(`${numberSuma} athletes won at least 2 gold medals.`);
+    newDiv3.appendChild(newContent2); // agregándole el contenido a la etiqueta p
 
     return datos.forEach((item) => {        
       //  const newSeccion = document.importNode(elementHighlights,true); 
-      const newSeccion = elementHighlights.cloneNode(true);
+      const newSection = elementHighlights.cloneNode(true);
 
-      newSeccion.querySelector(".highlights-athlete").setAttribute("src",item.ref);
-      newSeccion.querySelector(".highlights-name").textContent = item.athlete;
-      let medalsByAthletes=filterDataAthlete(medalsData,`${item.athlete}`);
-      newSeccion.querySelector(".highlights-medals").textContent = `Medals: ${medalsByAthletes[0].medal}`;
-      parentHighlights.appendChild(newSeccion);
+      newSection.querySelector(".highlights-athlete").setAttribute("src", item.ref);
+      newSection.querySelector(".highlights-name").textContent = item.athlete;
+      let medalsByAthletes = filterDataAthlete(medalsData, `${item.athlete}`);
+      
+      newSection.querySelector(".highlights-medals").textContent = `Medals: ${medalsByAthletes[0].medal}`; // el index 0 es para ingresar al elemento único dentro del objeto
+      parentHighlights.appendChild(newSection);
     })
   }
   imprimirHighlights(dataHighlights);
