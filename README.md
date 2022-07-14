@@ -9,7 +9,7 @@ Se puede acceder al proyecto siguiendo el enlace:
 
 # Juegos Olímpicos de Río de Janeiro
 
-Juegos Olímpicos de Río de Janeiro, fueron un evento multideportivo internacional,
+Juegos Olímpicos de Río de Janeiro, fue un evento multideportivo internacional,
 celebrado en la ciudad de Río de Janeiro, Brasil. La elección de Río marcó la
 primera vez que se realiza en un país sudamericano. Este evento tuvo gran
 acogida a nivel mundial, de todas estas personas hay un grupo que desea poder
@@ -20,21 +20,21 @@ países que participaron.
 
 Nuestro producto 
 
-Para entender mejor qué información que podrían necesitar nuestos usuarios,
+Para entender mejor qué información podrían necesitar nuestos usuarios,
 hicimos una rápida investigación (research) y estos son algunos de los
 hallazgos.
 
 - Información relevante sobre los atletas olímpicos, como nombre, altura, peso,
-país que representa y especialidad deportiva
+país que representa y especialidad deportiva.
 - En los juegos olímpicos son muchos los países participantes, para nuestros
-usuarios es importante saber cuáles son
+usuarios es importante saber cuáles son.
 - Adicionalmente a esta información, para nuestros usuarios es importante poder
-ver la cantidad de atletas que participaron por país
+ver la cantidad de atletas que participaron por país.
 - En los juegos olímpicos hay deportes y estos tienen sus disciplinas, para
-nuestros usuarios es importante saber cuántos y cuáles son
+nuestros usuarios es importante saber cuántos y cuáles son.
 - En los juegos olímpicos siempre hay equipos o atletas que ganan diferentes
 disciplinas, para nuestros usuarios es importante saber quiénes son y cuantas
-son las medallas que ganaron
+son las medallas que ganaron.
 - Adicionalmente a nuestros usuarios les gustaría saber la cantidad de mujeres
 atletas que participaron y ganaron medallas.
 
@@ -44,16 +44,16 @@ atletas que participaron y ganaron medallas.
 
 ## 4. Historias de usuario
 
-1. Como usuario quiero saber información de los atletas como nombre, altura, peso, país que representa y especialidad deportiva.
+1. Como usuario quiero conocer datos importantes de los atletas como nombre, altura, peso, país que representa y especialidad deportiva.
   - Visualizar una imagen de cada deportista.
-  - Al tocar la foto con el clic, podamos ver información relevante del deportista ( nombre, altura, peso, país que representa y especialidad deportiva).
-  - Barra de menú.
+  - Al tocar la foto de cada atleta con un clic, se pueda ver información relevante del deportista (nombre, altura, peso, país que representa y especialidad deportiva).
+  - Tener una barra de menú.
 
-2. Como usuario quiero poder ver a todos los atletas y también poder verlos según su deporte.
-  - Botón que te dirija directamente a todos los deportistas sin repetirlos.
+2. Como usuario quiero poder ver a todos los atletas y también poder ver la cantidad de atletas que participaron por deporte.
+  - Botón que te dirija directamente a todos los deportistas (sin repetirlos).
   - Pantalla principal que muestre cada deporte.
   - Poder entrar a cada disciplina y ver a los atletas de ese deporte elegido.
-  - Corregir la barra de menú reponsive.
+  - Que pueda ingresar desde cualquier dispositivo (tablet, celular, computadora).
 
 3. Como usuario me gustaría poder ver una barra de menú donde pueda buscar los deportistas de un país, deporte o género.
   - Listado de todos los países para que pueda buscar los deportistas de ese país en específico.
